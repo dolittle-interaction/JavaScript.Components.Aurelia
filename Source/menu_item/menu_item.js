@@ -8,9 +8,9 @@ import globals from '../globals';
 @customElement('menu-item')
 @containerless()
 export class menu_item {
-    @bindable    navigate_to;
-    @bindable    icon;
-    @bindable    text;
+    @bindable({ primaryProperty: true })    text;
+    @bindable                               navigate_to;
+    @bindable                               icon;
 
     constructor() {}
 

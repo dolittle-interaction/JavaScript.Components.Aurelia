@@ -8,10 +8,10 @@ import globals from '../globals';
 @customElement('checklist-item')
 @containerless()
 export class checklist_item {
-    @bindable navigate_to;
-    @bindable icon;
-    @bindable text;
-    @bindable is_success = false;
+    @bindable({ primaryProperty: true })    text;
+    @bindable                               navigate_to;
+    @bindable                               icon;
+    @bindable                               is_success = false;
 
     successIcon='';
     failedIcon=''; 

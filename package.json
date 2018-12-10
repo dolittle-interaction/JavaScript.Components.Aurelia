@@ -2,7 +2,7 @@
   "name": "@dolittle/aurelia.components",
   "author": "",
   "license": "ISC",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "Source/index.js",
   "scripts": {
