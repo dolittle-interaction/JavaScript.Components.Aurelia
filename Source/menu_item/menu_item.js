@@ -8,20 +8,21 @@ import globals from '../globals';
 @customElement('menu-item')
 @containerless()
 export class menu_item {
-    @bindable
-    nav_url;
-    @bindable
-    icon_name;
-    @bindable
-    text;
+    @bindable    navigate_to;
+    @bindable    icon;
+    @bindable    text;
 
     constructor() {}
 
-    get icon_url() {
-        let icon_file = '';
-        if (this.icon_name) {
-            icon_file = require(`${globals.iconBaseFolder}/${this.icon_name}.svg`);
+    get hasIcon() {
+        return this.iconName != null && this.iconName != '';
+    }
+
+    get iconUrl() {
+        let filename = '';
+        if (this.icon) {
+            filename = require(`${globals.iconBaseFolder}/${this.iconName}.svg`);
         }
-        return icon_file;
+        return filename;
     }
 }

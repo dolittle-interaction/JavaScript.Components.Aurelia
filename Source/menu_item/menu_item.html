@@ -7,8 +7,8 @@
 
 <template>
     <require from="./menu_item.scss"></require>
-    <a href.bind="nav_url" class="menu_item" title.bind="text">
-        <img src.bind="icon_url" alt.bind="icon_name">
+    <a href.bind="navigate-to" class="menu_item" title.bind="text">
+        <img src.bind="iconUrl" alt.bind="iconName" if.bind="hasIcon">
         <span>${text}</span>
     </a>
 </template>

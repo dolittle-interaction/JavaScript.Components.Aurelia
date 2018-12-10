@@ -8,28 +8,28 @@ import globals from '../globals';
 @customElement('checklist-item')
 @containerless()
 export class checklist_item {
-    @bindable nav_url;
-    @bindable icon_name;
+    @bindable navigate_to;
+    @bindable icon;
     @bindable text;
+    @bindable is_success = false;
 
-    status_success_icon='';
-    status_fail_icon=''; 
+    successIcon='';
+    failedIcon=''; 
 
     constructor() {
-        try { this.status_success_icon = require(`../assets/icons/check_badge.svg`); } catch(ex) {}
-        try { this.status_fail_icon = require(`../assets/icons/fail_badge.svg`); } catch(ex) {}
+        try { this.successIcon = require(`../assets/icons/check_badge.svg`); } catch(ex) {}
+        try { this.failedIcon = require(`../assets/icons/fail_badge.svg`); } catch(ex) {}
     }
     
-    show_success() {
-        let d = new Date();
-        return d.getTime() % 2 == 0;
+    get hasIcon() {
+        return this.iconName != null && this.iconName != '';
     }
 
-    get icon_url() {
-        let icon_file = '';
-        if (this.icon_name) {
-            try { icon_file = require(`${globals.iconBaseFolder}/${this.icon_name}.svg`);  } catch(ex) {}
+    get iconUrl() {
+        let filename = '';
+        if (this.icon) {
+            try { filename = require(`${globals.iconBaseFolder}/${this.icon_name}.svg`);  } catch(ex) {}
         }
-        return icon_file;
+        return filename;
     }
 }
