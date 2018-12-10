@@ -9,6 +9,6 @@
     <require from="./menu_item.scss"></require>
     <a href.bind="navigate-to" class="menu_item" title.bind="text">
         <img src.bind="iconUrl" alt.bind="iconName" if.bind="hasIcon">
-        <span>${text}</span>
+        <span>${text}<slot></slot></span>
     </a>
 </template>
