@@ -1,0 +1,14 @@
+<!--
+*---------------------------------------------------------------------------------------------
+* Copyright (c) Dolittle. All rights reserved.
+* Licensed under the MIT License. See LICENSE in the project root for license information.
+*---------------------------------------------------------------------------------------------
+-->
+
+<template>
+    <require from="./menu_item.scss"></require>
+    <a href.bind="nav_url" class="menu_item" title.bind="text">
+        <img src.bind="icon_url" alt.bind="icon_name">
+        <span>${text}</span>
+    </a>
+</template>
