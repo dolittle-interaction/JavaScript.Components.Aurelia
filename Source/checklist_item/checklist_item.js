@@ -9,9 +9,9 @@ import globals from '../globals';
 @containerless()
 export class checklist_item {
     @bindable({ primaryProperty: true })    text;
-    @bindable                               navigate_to;
+    @bindable                               navigateTo;
     @bindable                               icon;
-    @bindable                               is_success = false;
+    @bindable                               isSuccess = false;
 
     successIcon='';
     failedIcon=''; 

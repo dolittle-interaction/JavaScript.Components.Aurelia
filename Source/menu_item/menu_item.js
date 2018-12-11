@@ -9,7 +9,7 @@ import globals from '../globals';
 @containerless()
 export class menu_item {
     @bindable({ primaryProperty: true })    text;
-    @bindable                               navigate_to;
+    @bindable                               navigateTo;
     @bindable                               icon;
 
     constructor() {}
