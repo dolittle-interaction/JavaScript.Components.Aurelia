@@ -7,7 +7,7 @@ import globals from '../globals';
 
 @customElement('menu-item')
 @containerless()
-export class menu_item {
+export class menuItem {
     @bindable({ primaryProperty: true })    text;
     @bindable                               navigateTo;
     @bindable                               icon;
