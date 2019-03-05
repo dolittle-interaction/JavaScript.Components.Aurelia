@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "workspaces": [
+        "SampleBrowser",
+        "Source"
+    ],
+    "scripts": {
+        "build": "gulp build"
+    },
+    "devDependencies": {
+        "@dolittle/build": "^6.2.4"
+    }
+}

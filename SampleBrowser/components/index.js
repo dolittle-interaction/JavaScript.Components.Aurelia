@@ -2,12 +2,12 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { customElement, containerless, bindable } from 'aurelia-framework';
+import { PLATFORM } from 'aurelia-pal';
 
-@customElement('pivot-item')
-@containerless()
-export class pivotItem {
-    @bindable   text;
-    @bindable   title;
-    @bindable   current;
+import * as pivot from './pivot/index';
+import * as sideBar from './sideBar/index';
+
+export class index {
+
+
 }

@@ -2,12 +2,15 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { customElement, containerless, bindable } from 'aurelia-framework';
+import { PLATFORM } from 'aurelia-pal';
+import { inject } from 'aurelia-dependency-injection';
+import { default as structure } from './structure';
 
-@customElement('pivot-item')
-@containerless()
-export class pivotItem {
-    @bindable   text;
-    @bindable   title;
-    @bindable   current;
+@inject(structure)
+export class index {
+    
+    constructor(structure) {
+        this.structure = structure;
+    }
+
 }

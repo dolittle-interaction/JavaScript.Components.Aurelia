@@ -17,8 +17,8 @@ export class checklistItem {
     failedIcon=''; 
 
     constructor() {
-        //try { this.successIcon = require(`../assets/icons/check_badge.svg`); } catch(ex) {}
-        //try { this.failedIcon = require(`../assets/icons/fail_badge.svg`); } catch(ex) {}
+        try { this.successIcon = require(`../assets/icons/check_badge.svg`); } catch(ex) {}
+        try { this.failedIcon = require(`../assets/icons/fail_badge.svg`); } catch(ex) {}
     }
     
     get hasIcon() {
@@ -28,7 +28,7 @@ export class checklistItem {
     get iconUrl() {
         let filename = '';
         if (this.icon) {
-            //try { filename = require(`${globals.iconBaseFolder}/${this.icon_name}.svg`);  } catch(ex) {}
+            try { filename = require(`${globals.iconBaseFolder}/${this.icon_name}.svg`);  } catch(ex) {}
         }
         return filename;
     }

@@ -2,7 +2,6 @@ import { PLATFORM } from 'aurelia-pal';
 import globals from './globals';
 
 export function configure(aurelia, config) {
-    console.log('Lakk og lær');
     aurelia.globalResources(PLATFORM.moduleName('checklistItem/checklistItem'));
     aurelia.globalResources(PLATFORM.moduleName('menuItem/menuItem'));
     aurelia.globalResources(PLATFORM.moduleName('sideBar/sideBar'));

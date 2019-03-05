@@ -1,7 +1,6 @@
 import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
-import * as components from '../index';
 
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
@@ -11,10 +10,8 @@ export function configure(aurelia) {
         .standardConfiguration()
         .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
         .plugin(config => {
-            components.configure(config);
+            return components.configure(config, { iconBaseFolder: '~/assets/icons'});
         })
-        
-        //.plugin(PLATFORM.moduleName('@dolittle/aurelia.components'),  { iconBaseFolder: '~/assets/icons'});
         ;
 
     if (environment.debug) {

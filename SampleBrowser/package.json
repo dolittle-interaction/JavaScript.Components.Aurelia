@@ -1,0 +1,26 @@
+{
+  "name": "@dolittle/aurelia.components.samplebrowser",
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "version": "1.0.14",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --watch --progress --hot"
+  },
+  "devDependencies": {
+    "@dolittle/build.aurelia": "3.2.1",
+    "@dolittle/aurelia.components": "^1.0.0",
+    "dotenv": "^6.1.0",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-notifier": "^1.7.0"
+  },
+  "dependencies": {
+    "@dolittle/aurelia": "^1.0.15",
+    "@dolittle/styles": "^2.9.5",
+    "aurelia-templating": "^1.10.1"
+  }
+}

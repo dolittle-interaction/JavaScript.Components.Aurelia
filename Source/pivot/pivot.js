@@ -10,7 +10,5 @@ import {contentProcessor} from './contentProcessor';
 @processContent(contentProcessor)
 export class pivot {
     constructor() {
-        alert('Hello from Pivot');
     }
-
 }
