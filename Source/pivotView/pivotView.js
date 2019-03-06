@@ -10,6 +10,10 @@ import {contentProcessor} from './contentProcessor';
 @containerless()
 @processContent(contentProcessor)
 export class pivotView {
+  
+    @bindable
+    header;
+
     constructor() {
     }
 }
