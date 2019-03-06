@@ -2,20 +2,9 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-@import '~@dolittle/styles/src/styles/Settings/base';
+import { customElement, containerless, bindable } from 'aurelia-framework';
 
-/*
-.menu_item {
-    color: #fff;
-    display: block;
-    padding: 1rem;
-    white-space: nowrap;
-    img {
-        height: 1rem;
-        max-width: unset;
-    }
-    span {
-        margin-left: $grid-gutter/2;
-    }
+@customElement('navigation-view-item')
+export class navigationViewItem {
+
 }
-*/
