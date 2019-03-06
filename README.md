@@ -50,11 +50,11 @@ Considerations related to creating custom elements can be found [here](https://d
 According to the HTML5 standard, a '-' hyphen is required in the name of a custom element.
 Read more about it [here](https://stackoverflow.com/questions/22545621/do-custom-elements-require-a-dash-in-their-name).
 
-## Sample Browser
+## Control Gallery
 
-The purpose of the sample browser is to enable a simple place to go to for reference on how to use a component.
+The purpose of the control gallery is to enable a simple place to go to for reference on how to use a component.
 When working locally, it depends on the use of [Yarn workspaces](https://github.com/dolittle-tools/JavaScript.Build).
-For running the sample browser, just do the following from the folder called `SampleBrowser`:
+For running the control gallery, just do the following from the folder called `ControlGallery`:
 
 ```shell
 $ yarn start
