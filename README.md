@@ -62,6 +62,8 @@ $ yarn start
 
 This will start the Webpack DevServer and it will react to any changes, also those happening from the build.
 
+The gallery is inspired by the official [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery) for Fluent Design System by Microsoft.
+
 ## Building
 
 Both for publishing and for working locally one needs to build on change. This can be done by doing:
