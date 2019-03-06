@@ -4,9 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 import { customElement, containerless, bindable } from 'aurelia-framework';
 
-@customElement('side-bar')
+// https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
+@customElement('navigation-view')
 @containerless()
-export class sideBar {
+export class navigationView {
     @bindable expanded = false;
     @bindable hide_trigger;
     @bindable is_subnavigation;
