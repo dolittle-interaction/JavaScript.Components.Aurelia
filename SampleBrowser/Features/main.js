@@ -12,19 +12,16 @@ import * as Bluebird from 'bluebird';
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia) {
-    aurelia.use
-        .standardConfiguration()
-        .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
-        .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'), config => {
-          console.log("Hello world");
-        })
-        /*.plugin(config => {
-            return components.configure(config, { iconBaseFolder: '~/assets/icons'});
-        })*/
-        ;
+  aurelia.use
+    .standardConfiguration()
+    .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
+    
+    .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'), config => {
+      console.log("Hello world");
+    });
 
-    if (environment.debug) {
-        aurelia.use.developmentLogging();
-    }
-    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+  if (environment.debug) {
+    aurelia.use.developmentLogging();
+  }
+  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

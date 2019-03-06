@@ -5,10 +5,11 @@
 import { customElement, containerless, processContent, bindable } from 'aurelia-framework';
 import {contentProcessor} from './contentProcessor';
 
-@customElement('pivot')
+// https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/pivot
+@customElement('pivot-view')
 @containerless()
 @processContent(contentProcessor)
-export class pivot {
+export class pivotView {
     constructor() {
     }
 }
