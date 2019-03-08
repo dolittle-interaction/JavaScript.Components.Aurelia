@@ -14,9 +14,10 @@ function handleSlot(name, element) {
 
 
 export function contentProcessor(viewCompiler, viewResources, element, instruction) {
-  handleSlot('top', element);
-  handleSlot('items', element);
-  handleSlot('bottom', element);
+  handleSlot('header', element);
+  handleSlot('title', element);
+  handleSlot('menu-items', element);
+  handleSlot('footer', element);
 
   return true;
 }

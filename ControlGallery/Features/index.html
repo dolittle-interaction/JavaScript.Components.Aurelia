@@ -1,16 +1,18 @@
 <template>
   <require from="./index.scss"></require>
-  <navigation-view>
-    <top>
-      <navigation-view-itemseparator></navigation-view-itemseparator>
-    </top>
-    <items>
+  <navigation-view settings-visible="true">
+    <title>
+      <img src="logo.png">
+    </title>
+    <header>
+      <auto-suggest-box></auto-suggest-box>
+    </header>
+    <menu-items>
       <navigation-view-item repeat.for="component of structure.components">${component.name}</navigation-view-item>
-    </items>
-    <bottom>
-      <navigation-view-itemseparator></navigation-view-itemseparator>
-      <navigation-view-item>Settings</navigation-view-item>
-    </bottom>   
+    </menu-items>
+    <footer>
+      <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
+    </footer>
   </navigation-view>
 
   <section class="content">

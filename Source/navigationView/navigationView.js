@@ -15,6 +15,9 @@ export class navigationView {
   @bindable
   paneDisplayMode;
 
+  @bindable
+  settingsVisible;
+
   constructor() {
   }
 }
