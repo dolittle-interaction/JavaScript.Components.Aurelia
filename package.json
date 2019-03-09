@@ -8,6 +8,6 @@
         "build": "gulp build"
     },
     "devDependencies": {
-        "@dolittle/build": "^6.3.2"
+        "@dolittle/build": "^6.3.4"
     }
 }

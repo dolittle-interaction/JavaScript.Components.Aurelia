@@ -12,7 +12,6 @@ function handleSlot(name, element) {
   }
 }
 
-
 export function contentProcessor(viewCompiler, viewResources, element, instruction) {
   handleSlot('header', element);
   handleSlot('title', element);

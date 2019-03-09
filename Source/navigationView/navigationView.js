@@ -4,7 +4,6 @@
  *--------------------------------------------------------------------------------------------*/
 import { customElement, containerless, processContent, bindable } from 'aurelia-framework';
 import { contentProcessor } from './contentProcessor';
-import { itemsControl } from '../itemsControl/itemsControl';
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
@@ -19,5 +18,6 @@ export class navigationView {
   settingsVisible;
 
   constructor() {
+    
   }
 }
