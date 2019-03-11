@@ -5,17 +5,10 @@
 import { customElement, containerless, processContent, bindable } from 'aurelia-framework';
 import { contentProcessor } from './contentProcessor';
 
+function katt(target, key, descriptor) {
+  debugger;
 
-class someConverter {
-
-  toView(value) {
-    debugger;
-  }
-
-  fromView(value) {
-    debugger;
-
-  }
+  return descriptor;
 }
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
@@ -24,13 +17,17 @@ class someConverter {
 @processContent(contentProcessor)
 export class navigationView {
 
-  @bindable({converter: new someConverter()})
+  @bindable //@katt
   paneDisplayMode;
 
   @bindable
   settingsVisible;
 
   constructor() {
+
+    this.paneDisplayMode = 'leftCompact';
+    debugger//;
+
 
   }
 }
