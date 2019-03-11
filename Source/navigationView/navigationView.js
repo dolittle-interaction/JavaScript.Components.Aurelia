@@ -10,6 +10,8 @@ import { contentProcessor } from './contentProcessor';
 @containerless()
 @processContent(contentProcessor)
 export class navigationView {
+  @bindable expanded = false;
+  @bindable showTrigger = true;
 
   @bindable
   paneDisplayMode;
@@ -17,7 +19,9 @@ export class navigationView {
   @bindable
   settingsVisible;
 
-  constructor() {
-    
+  constructor() {}
+
+  toggleWidth() {
+    this.expanded = !this.expanded;
   }
 }
