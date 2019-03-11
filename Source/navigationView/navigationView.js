@@ -5,19 +5,32 @@
 import { customElement, containerless, processContent, bindable } from 'aurelia-framework';
 import { contentProcessor } from './contentProcessor';
 
+
+class someConverter {
+
+  toView(value) {
+    debugger;
+  }
+
+  fromView(value) {
+    debugger;
+
+  }
+}
+
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
 @containerless()
 @processContent(contentProcessor)
 export class navigationView {
 
-  @bindable
+  @bindable({converter: new someConverter()})
   paneDisplayMode;
 
   @bindable
   settingsVisible;
 
   constructor() {
-    
+
   }
 }

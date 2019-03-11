@@ -2,6 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+import { paneDisplayMode } from './paneDisplayMode';
+
 function handleSlot(name, element) {
   let slotContainer = element.querySelector(name);
   if (slotContainer) {
@@ -17,6 +19,6 @@ export function contentProcessor(viewCompiler, viewResources, element, instructi
   handleSlot('title', element);
   handleSlot('menu-items', element);
   handleSlot('footer', element);
-
   return true;
 }
+  
