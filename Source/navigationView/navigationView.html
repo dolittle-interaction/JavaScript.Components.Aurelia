@@ -7,11 +7,14 @@
 <template>
   <require from="./navigationView.scss"></require>
 
-  <div>
-    The title slot:
-    <div>
+  <nav class="navigation-view" class.bind="expanded ? 'expanded' : ''">
+    <header>
+      <a if.bind="showTrigger" class="expand-trigger" href="#" click.delegate="toggleWidth()" class.bind="expanded ? 'close': 'open'">
+        <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
+        <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
+      </a>
       <slot name="title"></slot>
-    </div>
+    </header>
 
     The header slot:
     <div>
@@ -27,5 +30,5 @@
     <div>
       <slot name="footer"></slot>
     </div>
-  </div>
+  </nav>
 </template>

@@ -16,6 +16,8 @@ function katt(target, key, descriptor) {
 @containerless()
 @processContent(contentProcessor)
 export class navigationView {
+  @bindable expanded = false;
+  @bindable showTrigger = true;
 
   @bindable //@katt
   paneDisplayMode;
@@ -27,7 +29,9 @@ export class navigationView {
 
     this.paneDisplayMode = 'leftCompact';
     debugger//;
+  }
 
-
+  toggleWidth() {
+    this.expanded = !this.expanded;
   }
 }
