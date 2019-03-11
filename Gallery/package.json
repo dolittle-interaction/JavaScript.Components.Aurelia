@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@dolittle/aurelia": "^1.0.15",
-    "@dolittle/styles": "^2.9.5",
+    "@dolittle/styles": "^3.0.0",
     "aurelia-templating": "^1.10.1"
   }
 }
