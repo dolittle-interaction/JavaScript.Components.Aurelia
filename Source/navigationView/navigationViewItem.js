@@ -6,5 +6,7 @@ import { customElement, containerless, bindable } from 'aurelia-framework';
 
 @customElement('navigation-view-item')
 export class navigationViewItem {
+  @bindable navUrl;
+  @bindable icon;
 
 }

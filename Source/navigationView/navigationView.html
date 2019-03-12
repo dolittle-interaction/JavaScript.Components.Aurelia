@@ -13,22 +13,16 @@
         <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
         <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
       </a>
-      <slot name="title"></slot>
-    </header>
-
-    The header slot:
-    <div>
+      <div class="title">
+        <slot name="navigation-title"></slot>
+      </div>
       <slot name="header"></slot>
-    </div>
-
-    The items
-    <div>
+    </header>
+    <section class="menu-items">
       <slot name="menu-items"></slot>
-    </div>
-
-    The footer slot:
-    <div>
+    </ection>
+    <footer>
       <slot name="footer"></slot>
-    </div>
+    </footer>
   </nav>
 </template>

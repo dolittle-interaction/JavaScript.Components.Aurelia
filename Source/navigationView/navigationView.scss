@@ -9,7 +9,7 @@
 $navigation-view-bg-color: $color-black-60 !default;
 $navigation-view-top-push-height: 0 !default;
 $navigation-view-width: 3rem !default;
-$navigation-view-width-expanded: 15rem !default;
+$navigation-view-width-expanded: 20rem !default;
 $navigation-view-transition-time: 0.3s;
 
 .navigation-view {
@@ -18,16 +18,19 @@ $navigation-view-transition-time: 0.3s;
   left: 0;
   position: fixed;
   top: 0;
-  transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
   transform: translateX(-70vw);
+  transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
   width: 70vw;
+  white-space: nowrap;
 
-  &.expanded {
-    transform: translateX(0);
+  .title {
+    display: none;
+    font-weight: 300;
+    letter-spacing: 0.0625rem;
+    font-size: 1.75rem;
   }
 
   header {
-    height: $navigation-view-width;
     position: relative;
     width: 100%;
   }
@@ -37,6 +40,7 @@ $navigation-view-transition-time: 0.3s;
     position: absolute;
     top: 0;
     right: 0;
+    padding: $grid-gutter/2;
     transform: translateX(100%);
     transition: transform $navigation-view-transition-time;
     width: $navigation-view-width;
@@ -70,23 +74,51 @@ $navigation-view-transition-time: 0.3s;
       }
     }
   }
+  .menu-items {
+    margin-top: $grid-gutter;
+  }
+  &.expanded {
+    transform: translateX(0);
+    header {
+      padding: $grid-gutter/2;
+      padding-right: $navigation-view-width;
+    }
+    .title {
+      display: block;
+    }
+  }
 
   @include media-bp-min(tablet) {
     transform: translateX(0);
     overflow: hidden;
+    top: $navigation-view-top-push-height;
     width: $navigation-view-width;
-
-    &.expanded {
-      width: $navigation-view-width-expanded;
+    header {
+      padding: $grid-gutter/2;
+    }
+    .title {
+      display: block;
+      visibility: hidden;
     }
     .expand-trigger {
       transform: translateX(0);
     }
-  }
-  @include media-bp-min(desktop) {
-    width: $navigation-view-width-expanded;
-    .expand-trigger {
-      display: none;
+    &.expanded {
+      width: $navigation-view-width-expanded;
+      .title {
+        visibility: visible;
+      }
     }
   }
+
+  // @include media-bp-min(desktop) {
+  //   width: $navigation-view-width-expanded;
+  //   .title {
+  //     display: block;
+  //     visibility: visible;
+  //   }
+  //   .expand-trigger {
+  //     display: none;
+  //   }
+  // }
 }
