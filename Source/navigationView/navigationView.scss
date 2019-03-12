@@ -9,29 +9,46 @@
 $navigation-view-bg-color: $color-black-60 !default;
 $navigation-view-top-push-height: 0 !default;
 $navigation-view-width: 3rem !default;
-$navigation-view-width-expanded: 10rem !default;
+$navigation-view-width-expanded: 15rem !default;
 $navigation-view-transition-time: 0.3s;
 
 .navigation-view {
   background-color: $navigation-view-bg-color;
-  height: 100%;
-  overflow: hidden;
-  transition: width $navigation-view-transition-time ease-in-out;
-  transform: translateZ(0);
-  width: $navigation-view-width;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
+  transform: translateX(-70vw);
+  width: 70vw;
 
+  &.expanded {
+    transform: translateX(0);
+  }
+
+  header {
+    height: $navigation-view-width;
+    position: relative;
+    width: 100%;
+  }
   .expand-trigger {
     display: block;
     height: $navigation-view-width;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform $navigation-view-transition-time;
     width: $navigation-view-width;
+
     img {
       padding: 1rem;
-      position: absolute;
-      top: 0;
-      right: 0;
       display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
       transform: translateZ(0);
-      transition: opacity $navigation-view-transition-time ease-in-out, transform $navigation-view-transition-time ease-in-out;
+      transition: opacity $navigation-view-transition-time, transform $navigation-view-transition-time;
       &.arrow {
         opacity: 0;
       }
@@ -41,6 +58,7 @@ $navigation-view-transition-time: 0.3s;
       }
     }
     &.close {
+      transform: translateX(0);
       img {
         &.arrow {
           opacity: 1;
@@ -52,7 +70,23 @@ $navigation-view-transition-time: 0.3s;
       }
     }
   }
-  &.expanded {
+
+  @include media-bp-min(tablet) {
+    transform: translateX(0);
+    overflow: hidden;
+    width: $navigation-view-width;
+
+    &.expanded {
+      width: $navigation-view-width-expanded;
+    }
+    .expand-trigger {
+      transform: translateX(0);
+    }
+  }
+  @include media-bp-min(desktop) {
     width: $navigation-view-width-expanded;
+    .expand-trigger {
+      display: none;
+    }
   }
 }
