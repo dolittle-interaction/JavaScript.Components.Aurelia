@@ -1,6 +1,6 @@
 <template>
   <require from="./index.scss"></require>
-  <navigation-view settings-visible="true">
+  <navigation-view settings-visible="true" current-item.bind="currentItem">
     <navigation-title>
       <div>Navigation</div>
     </navigation-title>
@@ -9,7 +9,7 @@
     </header>
     <menu-items>
       <div repeat.for="component of structure.components">
-        <navigation-view-item navUrl.bind="component.name" icon="book">${component.name}</navigation-view-item>
+        <navigation-view-item icon="book">${component.name}</navigation-view-item>
       </div>
     </menu-items>
     <footer>

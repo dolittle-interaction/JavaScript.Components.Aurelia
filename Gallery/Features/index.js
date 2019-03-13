@@ -4,13 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 import { PLATFORM } from 'aurelia-pal';
 import { inject } from 'aurelia-dependency-injection';
-import { default as structure } from './structure';
+import { default as structure } from './structure';
+import { bindable } from 'aurelia-framework';
 
 @inject(structure)
 export class index {
-    
+    @bindable currentItem;
+
     constructor(structure) {
         this.structure = structure;
+    }
+
+    currentItemChanged(item) {
+        debugger;
     }
 
 }
