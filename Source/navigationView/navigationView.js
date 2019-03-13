@@ -11,6 +11,7 @@ function katt(target, key, descriptor) {
   return descriptor;
 }
 
+
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
 @containerless()
@@ -26,9 +27,8 @@ export class navigationView {
   settingsVisible;
 
   constructor() {
-
     this.paneDisplayMode = 'leftCompact';
-    debugger//;
+    //debugger;
   }
 
   toggleWidth() {

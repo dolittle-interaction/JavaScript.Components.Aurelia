@@ -5,6 +5,11 @@
 *----------------------------------------------------------------------------------------------
 -->
 <template>
-    Navigation
-  
+  <require from="./navigationViewItem.scss"></require>
+  <div>
+    <a href.bind="navUrl" class="navigation-view-item">
+      <img alt="" />
+      <span><slot></slot></span>
+    </a>
+  </div>
 </template>

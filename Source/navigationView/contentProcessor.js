@@ -9,14 +9,14 @@ function handleSlot(name, element) {
   if (slotContainer) {
     while (slotContainer.children.length > 0) {
       slotContainer.firstElementChild.setAttribute('slot', name);
-      element.append(slotContainer.firstElementChild)
+      element.append(slotContainer.firstElementChild);
     }
   }
 }
 
 export function contentProcessor(viewCompiler, viewResources, element, instruction) {
   handleSlot('header', element);
-  handleSlot('title', element);
+  handleSlot('navigation-title', element);
   handleSlot('menu-items', element);
   handleSlot('footer', element);
   return true;
