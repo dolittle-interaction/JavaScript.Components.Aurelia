@@ -16,7 +16,7 @@ export class CustomEventFactory {
     create(name, details) {
         return new CustomEvent(name, {
             bubbles: true,
-            details: details
+            detail: details
         });
     }
 }
