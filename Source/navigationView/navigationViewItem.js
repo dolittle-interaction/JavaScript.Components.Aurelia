@@ -8,7 +8,12 @@ import { customElement, bindable, inject } from 'aurelia-framework';
 @inject(Element)
 export class navigationViewItem {
     #element;
-    @bindable icon;
+    
+    @bindable
+    icon;
+
+    @bindable
+    tag;
 
     constructor(element) {
         this.#element = element;
