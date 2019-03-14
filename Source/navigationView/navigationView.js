@@ -29,7 +29,7 @@ export class navigationView {
         this.paneDisplayMode = 'leftCompact';
     }
 
-    toggleWidth() {
+    toggleExpansion() {
         this.expanded = !this.expanded;
     }
 
