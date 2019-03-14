@@ -4,7 +4,7 @@ import globals from './globals';
 export function configure(aurelia, config) {
   //config();
   
-  aurelia.globalResources(PLATFORM.moduleName('./RoutedEvent'));
+  aurelia.globalResources(PLATFORM.moduleName('./Interaction/RoutedEvent'));
   aurelia.globalResources(PLATFORM.moduleName('./navigationView/navigationView'), PLATFORM.moduleName('./navigationView/navigationView.html'));
   aurelia.globalResources(PLATFORM.moduleName('./navigationView/navigationViewItem'), PLATFORM.moduleName('./navigationView/navigationViewItem.html'));
   aurelia.globalResources(PLATFORM.moduleName('./navigationView/navigationViewItemSeparator'), PLATFORM.moduleName('./navigationView/navigationViewItemSeparator.html'));

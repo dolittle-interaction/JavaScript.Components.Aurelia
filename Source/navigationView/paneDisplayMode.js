@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 const paneDisplayMode = {
   left: 1,
-  leftCompact: 2,
+  leftCompact: 2
 };
 
 export { paneDisplayMode }
