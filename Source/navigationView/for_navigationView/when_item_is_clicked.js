@@ -4,7 +4,17 @@
  *--------------------------------------------------------------------------------------------*/
 import { navigationView } from '../navigationView';
 
-describe('when doing stuff', () => {
-  let n = new navigationView();
-  it('should do stuff', () => true.should.equal(true));
+describe('when item is clicked', () => {
+    let item = { my: 'item' };
+    let view = null;
+
+    (beforeEach => {
+        view = new navigationView();
+
+        view.itemClicked({
+            detail: item
+        });
+    })();
+
+    it('should set the current item to the clicked item', () => view.currentItem.should.equal(item));
 });
