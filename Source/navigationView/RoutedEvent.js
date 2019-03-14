@@ -24,7 +24,6 @@ export class RoutedEvent {
 
     bind(bindingContext, overrideContext) {
         this.#element.addEventListener(this.listen, () => {
-            debugger;
             let event = new CustomEvent(this.publish, {
                 bubbles: true,
                 detail: this.details
