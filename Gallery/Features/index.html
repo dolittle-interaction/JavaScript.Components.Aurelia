@@ -9,7 +9,9 @@
     </header>
     <menu-items>
       <div repeat.for="component of structure.components">
-        <navigation-view-item icon="book">${component.name}</navigation-view-item>
+        <navigation-view-item icon="book" 
+                              tag.bind="component.name"
+                              data.bind="component">${component.name}</navigation-view-item>
       </div>
     </menu-items>
     <footer>
