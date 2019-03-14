@@ -15,6 +15,9 @@ export class navigationViewItem {
     @bindable
     tag;
 
+    @bindable
+    data;
+
     constructor(element) {
         this.#element = element;
     }
