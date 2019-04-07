@@ -9,7 +9,7 @@ import { contentProcessor } from './contentProcessor';
 @customElement('navigation-view')
 @containerless()
 @processContent(contentProcessor)
-export class navigationView {
+export class NavigationView {
     @bindable 
     expanded = false;
 

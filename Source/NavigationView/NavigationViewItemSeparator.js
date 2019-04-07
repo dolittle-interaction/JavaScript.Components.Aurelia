@@ -5,6 +5,6 @@
 import { customElement, containerless, processContent, bindable } from 'aurelia-framework';
 
 @customElement('navigation-view-itemseparator')
-export class navigationViewItemSeparator {
+export class NavigationViewItemSeparator {
 
 }

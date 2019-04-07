@@ -2,10 +2,10 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { navigationView } from '../navigationView';
+import { NavigationView } from '../NavigationView';
 
 describe('when toggling expansion for expanded view', () => {
-    let view = new navigationView()
+    let view = new NavigationView()
     view.expanded = true;
 
     view.toggleExpansion();

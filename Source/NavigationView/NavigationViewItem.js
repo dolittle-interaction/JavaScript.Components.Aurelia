@@ -6,7 +6,7 @@ import { customElement, bindable, inject } from 'aurelia-framework';
 
 @customElement('navigation-view-item')
 @inject(Element)
-export class navigationViewItem {
+export class NavigationViewItem {
     #element;
     
     @bindable
