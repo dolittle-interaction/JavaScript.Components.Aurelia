@@ -7,7 +7,7 @@ import { customElement, containerless, bindable, inject } from 'aurelia-framewor
 @customElement('navigation-view-item')
 export class NavigationViewItem {
     @bindable
-    icon;
+    iconUrl;
 
     @bindable
     tag;
