@@ -9,13 +9,13 @@
     </header>
     <items>
       <div repeat.for="component of structure.components">
-        <navigation-view-item icon-url="book" 
+        <navigation-view-item icon="book" 
                               tag.bind="component.name"
                               data.bind="component">${component.name}</navigation-view-item>
       </div>
     </items>
     <footer>
-      <navigation-view-item icon-url="user.png">${profile.userName}</navigation-view-item>
+      <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
     </footer>
   </navigation-view>
 
