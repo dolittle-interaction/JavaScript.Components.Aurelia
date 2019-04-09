@@ -1,19 +1,19 @@
 <template>
   <require from="./index.scss"></require>
-  <navigation-view settings-visible="true" current-item.bind="currentItem">
-    <navigation-title>
+  <navigation-view selected-item.bind="selectedItem">
+    <banner>
       <div>Navigation</div>
-    </navigation-title>
+    </banner>
     <header>
       <auto-suggest-box></auto-suggest-box>
     </header>
-    <menu-items>
+    <items>
       <div repeat.for="component of structure.components">
         <navigation-view-item icon="book" 
                               tag.bind="component.name"
                               data.bind="component">${component.name}</navigation-view-item>
       </div>
-    </menu-items>
+    </items>
     <footer>
       <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
     </footer>

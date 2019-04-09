@@ -9,14 +9,18 @@ import { bindable } from 'aurelia-framework';
 
 @inject(structure)
 export class index {
-    @bindable currentItem;
+    @bindable selectedItem;
+
+    
 
     constructor(structure) {
         this.structure = structure;
+
+        this.profile = {
+            userName : 'Johnny Cochrane'
+        }
     }
 
-    currentItemChanged(item) {
-        debugger;
+    selectedItemChanged(item) {
     }
-
 }

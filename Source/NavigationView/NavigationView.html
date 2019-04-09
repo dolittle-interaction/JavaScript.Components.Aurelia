@@ -6,21 +6,25 @@
 -->
 <template>
   <require from="./navigationView.scss"></require>
+  <require from="./PaneDisplayModeValueConverter"></require>
 
-  <nav class="navigation-view" class.bind="expanded ? 'expanded' : ''" itemclicked.delegate="itemClicked($event)">
+  <nav class="navigation-view" class.bind="paneDisplayMode | paneDisplayMode"
+    itemclicked.delegate="itemClicked($event)">
     <header>
-      <a if.bind="showTrigger" class="expand-trigger" href="#" click.delegate="toggleExpansion()" class.bind="expanded ? 'close': 'open'">
-        <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
+      <a href="#" if.bind="isBackEnabled">
         <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
       </a>
-      <div class="title">
-        <slot name="navigation-title"></slot>
+      <div class="banner">
+        <a href="#" click.delegate="menuClicked()">
+          <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
+        </a>
+        <slot name="banner"></slot>
       </div>
       <slot name="header"></slot>
     </header>
-    <section class="menu-items">
-      <slot name="menu-items"></slot>
-    </ection>
+    <ul class="navigation-view-items">
+      <slot name="items"></slot>
+    </ul>
     <footer>
       <slot name="footer"></slot>
     </footer>

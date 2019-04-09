@@ -4,9 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 function handleSlot(name, element) {
     let slotContainer = element.querySelector(name);
+
     if (slotContainer) {
         while (slotContainer.children.length > 0) {
             slotContainer.firstElementChild.setAttribute('slot', name);
+            //slotContainer.firstElementChild.setAttribute('selected.bind', '$parent.selectedItem == $this');
+
             element.append(slotContainer.firstElementChild);
         }
     }
@@ -14,8 +17,8 @@ function handleSlot(name, element) {
 
 export function contentProcessor(viewCompiler, viewResources, element, instruction) {
     handleSlot('header', element);
-    handleSlot('navigation-title', element);
-    handleSlot('menu-items', element);
+    handleSlot('banner', element);
+    handleSlot('items', element);
     handleSlot('footer', element);
     return true;
 }

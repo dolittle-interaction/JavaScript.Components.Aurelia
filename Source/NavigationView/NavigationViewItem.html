@@ -7,11 +7,13 @@
 <template>
   <require from="./navigationViewItem.scss"></require>
   
-  <div>
-    <a href="#" class="navigation-view-item" 
+  <li class="navigation-view-item">
+    <a href="#" class="navigation-view-item" class.bind="selected ? 'selected' : ''"
       routed-event="input: click; output: itemclicked; details.bind: $this">
-      <img alt="" />
+      <figure if.bind="icon">
+          <img src.bind="icon" alt="" />
+      </figure>      
       <span><slot></slot></span>
     </a>
-  </div>
+  </li>
 </template>
