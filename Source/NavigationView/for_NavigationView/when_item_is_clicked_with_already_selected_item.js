@@ -4,17 +4,20 @@
  *--------------------------------------------------------------------------------------------*/
 import { NavigationView } from '../NavigationView';
 
-describe('when item is clicked', () => {
-    let item = { my: 'item' };
+describe('when item is clicked with already selected item', () => {
+    let previousItem = { isSelected: true };
+    let item = { my: 'item', isSelected: false };
     let view = null;
 
     (beforeEach => {
         view = new NavigationView();
+        view.selectedItem = previousItem;
 
         view.itemClicked({
             detail: item
         });
     })();
 
-    it('should set the selected item to the clicked item', () => view.selectedItem.should.equal(item));
+    it('should set the selected on previous item to false', () => previousItem.isSelected.should.be.false);
+    it('should set the selected on new item to true', () => item.isSelected.should.be.true);
 });

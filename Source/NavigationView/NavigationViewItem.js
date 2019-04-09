@@ -16,9 +16,9 @@ export class NavigationViewItem {
     data;
 
     @bindable
-    selected;
+    isSelected;
 
     constructor() {
-        this.selected = false;
+        this.isSelected = false;
     }
 }

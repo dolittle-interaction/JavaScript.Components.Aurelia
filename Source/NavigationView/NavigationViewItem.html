@@ -8,7 +8,7 @@
   <require from="./navigationViewItem.scss"></require>
   
   <li class="navigation-view-item">
-    <a href="#" class="navigation-view-item" class.bind="selected ? 'selected' : ''"
+    <a href="#" class="navigation-view-item" class.bind="isSelected ? 'selected' : ''"
       routed-event="input: click; output: itemclicked; details.bind: $this">
       <figure if.bind="icon">
           <img src.bind="icon" alt="" />

@@ -44,8 +44,8 @@ export class NavigationView {
     }
 
     itemClicked(event) {
-        if( this.selectedItem ) this.selectedItem.selected = false;
+        if( this.selectedItem ) this.selectedItem.isSelected = false;
         this.selectedItem = event.detail;
-        this.selectedItem.selected = true;
+        this.selectedItem.isSelected = true;
     }
 }
