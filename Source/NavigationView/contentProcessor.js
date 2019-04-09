@@ -8,8 +8,6 @@ function handleSlot(name, element) {
     if (slotContainer) {
         while (slotContainer.children.length > 0) {
             slotContainer.firstElementChild.setAttribute('slot', name);
-            //slotContainer.firstElementChild.setAttribute('selected.bind', '$parent.selectedItem == $this');
-
             element.append(slotContainer.firstElementChild);
         }
     }
