@@ -52,7 +52,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     }
 
     createView() {
-        let view = this.viewFactory.create();
+        let view = this.#viewFactory.create();
         return view;
     }
 
