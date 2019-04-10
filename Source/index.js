@@ -5,6 +5,7 @@ export function configure(aurelia, config) {
   //config();
   
   aurelia.globalResources(PLATFORM.moduleName('./Interaction/RoutedEvent'));
+  aurelia.globalResources(PLATFORM.moduleName('./Templating/HierarchyRepeat'));
   aurelia.globalResources(PLATFORM.moduleName('./NavigationView/NavigationView'), PLATFORM.moduleName('./NavigationView/NavigationView.html'));
   aurelia.globalResources(PLATFORM.moduleName('./NavigationView/NavigationViewItem'), PLATFORM.moduleName('./NavigationView/NavigationViewItem.html'));
   aurelia.globalResources(PLATFORM.moduleName('./NavigationView/NavigationViewItemSeparator'), PLATFORM.moduleName('./NavigationView/NavigationViewItemSeparator.html'));

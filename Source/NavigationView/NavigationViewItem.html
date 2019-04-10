@@ -6,14 +6,19 @@
 -->
 <template>
   <require from="./navigationViewItem.scss"></require>
-  
+
   <li class="navigation-view-item">
     <a href="#" class="navigation-view-item" class.bind="isSelected ? 'selected' : ''"
       routed-event="input: click; output: itemclicked; details.bind: $this">
       <figure if.bind="icon">
-          <img src.bind="icon" alt="" />
-      </figure>      
-      <span><slot></slot></span>
+        <img src.bind="icon" alt="" />
+      </figure>
+      <span>
+        <slot></slot>
+      </span>
+      <ul class="navigation-view-items" hierarchy-repeat-children>
+        <slot name="items"></slot>
+      </ul>
     </a>
   </li>
 </template>

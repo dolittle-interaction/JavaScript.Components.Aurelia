@@ -3,7 +3,14 @@ export default {
         {
             name: 'Navigation View',
             description: 'A view holding navigation items',
-            component: 'navigationView'
+            component: 'navigationView',
+            children: [
+                {
+                    name: 'Something',
+                    description: 'Blah',
+                    component: ''
+                }
+            ]
         },
         {
             name: 'Pivot',
