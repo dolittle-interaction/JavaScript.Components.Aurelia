@@ -2,13 +2,13 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { customElement, containerless, processContent, bindable, bindingMode } from 'aurelia-framework';
-import { contentProcessor } from './contentProcessor';
+import { customElement, bindable, bindingMode } from 'aurelia-framework';
+import { parts } from '../Templating/parts'
 import { paneDisplayMode } from './paneDisplayMode';
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
-@processContent(contentProcessor)
+@parts('header', 'banner', 'items', 'footer')
 export class NavigationView {
     @bindable 
     expanded = false;
@@ -24,11 +24,6 @@ export class NavigationView {
 
     @bindable
     isBackEnabled
-
-    /*
-    Concept of "sub navigation" - or more a navigation level - to differentiate colors - lighter when its sub
-    */
-
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.left;

@@ -37,7 +37,7 @@ export class HierarchyRepeater extends AbstractRepeater {
 
     bind(bindingContext, overrideContext) {
         this.scope = { bindingContext, overrideContext };
-        this.bindItems();
+        this.bindItems(bindingContext, overrideContext);
         this.itemsChanged();
     }
 
