@@ -4,7 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 import { RepeatStrategyLocator } from 'aurelia-templating-resources';
 import { bindable, BindingEngine, inject, BoundViewFactory, customAttribute, templateController, TargetInstruction, ViewSlot, ViewResources } from 'aurelia-framework';
-import { HierarchyRepeater } from './HierarchyRepeater';
+import { HierarchyRepeater } from './HierarchyRepeater';
+import { HierarchyRepeat } from './HierarchyRepeat';
+import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 
 @customAttribute('hierarchy-repeat-children')
 @templateController
@@ -24,7 +26,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
 
         this.#bindingEngine = bindingEngine;
         this.#viewFactory = viewFactory;
-        this.#lookupFunctions = viewResources.lookupFunctions;       
+        this.#lookupFunctions = viewResources.lookupFunctions;
     }
 
     bindItems(bindingContext, overrideContext) {
@@ -33,10 +35,32 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     }
 
     createView() {
-        let v = this.#viewFactory;
-        console.log(v);
-        //debugger;
-        let view = HierarchyRepeatChildren.viewFactory.create();
+        let parentHierarchyRepeat = this.#getParrentHierarchyRepeat();
+        if (parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();
+
+        let view = parentHierarchyRepeat.createView();
         return view;
+    }
+
+    #getParrentHierarchyRepeat() {
+        let current = this.#viewFactory.parentContainer;
+        let parentHierarchyRepeat = null;
+        
+        while (current) {
+            if (current.instruction && current.instruction.behaviorInstructions) {
+                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat')) {
+                    
+                    for (let property in current) {                       
+                        if (current[property] instanceof HierarchyRepeat) {
+                            parentHierarchyRepeat = current[property];
+                            break;
+                        }
+                    }
+                }
+            }
+            if( parentHierarchyRepeat ) break;
+            current = current.parent;
+        }
+        return parentHierarchyRepeat;
     }
 }
