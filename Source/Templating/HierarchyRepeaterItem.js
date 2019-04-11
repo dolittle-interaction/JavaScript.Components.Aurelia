@@ -3,11 +3,10 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
- /**
-  * Represents the base class for any item that should be part of a hierarchy
-  */
- export class HierarchyRepeaterItem {
-
+/**
+ * Represents the base class for any item that should be part of a hierarchy
+ */
+export class HierarchyRepeaterItem {
     /**
      * Gets or sets the hierarchy level of the item - 0 = root
      */
@@ -19,4 +18,4 @@
     get isRootLevel() {
         return isRootLevel == 0;
     }
- }
+}
