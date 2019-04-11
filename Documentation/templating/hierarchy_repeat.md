@@ -1,11 +1,9 @@
 ---
-title: Hierarchy Repeat
+title: Hierarchy Repeat & Children
 description: Details on how to work with the hierarchy repeat
 keywords: 
 author: einari
 ---
-## Hierarchy Repeat & Children
-
 Some components require more than repeating over a flat list and data binding
 to a recursive hierarchical structure is not supported out of the box in
 Aurelia in a way that makes it easy to define and reuse a view template.
