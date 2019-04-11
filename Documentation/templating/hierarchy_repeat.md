@@ -85,6 +85,18 @@ the item in an autonomous component. If the component extends the `HierarchyRepe
 the repeater mechanism will recognize the template as being this and provide additional
 value.
 
+Your item would then have its view-model starting off as follows:
+
+```javascript
+import { HierarchyRepeatItem } from '@dolittle/components.aurelia/';
+
+export class myItem extends HierarchyRepeatItem {
+  constructor() {
+    super();
+  }
+}
+```
+
 ### Hierarchy Navigation
 
 The `HierarchyRepeatItem` gives two properties that enables each item to keep track of
