@@ -4,6 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 import { AbstractRepeater, viewsRequireLifecycle, RepeatStrategyLocator } from 'aurelia-templating-resources';
 import { inject, BoundViewFactory, bindable, TargetInstruction, ViewSlot, ViewResources, ObserverLocator } from 'aurelia-framework';
+import { HierarchyRepeaterItem } from './HierarchyRepeaterItem';
 
 /**
  * Represents a base class for repeaters that repeats a hierarchy
@@ -40,13 +41,21 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Typically implemented in those cases where there is no expression for
      * the repeater and we get the items from other sources
      */
-    bindItems() {
-    }
+    bindItems() {}
 
+    /**
+     * Method that gets called for creating a new new view - overridable
+     */
     createView() {
         let view = this.#viewFactory.create();
         return view;
     }
+
+    /**
+     * Method that gets called when a repeater item needs handling
+     * @param {HierarchyRepeaterItem} item The item - typically a view model
+     */
+    handleRepeaterItem(item) {}
 
     /** @inheritdoc */
     call() {
@@ -93,6 +102,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     /** @inheritdoc */
     addView(bindingContext, overrideContext) {
         let view = this.createView();
+        this.#handleNewView(view);
         view.bind(bindingContext, overrideContext);
         this.#viewSlot.add(view);
     }
@@ -100,6 +110,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     /** @inheritdoc */
     insertView(index, bindingContext, overrideContext) {
         let view = this.createView();
+        this.#handleNewView(view);
         view.bind(bindingContext, overrideContext);
         this.#viewSlot.insert(index, view);
     }
@@ -126,5 +137,10 @@ export class HierarchyRepeater extends AbstractRepeater {
 
     /** @inheritdoc */
     updateBindings(view) {
-    }    
+    }
+
+    #handleNewView(view) {
+        let viewModels = view.controllers.filter(_ => _.viewModel instanceof HierarchyRepeaterItem);
+        viewModels.forEach(_ => this.handleRepeaterItem(_.viewModel));
+    }
 }

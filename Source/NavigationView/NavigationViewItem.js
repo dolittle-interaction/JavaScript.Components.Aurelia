@@ -3,22 +3,20 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { customElement, containerless, bindable, inject, processContent } from 'aurelia-framework';
+import { HierarchyRepeaterItem } from '../Templating/HierarchyRepeaterItem';
 
+/**
+ * Represents the view model for a navigation view item
+ */
 @customElement('navigation-view-item')
-export class NavigationViewItem {
-    @bindable
-    icon;
-
-    @bindable
-    tag;
-
-    @bindable
-    data;
-
-    @bindable
-    isSelected;
+export class NavigationViewItem extends HierarchyRepeaterItem {
+    @bindable icon;
+    @bindable tag;
+    @bindable data;
+    @bindable isSelected;   
 
     constructor() {
+        super();
         this.isSelected = false;
     }
 }

@@ -45,7 +45,8 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     bindItems(bindingContext, overrideContext) {
         this.#ensureParentHierarchyRepeat();
         if (this.#parentHierarchyRepeat) {
-            let bindingExpression = this.#bindingEngine.createBindingExpression('component', `$this.data.${this.#parentHierarchyRepeat.childrenProperty}`);
+            let bindingExpression = this.#bindingEngine.createBindingExpression('component', `$this.data.${this.#parentHierarchyRepeat.childrenProperty
+        } `);
             this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.#lookupFunctions);
         } else {
             this.items = null;
@@ -59,6 +60,24 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
 
         let view = this.#parentHierarchyRepeat.createView();
         return view;
+    }
+
+    /** @inheritdoc */
+    handleRepeaterItem(item) {
+        let hierarchyLevel = 0;
+        let current = this.#viewFactory.parentContainer;
+        while (current) {
+            if (current.instruction && current.instruction.behaviorInstructions) {
+                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat')) {
+                    break;
+                }
+                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat-children')) {
+                    hierarchyLevel++;
+                }
+            }
+            current = current.parent;
+        }
+        item.hierarchyLevel = hierarchyLevel;
     }
 
     #ensureParentHierarchyRepeat() {
