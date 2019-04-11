@@ -4,8 +4,6 @@ description: Details on how routed events work
 keywords: 
 author: einari
 ---
-## Routed Event
-
 In the DOM there are a lot of events that happens, for instance when clicking
 a button; the `click` event occurs. These events often happens on an element
 and can be handled. A key feature of the DOM is also its ability to bubble
