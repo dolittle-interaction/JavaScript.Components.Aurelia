@@ -15,6 +15,12 @@ function handlePart(name, element) {
     }
 }
 
+/**
+ * Decorator used on components that will have parts mapped by convention into their matching slots
+ * 
+ * This works by looking at named slots and finding elements with the same name and matching these
+ * inside the use of the custom element.
+ */
 export function hasParts() {
     function contentProcessor(viewCompiler, viewResources, element, parentInstruction) {
         for (let instructionName in parentInstruction.type.viewFactory.instructions) {

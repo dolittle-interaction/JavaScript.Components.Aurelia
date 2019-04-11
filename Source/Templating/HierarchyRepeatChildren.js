@@ -8,6 +8,9 @@ import { HierarchyRepeater } from './HierarchyRepeater';
 import { HierarchyRepeat } from './HierarchyRepeat';
 import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 
+/**
+ * Represents a repeater that feeds off of a parent {HierarchyRepeat} and reuses the template from the parent
+ */
 @customAttribute('hierarchy-repeat-children')
 @templateController
 @inject(BindingEngine, BoundViewFactory, TargetInstruction, ViewSlot, ViewResources, RepeatStrategyLocator)
@@ -19,8 +22,15 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     @bindable local;
     @bindable items;
 
-    static viewFactory;
-
+    /**
+     * Initializes a new instance of {HierarchyRepeatChildren}
+     * @param {BindingEngine} bindingEngine The binding engine to use
+     * @param {ViewFactory} viewFactory The view factory for the element
+     * @param {TargetInstruction} instruction The target instruction
+     * @param {ViewSlot} viewSlot The viewslot to render to
+     * @param {ViewResources} viewResources The available view resources
+     * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
+     */
     constructor(bindingEngine, viewFactory, instruction, viewSlot, viewResources, strategyLocator) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
 
@@ -29,11 +39,13 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         this.#lookupFunctions = viewResources.lookupFunctions;
     }
 
+    /** @inheritdoc */
     bindItems(bindingContext, overrideContext) {
         let bindingExpression = this.#bindingEngine.createBindingExpression('component', '$this.data.children');
         this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.#lookupFunctions);
     }
 
+    /** @inheritdoc */
     createView() {
         let parentHierarchyRepeat = this.#getParrentHierarchyRepeat();
         if (parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();

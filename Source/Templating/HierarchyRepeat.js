@@ -6,14 +6,8 @@ import { RepeatStrategyLocator } from 'aurelia-templating-resources';
 import { inject, BoundViewFactory, customAttribute, bindable, templateController, TargetInstruction, ViewSlot, ViewResources } from 'aurelia-framework';
 import { HierarchyRepeater } from './HierarchyRepeater';
 
-// Inspired by: https://github.com/buttonwoodcx/bcx-aurelia-reorderable-repeat/blob/master/src/reorderable-repeat.js
-// ... and : https://gist.github.com/niieani/2c6423601fbecde7ef62b4087564576d
-// https://blog.ashleygrant.com/2017/07/09/getting-my-hands-dirty-with-aurelias-binding-engine/
-// https://blog.ashleygrant.com/2017/07/16/getting-my-hands-dirty-with-aurelias-binding-engine-part-two/
-
-
 /**
- * 
+ * Represents the repeater for the top level of a hierarchy
  */
 @customAttribute('hierarchy-repeat')
 @templateController
@@ -22,11 +16,14 @@ export class HierarchyRepeat extends HierarchyRepeater {
     @bindable local;
     @bindable items;
 
+    /**
+     * Initializes a new instance of {HierarchyRepeatChildren}
+     * @param {ViewFactory} viewFactory The view factory for the element
+     * @param {TargetInstruction} instruction The target instruction
+     * @param {ViewSlot} viewSlot The viewslot to render to
+     * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
+     */
     constructor(viewFactory, instruction, viewSlot, strategyLocator) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
-
-        // 1. Add a property / parameter for the HierarchyRepeat decoarator that tells which property to look recursively for
-        // 2. Introduce attribute for elements that can have children - or "canHaveItems" or something - might need a name for the view slot
-        // 3. Using the same viewFactory as root; dynamically add a 'hierarchy-repeat.for' binding to the "canHaveItems" element(s)
     }
 }
