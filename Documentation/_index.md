@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Components
 description: Get an overview over the Aurelia Components
 keywords: Components, Overview
 author: einari
