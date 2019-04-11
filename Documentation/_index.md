@@ -16,3 +16,5 @@ make the API nicer, due to the nature of HTML+CSS+JavaScript.
 At the core of all components, sits [Dolittle Styles]({{< relref interaction/styles >}}), which is built from the ground
 up for effective and flexible CSS. This style system is built on top of
 [Microsofts Fluent Design System](https://www.microsoft.com/design/fluent/).
+
+[*Artifacts*]({{< relref artifacts >}})
