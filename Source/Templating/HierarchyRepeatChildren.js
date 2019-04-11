@@ -5,6 +5,7 @@
 import { RepeatStrategyLocator } from 'aurelia-templating-resources';
 import { bindable, BindingEngine, inject, BoundViewFactory, customAttribute, templateController, TargetInstruction, ViewSlot, ViewResources } from 'aurelia-framework';
 import { HierarchyRepeater } from './HierarchyRepeater';
+import { HierarchyRepeaterItem } from './HierarchyRepeaterItem';
 import { HierarchyRepeat } from './HierarchyRepeat';
 import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 
@@ -66,7 +67,17 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     handleRepeaterItem(item) {
         let hierarchyLevel = 0;
         let current = this.#viewFactory.parentContainer;
+        let previousViewModel = item;
+
         while (current) {
+            if( current.viewModel && current.viewModel instanceof HierarchyRepeaterItem ) {
+                if( previousViewModel ) {
+                    current.viewModel.addChild(previousViewModel);
+                    previousViewModel.parent = current.viewModel;
+                }
+                previousViewModel = current.viewModel;
+            }
+
             if (current.instruction && current.instruction.behaviorInstructions) {
                 if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat')) {
                     break;
