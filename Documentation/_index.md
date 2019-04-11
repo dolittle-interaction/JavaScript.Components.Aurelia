@@ -3,7 +3,7 @@ title: Components
 description: Get an overview over the Aurelia Components
 keywords: Components, Overview
 author: einari
-weight: 1
+weight: 2
 ---
 
 Aurelia Components represents common reusable components that is geared towards
