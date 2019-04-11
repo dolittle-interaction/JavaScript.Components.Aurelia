@@ -18,6 +18,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     #bindingEngine;
     #viewFactory;
     #lookupFunctions;
+    #parentHierarchyRepeat;
 
     @bindable local;
     @bindable items;
@@ -37,21 +38,33 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         this.#bindingEngine = bindingEngine;
         this.#viewFactory = viewFactory;
         this.#lookupFunctions = viewResources.lookupFunctions;
+        this.#parentHierarchyRepeat = null;
     }
 
     /** @inheritdoc */
     bindItems(bindingContext, overrideContext) {
-        let bindingExpression = this.#bindingEngine.createBindingExpression('component', '$this.data.children');
-        this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.#lookupFunctions);
+        this.#ensureParentHierarchyRepeat();
+        if (this.#parentHierarchyRepeat) {
+            let bindingExpression = this.#bindingEngine.createBindingExpression('component', `$this.data.${this.#parentHierarchyRepeat.childrenProperty}`);
+            this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.#lookupFunctions);
+        } else {
+            this.items = null;
+        }       
     }
 
     /** @inheritdoc */
     createView() {
-        let parentHierarchyRepeat = this.#getParrentHierarchyRepeat();
-        if (parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();
+        this.#ensureParentHierarchyRepeat();
+        this.#throwIfMissingParentHiearchyRepeat();
 
-        let view = parentHierarchyRepeat.createView();
+        let view = this.#parentHierarchyRepeat.createView();
         return view;
+    }
+
+    #ensureParentHierarchyRepeat() {
+        if( this.#parentHierarchyRepeat == null ) {
+            this.#parentHierarchyRepeat = this.#getParrentHierarchyRepeat();
+        }
     }
 
     #getParrentHierarchyRepeat() {
@@ -74,5 +87,9 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
             current = current.parent;
         }
         return parentHierarchyRepeat;
+    }
+
+    #throwIfMissingParentHiearchyRepeat() {
+        if (this.#parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();
     }
 }

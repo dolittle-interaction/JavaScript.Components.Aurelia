@@ -17,7 +17,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     #strategy;
 
     /**
-     * Initializes a new instance of {HierarchyRepeatChildren}
+     * Initializes a new instance of {HierarchyRepeater}
      * @param {BindingEngine} bindingEngine The binding engine to use
      * @param {TargetInstruction} instruction The target instruction
      * @param {ViewSlot} viewSlot The viewslot to render to
