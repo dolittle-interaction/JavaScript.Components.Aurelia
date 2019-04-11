@@ -13,10 +13,22 @@ export class NavigationViewItem extends HierarchyRepeaterItem {
     @bindable icon;
     @bindable tag;
     @bindable data;
-    @bindable isSelected;   
+    @bindable isSelected;
+    @bindable isExpanded;
 
+    /**
+     * Initializes a new instance of {NavigationViewItem}
+     */
     constructor() {
         super();
         this.isSelected = false;
+        this.isExpanded = false;
+    }
+
+    /**
+     * Toggle expansion for the item - this will only have an effect it the item actually has children
+     */
+    toggleExpansion() {
+        this.isExpanded = !this.isExpanded;
     }
 }

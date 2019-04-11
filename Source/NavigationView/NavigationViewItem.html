@@ -8,7 +8,9 @@
   <require from="./navigationViewItem.scss"></require>
 
   <li class="navigation-view-item">
-    <a href="#" class="navigation-view-item" class.bind="isSelected ? 'selected' : ''"
+    <a href="#" class="navigation-view-item ${isExpanded ? 'expanded': ''}" 
+      class.bind="isSelected ? 'selected' : ''"
+      click.delegate="toggleExpansion()"
       routed-event="input: click; output: itemclicked; details.bind: $this">
       <figure if.bind="icon">
         <img src.bind="icon" alt="" />
@@ -16,6 +18,7 @@
       <span>
         <slot></slot>
       </span>
+      <i if.bind="hasChildren" class="toggle-expand"></i>
     </a>
     <ul class="navigation-view-items" hierarchy-repeat-children>
       <slot name="items"></slot>
