@@ -17,14 +17,3 @@ Using `npm`:
 ```shell
 $ npm install @dolittle/components.aurelia
 ```
-
-Then, in your `main.js` for Aurelia, you need to register the Dolittle module for the
-components.
-
-```javascript
-export function configure(aurelia) {
-  /* ...other configuration... */
-  aurelia.use
-    .plugin(PLATFORM.moduleName('@dolittle/components.aurelia');
-}
-```
