@@ -88,7 +88,7 @@ value.
 Your item would then have its view-model starting off as follows:
 
 ```javascript
-import { HierarchyRepeatItem } from '@dolittle/components.aurelia/';
+import { HierarchyRepeatItem } from '@dolittle/components.aurelia/Templating';
 
 export class myItem extends HierarchyRepeatItem {
   constructor() {
