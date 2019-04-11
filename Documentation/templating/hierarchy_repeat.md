@@ -71,12 +71,14 @@ export class viewModel {
 
 We should now be getting the following result
 
+```text
 * First Root Item
   * First Root First Child item
   * First Root Second Child item
 * Second Root Item
   * Second Root First Child item
   * Second Root Second Child item
+```
 
 ## HierarchyRepeatItem
 
