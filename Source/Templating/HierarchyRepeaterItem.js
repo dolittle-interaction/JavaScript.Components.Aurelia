@@ -34,6 +34,13 @@ export class HierarchyRepeaterItem {
     }
 
     /**
+     * Check if the item has children
+     */
+    get hasChildren() {
+        return this.#children.length > 0;
+    }
+
+    /**
      * Adds a child to the item
      * @param {HierarchyRepeaterItem} child Child to add
      */
