@@ -17,7 +17,7 @@ export class index {
         this.structure = structure;
 
         this.profile = {
-            userName : 'Johnny Cochrane'
+            userName : 'Jane Doe'
         }
     }
 
