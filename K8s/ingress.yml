@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: aureliacomponentgallery
+  namespace: dolittle
+spec:
+  rules:
+  - host: components.dolittle.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: aureliacomponentgallery
+          servicePort: 80
