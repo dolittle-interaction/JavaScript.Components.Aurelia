@@ -1,7 +1,7 @@
 ---
 title: Installing
 description: Get an overview over the Aurelia Components
-keywords: installing
+keywords: Installing
 author: einari
 ---
 ## Installing
