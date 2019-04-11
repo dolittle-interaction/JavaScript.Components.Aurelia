@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 import { NavigationView } from '../NavigationView';
 
-describe('when item is clicked with already selected item', () => {
+describe('when selecting new item with already selected item', () => {
     let previousItem = { isSelected: true };
     let item = { my: 'item', isSelected: false };
     let view = null;
@@ -12,10 +12,7 @@ describe('when item is clicked with already selected item', () => {
     (beforeEach => {
         view = new NavigationView();
         view.selectedItem = previousItem;
-
-        view.itemClicked({
-            detail: item
-        });
+        view.selectedItemChanged(item, previousItem);
     })();
 
     it('should set the selected on previous item to false', () => previousItem.isSelected.should.be.false);

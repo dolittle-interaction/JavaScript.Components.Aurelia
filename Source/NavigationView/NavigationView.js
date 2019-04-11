@@ -29,9 +29,24 @@ export class NavigationView {
         }
     }
 
+    selectedItemChanged(newItem, previousItem) {
+        if( previousItem ) {
+            previousItem.isSelected = false;
+            this.#setIsSelectedForParentFor(previousItem, false);
+        }
+        newItem.isSelected = true;
+        this.#setIsSelectedForParentFor(newItem, true);
+    }
+
     itemClicked(event) {
-        if( this.selectedItem ) this.selectedItem.isSelected = false;
         this.selectedItem = event.detail;
-        this.selectedItem.isSelected = true;
+    }
+
+    #setIsSelectedForParentFor(item, isSelected) {
+        let parent = item.parent;
+        while( parent ) {
+            parent.isSelected = isSelected;
+            parent = parent.parent;
+        }
     }
 }
