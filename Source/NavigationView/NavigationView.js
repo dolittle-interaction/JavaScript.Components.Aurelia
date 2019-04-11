@@ -3,27 +3,18 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { customElement, bindable, bindingMode } from 'aurelia-framework';
-import { parts } from '../Templating/parts'
+import { hasParts } from '../Templating/hasParts'
 import { paneDisplayMode } from './paneDisplayMode';
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
-@parts('header', 'banner', 'items', 'footer')
+@hasParts()
 export class NavigationView {
-    @bindable 
-    expanded = false;
-
-    @bindable 
-    showTrigger = true;
-
-    @bindable({ defaultBindingMode: bindingMode.twoWay })
-    selectedItem;
-
-    @bindable
-    paneDisplayMode;
-
-    @bindable
-    isBackEnabled
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
+    @bindable expanded = false;
+    @bindable showTrigger = true;
+    @bindable paneDisplayMode;
+    @bindable isBackEnabled
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.left;

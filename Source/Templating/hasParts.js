@@ -15,9 +15,12 @@ function handlePart(name, element) {
     }
 }
 
-export function parts(...partsToMove) {
-    function contentProcessor(viewCompiler, viewResources, element, instruction) {
-        partsToMove.forEach(part => handlePart(part, element));
+export function hasParts() {
+    function contentProcessor(viewCompiler, viewResources, element, parentInstruction) {
+        for (let instructionName in parentInstruction.type.viewFactory.instructions) {
+            let instruction = parentInstruction.type.viewFactory.instructions[instructionName];
+            if (instruction.slotName) handlePart(instruction.slotName, element);
+        }
         return true;
     }
     return processContent(contentProcessor);
