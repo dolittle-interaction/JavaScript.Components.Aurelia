@@ -7,31 +7,12 @@ weight: 1
 ---
 
 Aurelia Components represents common reusable components that is geared towards
-optimizing the building of typical line of business applications.
+optimizing the building of typical line of business applications. The components
+are inspired by the API surface of [Microsoft UWP Apps](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/).
+We try to adhere to this as much as possible with exceptions for those cases where
+we have other ideas, need new features, need less features or in when we can
+make the API nicer, due to the nature of HTML+CSS+JavaScript.
 
-## Getting Started
-
-In order to use the components, you need to add the package to your project:
-
-Using `yarn`:
-
-```shell
-$ yarn add @dolittle/components.aurelia
-```
-
-Using `npm`:
-
-```shell
-$ npm install @dolittle/components.aurelia
-```
-
-Then, in your `main.js` for Aurelia, you need to register the Dolittle module for the
-components.
-
-```javascript
-export function configure(aurelia) {
-  /* ...other configuration... */
-  aurelia.use
-    .plugin(PLATFORM.moduleName('@dolittle/components.aurelia');
-}
-```
+At the core of all components, sits [Dolittle Styles]({{ < relref /interaction/styles >}}), which is built from the ground
+up for effective and flexible CSS. This style system is built on top of
+[Microsofts Fluent Design System](https://www.microsoft.com/design/fluent/).
