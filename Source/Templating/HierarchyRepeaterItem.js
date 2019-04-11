@@ -16,6 +16,6 @@ export class HierarchyRepeaterItem {
      * Gets wether or not the item is considered to be at the root level of the hierarchy or not
      */
     get isRootLevel() {
-        return isRootLevel == 0;
+        return isRootLevel === 0;
     }
 }
