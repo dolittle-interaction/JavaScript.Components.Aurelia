@@ -27,3 +27,5 @@ The components are browseable with samples and full documentation [here](https:/
 
 If you want to contribute on existing components or create new ones, read
 the [contribution section](./contributing) to get started.
+
+If you want to build it locally, you can look [here](./contributing/working_locally).
