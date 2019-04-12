@@ -323,3 +323,5 @@ We expect the copyright header to be present in all files.
 | ------------- | --------------------- | ----- |
 | `@processContent` | Enables you to interact with the DOM | [link](https://aurelia.io/docs/templating/custom-elements#decorators-for-customizing-aurelia-custom-element-processing) |
 | ref binding | Element reference binding | [link](https://aurelia.io/docs/binding/basics#referencing-elements) |
+
+If you're unfamiliar with Aurelia, we highly recommend reading through its [fundamentals](https://aurelia.io/docs/fundamentals).
