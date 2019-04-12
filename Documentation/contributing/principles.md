@@ -32,7 +32,7 @@ the following:
 ## Core Mindset
 
 At the core of Dolittle sits a set of core principles, such as the
-[S.O.L.I.D. principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+[S.O.L.I.D principles](https://medium.com/@cramirez92/s-o-l-i-d-the-first-5-priciples-of-object-oriented-design-with-javascript-790f6ac9b9fa)
 and they all applies just as much in this project as any other Dolittle
 project. However, there is a high emphasis on two core principles that
 we are looking for; [Single Responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
