@@ -20,7 +20,7 @@ export class NavigationView {
         this.paneDisplayMode = paneDisplayMode.left;
     }
 
-    menuClicked() {
+    toggleDisplayMode() {
         switch( this.paneDisplayMode )
         {
             case paneDisplayMode.left: this.paneDisplayMode = paneDisplayMode.leftCompact; break;

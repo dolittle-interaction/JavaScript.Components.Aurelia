@@ -18,6 +18,6 @@ describe('when toggling expansion', () => {
         item.isExpanded = true;
         item.toggleExpansion();
 
-        it('should be expanded', () => item.isExpanded.should.be.false);
+        it('should not be expanded', () => item.isExpanded.should.be.false);
     });
 });

@@ -6,22 +6,17 @@ import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
 
-
-
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
-    
-    .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'), config => {
-      console.log("Hello world");
-    });
+    aurelia.use
+        .standardConfiguration()
+        .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
+        .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'));
 
-  if (environment.debug) {
-    aurelia.use.developmentLogging();
-  }
-  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    if (environment.debug) {
+        aurelia.use.developmentLogging();
+    }
+    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

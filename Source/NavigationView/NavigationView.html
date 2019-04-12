@@ -8,14 +8,15 @@
   <require from="./NavigationView.scss"></require>
   <require from="./PaneDisplayModeValueConverter"></require>
 
-  <nav class="navigation-view" class.bind="paneDisplayMode | paneDisplayMode"
-    itemclicked.delegate="itemClicked($event)">
+  <nav class="navigation-view"
+       class.bind="paneDisplayMode | paneDisplayMode" 
+       itemclicked.delegate="itemClicked($event)">
     <header>
       <a href="#" if.bind="isBackEnabled">
         <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
       </a>
       <div class="banner">
-        <a href="#" click.delegate="menuClicked()">
+        <a href="#" click.delegate="toggleDisplayMode()">
           <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
         </a>
         <slot name="banner"></slot>
