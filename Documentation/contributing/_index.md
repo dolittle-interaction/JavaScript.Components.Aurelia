@@ -12,4 +12,4 @@ This section holds additional details of how to contribute on this particular
 project with the existing components or creating new components and contribute back.
 It talks about what is expected and the mindset behind all the components.
 
-In order to be able to contribute, you also want to read through our [principles](../principles).
+In order to be able to contribute, you also want to read through our [principles](./principles).
