@@ -131,9 +131,53 @@ export class viewModel {
 
 {{% /notice %}}
 
+### Values - anti corruption
+
+The view in a Web application typically knows about HTML and strings, some times these
+are even so view specific that it really does not make sense for the view model to
+interact with it. This is part of really separating the concerns and understanding that
+a representation of something in one concern does not have to bleed into another concern.
+This is where value converters come to play. They help you translate the value between
+the view and view model concerns and make both of these pure in nature.
+
+As a core principle we want to do the translation for the concern as late as possible.
+It would be fundamentally wrong to for instance let the backend know how to translate into
+something the frontend could be using. The same relationship is between the view and the
+view model. The separation in thinking is absolute.
+
 ### Event Aggregator
 
+Some times there are multiple parts of a composition of components that need to know of
+changes or events that occurs without having to couple them together. This is where an
+[event aggregator](https://www.martinfowler.com/eaaDev/EventAggregator.html) comes handy
+and lets each component fire and forget messages that others can listen to.
+
 ![Event Aggregator figure](./event_aggregator.png)
+
+### Composition through binding
+
+Another way to deal with composing multiple components together without using an
+event aggregator is to leverage binding and expose an API surface with properties
+and observables that will notify when internals are changing of a component.
+An example of this could be a component with items in it and you have another component
+that will show the details when something is selected. Instead of firing off messages,
+you could simply expose an `@bindable` property of the component with items called
+`selectedItem`. The details component could then be bound to this items property.
+This is called a `ref` binding in Aurelia.
+
+Example:
+
+```html
+<template>
+
+  <div>
+    <items name="items" view-model.ref="items"></items>
+  </div>
+  <div>
+    <detail-view current-item.bind="items.selectedItem"></detail-view>
+  </div>
+</template>
+```
 
 ## Testing
 
@@ -155,3 +199,4 @@ You can find the issue [here](https://github.com/dolittle-interaction/JavaScript
 | Name | Description | Link |
 | ---- | ----------- | ---- |
 | `@processContent` | Enables you to interact with the DOM | [link](https://aurelia.io/docs/templating/custom-elements#decorators-for-customizing-aurelia-custom-element-processing) |
+| ref binding | Element reference binding | [link](https://aurelia.io/docs/binding/basics#referencing-elements) |
