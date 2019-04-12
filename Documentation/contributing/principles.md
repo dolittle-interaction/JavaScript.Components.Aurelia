@@ -154,4 +154,4 @@ You can find the issue [here](https://github.com/dolittle-interaction/JavaScript
 
 | Name | Description | Link |
 | ---- | ----------- | ---- |
-| `@processContent` | |
+| `@processContent` | Enables you to interact with the DOM | [link](https://aurelia.io/docs/templating/custom-elements#decorators-for-customizing-aurelia-custom-element-processing) |
