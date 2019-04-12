@@ -5,7 +5,7 @@ keywords: Components, Overview
 author: einari
 weight: 2
 ---
-A component is a UI element that displays content or enables interaction.
+A component is a UI element that displays content and/or enables interaction.
 Components are the building blocks of the user interface. These components
 represents the encapsulation of a concept, an intent, a user interaction surface.
 The goal of this components library is to help developers create great
