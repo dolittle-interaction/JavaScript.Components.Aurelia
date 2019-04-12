@@ -65,6 +65,9 @@ amongst them.
 
 ## UWP controls as reference
 
+We aim to be inspired by and adhering to as much as possible to the 
+UWP 
+
 ## Design Language
 
 ## API thinking
@@ -154,6 +157,20 @@ and lets each component fire and forget messages that others can listen to.
 
 ![Event Aggregator figure](../event_aggregator.png)
 
+### Routing of events
+
+When a component has child components and you want to decouple the container from the
+children, tapping into the event system of the DOM is a great of doing this. Events
+can bubble up through the hierarchy. Not all events does this, but they could be
+captured and forwarded as is or represented as a new custom event.
+
+{{% notice tip %}}
+There is a helper that helps you do this in a declarative way without having to
+involve the view model for this. Which would be the correct way. This is not the
+responsibility of the view model. Look at the [Routed Event topic](../../interaction/routed_event)
+for more details.
+{{% /notice %}}
+
 ### Composition through binding
 
 Another way to deal with composing multiple components together without using an
@@ -195,6 +212,7 @@ You can find the issue [here](https://github.com/dolittle-interaction/JavaScript
 {{% /notice %}}
 
 ## Aurelia building blocks
+
 
 | Name | Description | Link |
 | ---- | ----------- | ---- |
