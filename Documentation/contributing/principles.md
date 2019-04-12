@@ -228,9 +228,9 @@ while writing code. In addition there is also support for [Karma](http://karma-r
 
 The following testing frameworks are being used:
 
-- [Mocha](https://mochajs.org/)
-- [Chai](https://www.chaijs.com/) (w/ promise support)
-- [Sinon](https://sinonjs.org) + [Sinon Chai](https://github.com/domenic/sinon-chai)
+* [Mocha](https://mochajs.org/)
+* [Chai](https://www.chaijs.com/) (w/ promise support)
+* [Sinon](https://sinonjs.org) + [Sinon Chai](https://github.com/domenic/sinon-chai)
 
 Tests are referred to as specs or specifications, rooted in [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development)
 and the concept of [Specifications by Example](https://www.tutorialspoint.com/behavior_driven_development/bdd_specifications_by_example.htm).
