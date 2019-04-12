@@ -220,6 +220,78 @@ Example:
 
 ## Testing
 
+With the complete separation of concerns and focus on single responsibility principle
+we've put ourselves in the pit of success for optimal testing.
+
+The project is configured with [WallabyJS](https://wallabyjs.com) for continuous testing
+while writing code. In addition there is also support for [Karma](http://karma-runner.github.io/3.0/index.html).
+
+The following testing frameworks are being used:
+
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/) (w/ promise support)
+- [Sinon](https://sinonjs.org) + [Sinon Chai](https://github.com/domenic/sinon-chai)
+
+Tests are referred to as specs or specifications, rooted in [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development)
+and the concept of [Specifications by Example](https://www.tutorialspoint.com/behavior_driven_development/bdd_specifications_by_example.htm).
+
+Core principle of testing the components is that you should not rely on concrete
+instances during testing, but provide mocks and test the behavior in isolation.
+The interaction with other dependencies is what you want to test, not that they actual
+integrate well together.
+
+It is vital that you test the public API and its promise, not test internals.
+Follow the behavior and its resulting state.
+
+Specs sits together with the component it is specifying. The conventions supported
+are folders starting with `for_` or `when_`.
+
+```text
+Items
+│   Items.html
+│   Items.scss
+│   Items.js
+│
+└───for_SomeComponent
+    └───given
+    |   |   some_component_without_selection.js
+    |
+    │   when_item_is_selected.js
+```
+
+given/some_component_without_selection.js
+
+```javascript
+import { SomeComponent } from '../SomeComponent';
+
+export class some_component_without_selection {
+
+  constructor() {
+    this.component = new SomeComponent();
+    this.component.selectedItem = null;
+  }
+
+}
+```
+
+when_item_is_selected.js:
+
+```javascript
+import { some_component_without_selection } from './given/some_component_without_selection';
+
+describe('when item is selected', () => {
+  let context = new some_component_without_selection();
+
+  (beforeEach => {
+    context.component.selectedItem = {};
+  })();
+
+  it('should do things...', () => context.component.selectedItem.should.not.be.null); // Duh...
+});
+```
+
+In the codebase you'll find better examples of the how to write good tests.
+
 ## Debuggability
 
 When developing it is very important that developers get to see what is going on.
@@ -232,6 +304,17 @@ to see the actual elements and it helps understand the object model.
 
 You can find the issue [here](https://github.com/dolittle-interaction/JavaScript.Components.Aurelia/issues/7).
 {{% /notice %}}
+
+## Copyright headers
+
+We expect the copyright header to be present in all files.
+
+```javascript
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Dolittle. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+```
 
 ## Aurelia building blocks
 
