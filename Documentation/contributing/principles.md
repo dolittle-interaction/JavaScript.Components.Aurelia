@@ -154,4 +154,4 @@ You can find the issue [here](https://github.com/dolittle-interaction/JavaScript
 
 | Name | Description | Link |
 | ---- | ----------- | ---- |
-| `@processContent` | 
+| `@processContent` | |
