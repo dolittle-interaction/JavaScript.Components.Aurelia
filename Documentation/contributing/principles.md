@@ -61,22 +61,44 @@ component.
 The exception to this rule is when you have something that is commonly used
 amongst them.
 
-## One and once only (DRY principle)
-
 ## UWP controls as reference
 
-We aim to be inspired by and adhering to as much as possible to the 
-UWP 
+We aim to be inspired by and adhering to as much as possible to the
+[UWP controls and patterns](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/).
+The API surface is somewhat adapted for Web purpose with naming conventions
+different slightly. Instead of [upper camel casing](https://en.wikipedia.org/wiki/Camel_case) for
+anything that is in the view concern, it uses consistently lower case and words
+separated with `-` instead. This naming convention is however only for the view.
+Any JavaScript code adhere to the upper camel casing (pascal) for component names, while
+properties follow the lower camel casing convention.
 
-## Design Language
+Aurelia translates names and keeps the concerns separate on this. So any property
+that is bindable with a lower camel casing convention will be understood in the view
+as `-` space separation instead.
+
+## Design Language and Styles
+
+The design language adheres to the [Microsoft Fluent Design system](https://www.microsoft.com/design/fluent/)
+and is implemented using the [Dolittle Styles](/interaction/styles).
 
 ## API thinking
 
+Components are APIs - we put a great deal of thought into this. With the basis
+in the UWP controls, we get a lot for free when it comes to the API surface.
+But we do paint outside the box at times and introduce new APIs - it is vital
+that these APIs feel natural and consistent with the UWP and other APIs in the
+component library.
+
 ## Encapsulation
+
+All components are trying to encapsulate a single unit of work; a specific purpose
+or task that you typically need solved in a UI. It is important that these
+are encapsulated.
 
 ## Decoupling
 
-## Separation
+Components are by their nature autonomous; they should be decoupled from other
+components and stand alone.
 
 ## Model View View Model (MVVM)
 
@@ -213,8 +235,7 @@ You can find the issue [here](https://github.com/dolittle-interaction/JavaScript
 
 ## Aurelia building blocks
 
-
-| Name | Description | Link |
-| ---- | ----------- | ---- |
+| Name          | Description           | link  |
+| ------------- | --------------------- | ----- |
 | `@processContent` | Enables you to interact with the DOM | [link](https://aurelia.io/docs/templating/custom-elements#decorators-for-customizing-aurelia-custom-element-processing) |
 | ref binding | Element reference binding | [link](https://aurelia.io/docs/binding/basics#referencing-elements) |
