@@ -18,20 +18,17 @@ export class RoutedEvent {
     /**
      * Name of the input event to listen to
      */
-    @bindable
-    input;
+    @bindable input;
 
     /**
      * Name of the output event to procude
      */
-    @bindable
-    output;
+    @bindable output;
 
     /**
      * Details you want to associate with the event. This is optional and can be left undefined
      */
-    @bindable
-    details;
+    @bindable details;
 
     /**
      * Initializes a new instance of {RoutedEvent}
