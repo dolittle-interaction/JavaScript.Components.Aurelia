@@ -82,7 +82,7 @@ MVVM originates from [Martin Fowler's](https://martinfowler.com)
 from 2004 and is a variation of Trygve Reenskaug's MVC from 1976.
 Microsoft iterated on this and [introduced MVVM in 2005](https://blogs.msdn.microsoft.com/johngossman/2005/10/08/introduction-to-modelviewviewmodel-pattern-for-building-wpf-apps/).
 
-![Model View View Model figure](./mvvm.png)
+![Model View View Model figure](../mvvm.png)
 
 ### Model
 
@@ -152,7 +152,7 @@ changes or events that occurs without having to couple them together. This is wh
 [event aggregator](https://www.martinfowler.com/eaaDev/EventAggregator.html) comes handy
 and lets each component fire and forget messages that others can listen to.
 
-![Event Aggregator figure](./event_aggregator.png)
+![Event Aggregator figure](../event_aggregator.png)
 
 ### Composition through binding
 
