@@ -13,18 +13,18 @@ same name, the `hasParts` decorator handles just that.
 Aurelia has the concept of [named slots](https://aurelia.io/docs/templating/content-projection#named-slots).
 This enables one to project items from templates into different slots of for instance
 a custom component. This is what the `hasParts` takes advantage of. It maps by convention
-any named slots within the component to a custom element tag with the same name.
+any named replaceable part within the component to a custom element tag with the same name.
 
 Given the following view template for our component:
 
 ```html
 <template>
   <div>
-    <slot name="banner"></slot>
+    <template part="banner" replaceable></template>
   </div>
   <div>
     <ul>
-      <slot name="items"></slot>
+      <template part="items" replaceable></template>
     </ul>
   </div>
 </template>

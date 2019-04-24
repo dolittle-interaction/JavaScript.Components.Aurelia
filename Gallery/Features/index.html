@@ -1,22 +1,25 @@
 <template>
   <require from="./index.scss"></require>
+
   <navigation-view selected-item.bind="selectedItem">
     <banner>
-      <div>Navigation</div>
+        <div>Navigation</div>
     </banner>
     <header>
       <auto-suggest-box></auto-suggest-box>
     </header>
     <items>
-      <div hierarchy-repeat.for="component of structure.components" hierarchy-children-property="children">
-          <navigation-view-item icon="book"
-                                tag.bind="component.name"
-                                data.bind="component">${component.name}</navigation-view-item>
-      </div>
+      <navigation-view-item icon="book"                            
+                            hierarchy-repeat.for="component of structure.components"
+                            hierarchy-children-property="children" 
+                            tag.bind="component.name" 
+                            data.bind="component">${component.name}
+      </navigation-view-item>
     </items>
+
     <footer>
       <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
-    </footer>
+    </footer>    
   </navigation-view>
 
   <section class="content">

@@ -2,12 +2,13 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { customElement, bindable, bindingMode } from 'aurelia-framework';
+import { customElement, containerless, bindable, bindingMode, computedFrom } from 'aurelia-framework';
 import { hasParts } from '../Templating/hasParts'
 import { paneDisplayMode } from './paneDisplayMode';
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
+//@containerless()
 @hasParts()
 export class NavigationView {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
@@ -17,16 +18,19 @@ export class NavigationView {
     @bindable isBackEnabled
 
     constructor() {
-        this.paneDisplayMode = paneDisplayMode.left;
+        this.paneDisplayMode = paneDisplayMode.auto;
     }
 
-    toggleDisplayMode() {
-        switch( this.paneDisplayMode )
-        {
-            case paneDisplayMode.left: this.paneDisplayMode = paneDisplayMode.leftCompact; break;
-            case paneDisplayMode.leftCompact: this.paneDisplayMode = paneDisplayMode.leftMinimal; break;
-            case paneDisplayMode.leftMinimal: this.paneDisplayMode = paneDisplayMode.left; break;
-        }
+    @computedFrom('paneDisplayMode', 'expanded')
+    get actualPaneDisplayMode() {
+        if( this.paneDisplayMode == paneDisplayMode.top ) return paneDisplayMode.top;
+        
+        return this.paneDisplayMode;
+    }
+
+    toggleExpansion() {
+        if( this.paneDisplayMode === paneDisplayMode.top ) return;
+        this.expanded = !this.expanded;
     }
 
     selectedItemChanged(newItem, previousItem) {

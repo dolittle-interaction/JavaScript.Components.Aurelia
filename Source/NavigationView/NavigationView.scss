@@ -9,19 +9,46 @@
 $navigation-view-bg-color: $color-black-60 !default;
 $navigation-view-top-push-height: 0 !default;
 $navigation-view-width: 3rem !default;
+$navigation-view-height: 3rem !default;
 $navigation-view-width-expanded: 20rem !default;
-$navigation-view-transition-time: 0.3s;
+$navigation-view-transition-time: 0.3s !default;
 
 .navigation-view {
   background-color: $navigation-view-bg-color;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transform: translateX(-70vw);
+  position: fixed; 
   transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
-  width: 70vw;
   white-space: nowrap;
+
+  &.left, &.left-compact, &.left-minimal {
+    bottom: 0;
+    left: 0;
+    top: 0; 
+  }
+
+  &.left {
+    width: $navigation-view-width-expanded;
+  }
+
+  &.left-compact {
+    width: $navigation-view-width;
+  }
+
+  &.left-minimal {
+    width: $navigation-view-width-expanded;
+    transform: translateX(-$navigation-view-width-expanded);
+  }
+
+  &.top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: $navigation-view-height;
+  }
 
   .banner {
     display: none;
@@ -34,6 +61,15 @@ $navigation-view-transition-time: 0.3s;
     position: relative;
     width: 100%;
   }
+
+  footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 0.0625rem solid $body-text-color;
+  }
+
   .expand-trigger {
     display: block;
     height: $navigation-view-width;

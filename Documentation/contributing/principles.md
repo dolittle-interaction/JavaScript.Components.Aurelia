@@ -296,7 +296,12 @@ In the codebase you'll find better examples of the how to write good tests.
 ## Debuggability
 
 When developing it is very important that developers get to see what is going on.
-Therefor, the use of the `@containerless` decorator is prohibited.
+Therefor, the use of the `@containerless` decorator is prohibited for outer-most
+custom elements. For child custom elements used within, it could potentially end
+up rendering invalid HTML and for these scenarios it is allowed to have the
+`@containerless` decorator. An example would be a scenario where a custom element
+has items and uses `<ul>` and `<li>`, having the custom element in-between is not
+considered valid HTML.
 
 {{% notice tip %}}
 We are however looking into the ability to add this decorator, or the effect of

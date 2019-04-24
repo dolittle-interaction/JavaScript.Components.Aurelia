@@ -8,26 +8,33 @@
   <require from="./NavigationView.scss"></require>
   <require from="./PaneDisplayModeValueConverter"></require>
 
-  <nav class="navigation-view"
-       class.bind="paneDisplayMode | paneDisplayMode" 
+  <nav class="navigation-view left-compact" 
+       class.bind="paneDisplayMode | paneDisplayMode"
        itemclicked.delegate="itemClicked($event)">
     <header>
+      <!--
       <a href="#" if.bind="isBackEnabled">
         <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
       </a>
+      -->
       <div class="banner">
-        <a href="#" click.delegate="toggleDisplayMode()">
+        <a href="#" click.delegate="toggleExpansion()">
           <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
         </a>
-        <slot name="banner"></slot>
+        <template part="banner" replaceable></template>
       </div>
-      <slot name="header"></slot>
+      <template part="header" replaceable></template>
     </header>
     <ul class="navigation-view-items">
-      <slot name="items"></slot>
+      <template part="items" replaceable>
+        Hello world
+      </template>
     </ul>
+
     <footer>
-      <slot name="footer"></slot>
+      <ul class="navigation-view-items">
+        <template part="footer" replaceable></template>
+      </ul>
     </footer>
   </nav>
 </template>

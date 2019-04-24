@@ -9,6 +9,7 @@ import { HierarchyRepeaterItem } from '../Templating/HierarchyRepeaterItem';
  * Represents the view model for a navigation view item
  */
 @customElement('navigation-view-item')
+@containerless()
 export class NavigationViewItem extends HierarchyRepeaterItem {
     @bindable icon;
     @bindable tag;
