@@ -41,11 +41,17 @@ and the [Separation of Concerns princple](https://en.wikipedia.org/wiki/Separati
 These two principles are the core guiding principles throughout all the
 code and are on the checklist for reviewers of pull requests.
 
+Read more about our [core values](/contributing/guidelines/core_values),
+[core principles](/contributing/guidelines/core_principles) and
+[development principles](/contributing/guidelines/development_principles).
+
 ## Consistency
 
 Making something look consistent and feel solid from a UI perspective is very hard.
 We've chosen to lean on existing work from Microsoft Fluent Design System to help
 us stay consistent.
+
+Read more about consistency in our [development principles](/contributing/guidelines/development_principles)
 
 ## Cohesion
 
@@ -60,6 +66,8 @@ component.
 
 The exception to this rule is when you have something that is commonly used
 amongst them.
+
+Read more about cohesion in our [development principles](/contributing/guidelines/development_principles)
 
 ## UWP controls as reference
 
