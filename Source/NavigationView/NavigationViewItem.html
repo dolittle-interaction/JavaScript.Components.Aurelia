@@ -8,7 +8,7 @@
   <require from="./NavigationViewItem.scss"></require>
 
   <li class="navigation-view-item ${isExpanded ? 'expanded': ''}">
-    <a href="#" class="navigation-view-item" 
+    <a href="#"
       class.bind="isSelected ? 'selected' : ''"
       click.delegate="toggleExpansion()"
       routed-event="input: click; output: itemclicked; details.bind: $this">
@@ -20,9 +20,8 @@
       </span>
       <i if.bind="hasChildren" class="toggle-expand"></i>
     </a>
-    <ul class="navigation-view-items">
+    <ul>
       <template hierarchy-repeat-children></template>
     </ul>
-
   </li>
 </template>

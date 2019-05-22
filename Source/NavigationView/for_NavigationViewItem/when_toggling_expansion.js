@@ -6,11 +6,14 @@ import { NavigationViewItem } from '../NavigationViewItem';
 
 describe('when toggling expansion', () => {
     describe('and it is collapsed', () => {
-        let item = new NavigationViewItem();
-        item.isExpanded = false;
-        item.toggleExpansion();
-
-        it('should be expanded', () => item.isExpanded.should.be.true);
+        describe('and it has children', () => {
+            let item = new NavigationViewItem();
+            item.isExpanded = false;
+            item.toggleExpansion();
+            item.addChild(new NavigationViewItem());
+            console.log(item);
+            it('should be expanded', () => item.isExpanded.should.be.true);
+        });
     });
 
     describe('and it is expanded', () => {
