@@ -30,6 +30,8 @@ export class NavigationViewItem extends HierarchyRepeaterItem {
      * Toggle expansion for the item - this will only have an effect it the item actually has children
      */
     toggleExpansion() {
-        this.isExpanded = !this.isExpanded;
+        if (this.isExpanded || this.hasChildren) {   
+            this.isExpanded = !this.isExpanded;
+        }
     }
 }
