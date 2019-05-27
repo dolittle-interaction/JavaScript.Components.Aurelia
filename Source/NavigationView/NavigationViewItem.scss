@@ -49,8 +49,8 @@ $plus-icon-size: 1.125rem;
         transform: scaleX(1) scaleY(0);
         transform-origin: center top;
     }
-
     .toggle-expand {
+        display: none;
         color: $color-white-40;
         position: absolute;
         right: 0;
@@ -94,6 +94,15 @@ $plus-icon-size: 1.125rem;
             .context-menu .ellipsis {
                 opacity: 1;
             }
+        }
+    }
+}
+
+.navigation-view {
+    &.expanded,
+    &.left {
+        .toggle-expand {
+            display: block;
         }
     }
 }

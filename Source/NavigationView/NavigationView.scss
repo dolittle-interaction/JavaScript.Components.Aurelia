@@ -13,12 +13,14 @@ $navigation-view-height: 3rem !default;
 $navigation-view-width-expanded: 20rem !default;
 $navigation-view-transition-time: 0.3s !default;
 $navigation-view-expand-trigger-width: 2rem !default;
+$navigation-view-width-expanded-sm: 80vw;
 
 .navigation-view {
     background-color: $navigation-view-bg-color;
     position: fixed;
     transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
     white-space: nowrap;
+    overflow: hidden;
 
     &.left,
     &.left-compact,
@@ -37,10 +39,16 @@ $navigation-view-expand-trigger-width: 2rem !default;
 
     &.left-compact {
         width: $navigation-view-width;
+        &.expanded {
+            width: $navigation-view-width-expanded-sm;
+            @include media-bp-min(tablet) {
+                width: $navigation-view-width-expanded;
+            }
+        }
     }
 
     &.left-minimal {
-        width: 80vw;
+        width: $navigation-view-width-expanded-sm;
         transform: translateX(-80vw);
         @include media-bp-min(tablet) {
             width: $navigation-view-width-expanded;
@@ -88,7 +96,7 @@ $navigation-view-expand-trigger-width: 2rem !default;
     }
 
     footer {
-        position: fixed;
+        position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
@@ -122,7 +130,6 @@ $navigation-view-expand-trigger-width: 2rem !default;
 
     @include media-bp-min(tablet) {
         transform: translateX(0);
-        overflow: hidden;
         top: $navigation-view-top-push-height;
         width: $navigation-view-width;
 
