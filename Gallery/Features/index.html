@@ -5,30 +5,30 @@
 *----------------------------------------------------------------------------------------------
 -->
 <template>
-  <require from="./index.scss"></require>
+    <require from="./index.scss"></require>
 
-  <navigation-view selected-item.bind="selectedItem">
-    <banner>
-        <div>Navigation</div>
-    </banner>
-    <header>
-      <auto-suggest-box></auto-suggest-box>
-    </header>
-    <items>
-      <navigation-view-item icon="book"                            
-                            hierarchy-repeat.for="component of structure.components"
-                            hierarchy-children-property="children" 
-                            tag.bind="component.name" 
-                            data.bind="component">${component.name}
-      </navigation-view-item>
-    </items>
+    <navigation-view selected-item.bind="selectedItem" pane-display-mode="left-compact">
+        <banner>
+            Navigation
+        </banner>
+        <navigation-header></navigation-header>
+        <items>
+            <navigation-view-item
+                icon="book"
+                hierarchy-repeat.for="component of structure.components"
+                hierarchy-children-property="children"
+                tag.bind="component.name"
+                data.bind="component"
+                >${component.name}
+            </navigation-view-item>
+        </items>
 
-    <footer>
-      <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
-    </footer>    
-  </navigation-view>
+        <footer>
+            <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
+        </footer>
+    </navigation-view>
 
-  <section class="content">
-    <router-view containerless></router-view>
-  </section>
+    <section class="content">
+        <router-view containerless></router-view>
+    </section>
 </template>

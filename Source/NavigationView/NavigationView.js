@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { customElement, containerless, bindable, bindingMode, computedFrom } from 'aurelia-framework';
-import { hasParts } from '../Templating/hasParts'
+import { hasParts } from '../Templating/hasParts';
 import { paneDisplayMode } from './paneDisplayMode';
 
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
@@ -15,7 +15,7 @@ export class NavigationView {
     @bindable expanded = false;
     @bindable showTrigger = true;
     @bindable paneDisplayMode;
-    @bindable isBackEnabled
+    @bindable isBackEnabled;
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.auto;
@@ -23,18 +23,18 @@ export class NavigationView {
 
     @computedFrom('paneDisplayMode', 'expanded')
     get actualPaneDisplayMode() {
-        if( this.paneDisplayMode == paneDisplayMode.top ) return paneDisplayMode.top;
-        
+        if (this.paneDisplayMode == paneDisplayMode.top) return paneDisplayMode.top;
+
         return this.paneDisplayMode;
     }
 
     toggleExpansion() {
-        if( this.paneDisplayMode === paneDisplayMode.top ) return;
+        if (this.paneDisplayMode === paneDisplayMode.top) return;
         this.expanded = !this.expanded;
     }
 
     selectedItemChanged(newItem, previousItem) {
-        if( previousItem ) {
+        if (previousItem) {
             previousItem.isSelected = false;
             this.#setIsSelectedForParentFor(previousItem, false);
         }
@@ -48,7 +48,7 @@ export class NavigationView {
 
     #setIsSelectedForParentFor(item, isSelected) {
         let parent = item.parent;
-        while( parent ) {
+        while (parent) {
             parent.isSelected = isSelected;
             parent = parent.parent;
         }

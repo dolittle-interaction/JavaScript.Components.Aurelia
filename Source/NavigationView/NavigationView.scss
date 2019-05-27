@@ -12,149 +12,133 @@ $navigation-view-width: 3rem !default;
 $navigation-view-height: 3rem !default;
 $navigation-view-width-expanded: 20rem !default;
 $navigation-view-transition-time: 0.3s !default;
+$navigation-view-expand-trigger-width: 2rem !default;
 
 .navigation-view {
-  background-color: $navigation-view-bg-color;
-  position: fixed; 
-  transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
-  white-space: nowrap;
-
-  &.left, &.left-compact, &.left-minimal {
-    bottom: 0;
-    left: 0;
-    top: 0; 
-  }
-
-  &.left {
-    width: $navigation-view-width-expanded;
-  }
-
-  &.left-compact {
-    width: $navigation-view-width;
-  }
-
-  &.left-minimal {
-    width: $navigation-view-width-expanded;
-    transform: translateX(-$navigation-view-width-expanded);
-  }
-
-  &.top {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: $navigation-view-height;
-  }
-
-  .banner {
-    display: none;
-    font-weight: 300;
-    letter-spacing: 0.0625rem;
-    font-size: 1.75rem;
-  }
-
-  header {
-    position: relative;
-    width: 100%;
-  }
-
-  footer {
+    background-color: $navigation-view-bg-color;
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-top: 0.0625rem solid $body-text-color;
-  }
+    transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
+    white-space: nowrap;
 
-  .expand-trigger {
-    display: block;
-    height: $navigation-view-width;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: $grid-gutter/2;
-    transform: translateX(100%);
-    transition: transform $navigation-view-transition-time;
-    width: $navigation-view-width;
-
-    img {
-      padding: 1rem;
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform: translateZ(0);
-      transition: opacity $navigation-view-transition-time, transform $navigation-view-transition-time;
-      &.arrow {
-        opacity: 0;
-      }
-      &.hamburger {
-        opacity: 1;
-        transform: rotate(0);
-      }
+    &.left,
+    &.left-compact,
+    &.left-minimal {
+        bottom: 0;
+        left: 0;
+        top: 0;
     }
-    &.close {
-      transform: translateX(0);
-      img {
-        &.arrow {
-          opacity: 1;
+
+    &.left {
+        width: $navigation-view-width-expanded;
+        .banner {
+            display: block;
         }
-        &.hamburger {
-          transform: rotate(90deg);
-          opacity: 0;
-        }
-      }
     }
-  }
-  .navigation-view-items {
-    margin-top: $grid-gutter;
-  }
-  &.expanded {
-    transform: translateX(0);
-    header {
-      padding: $grid-gutter/2;
-      padding-right: $navigation-view-width;
-    }
-    .banner {
-      display: block;
-    }
-  }
 
-  @include media-bp-min(tablet) {
-    transform: translateX(0);
-    overflow: hidden;
-    top: $navigation-view-top-push-height;
-    width: $navigation-view-width;
-    header {
-      padding: $grid-gutter/2;
+    &.left-compact {
+        width: $navigation-view-width;
     }
-    .banner {
-      display: block;
-      visibility: hidden;
+
+    &.left-minimal {
+        width: 80vw;
+        transform: translateX(-80vw);
+        @include media-bp-min(tablet) {
+            width: $navigation-view-width-expanded;
+            transform: translateX(-$navigation-view-width-expanded);
+        }
+        overflow: visible;
+        .expand-trigger {
+            transform: translateX($navigation-view-width-expanded);
+        }
+
+        &.expanded {
+            .expand-trigger {
+                transform: translateX(0);
+            }
+            .banner {
+                display: inline-block;
+            }
+        }
     }
-    .expand-trigger {
-      transform: translateX(0);
+
+    &.top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: $navigation-view-height;
     }
+
     &.expanded {
-      width: $navigation-view-width-expanded;
-      .banner {
-        visibility: visible;
-      }
+        transform: translateX(0);
     }
-  }
 
-  // @include media-bp-min(desktop) {
-  //   width: $navigation-view-width-expanded;
-  //   .banner {
-  //     display: block;
-  //     visibility: visible;
-  //   }
-  //   .expand-trigger {
-  //     display: none;
-  //   }
-  // }
+    header {
+        position: relative;
+        width: 100%;
+        padding: $grid-gutter/2;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 0.0625rem solid $body-text-color;
+    }
+
+    .expand-trigger {
+        display: block;
+        height: $navigation-view-expand-trigger-width;
+        transition: transform $navigation-view-transition-time;
+        width: $navigation-view-expand-trigger-width;
+        margin-right: $grid-gutter/2;
+        flex: 0 0 $navigation-view-expand-trigger-width;
+        img {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .banner {
+        font-weight: 300;
+        letter-spacing: 0.0625rem;
+        font-size: 1.25rem;
+        flex: 1 1 auto;
+    }
+    .navigation-view-items {
+        margin-top: $grid-gutter;
+    }
+
+    @include media-bp-min(tablet) {
+        transform: translateX(0);
+        overflow: hidden;
+        top: $navigation-view-top-push-height;
+        width: $navigation-view-width;
+
+        &.expanded {
+            width: $navigation-view-width-expanded;
+        }
+    }
+
+    // @include media-bp-min(desktop) {
+    //   width: $navigation-view-width-expanded;
+    //   .banner {
+    //     display: block;
+    //     visibility: visible;
+    //   }
+    //   .expand-trigger {
+    //     display: none;
+    //   }
+    // }
 }
