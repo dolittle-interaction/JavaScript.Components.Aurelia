@@ -21,19 +21,52 @@ $navigation-view-width-expanded-sm: 80vw;
     transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
     white-space: nowrap;
     overflow: hidden;
+    @include media-bp-min(tablet) {
+        transform: translateX(0);
+        top: $navigation-view-top-push-height;
+        width: $navigation-view-width;
 
+        &.expanded {
+            width: $navigation-view-width-expanded;
+        }
+    }
     &.left,
     &.left-compact,
-    &.left-minimal {
+    &.left-minimal,
+    &.top {
         bottom: 0;
         left: 0;
         top: 0;
+        width: $navigation-view-width-expanded-sm;
+    }
+
+    &.left,
+    &.top {
+        transform: translateX(-80vw);
+        overflow: visible;
+        .expand-trigger {
+            transform: translateX($navigation-view-width-expanded-sm);
+        }
+        .banner {
+            display: block;
+        }
+        &.expanded {
+            .expand-trigger {
+                transform: translateX(0);
+            }
+            .banner {
+                display: inline-block;
+            }
+        }
     }
 
     &.left {
-        width: $navigation-view-width-expanded;
-        .banner {
-            display: block;
+        @include media-bp-min(tablet) {
+            width: $navigation-view-width-expanded;
+            transform: translateX(0);
+            .expand-trigger {
+                display: none;
+            }
         }
     }
 
@@ -48,15 +81,17 @@ $navigation-view-width-expanded-sm: 80vw;
     }
 
     &.left-minimal {
-        width: $navigation-view-width-expanded-sm;
-        transform: translateX(-80vw);
+        transform: translateX(-$navigation-view-width-expanded-sm);
         @include media-bp-min(tablet) {
             width: $navigation-view-width-expanded;
             transform: translateX(-$navigation-view-width-expanded);
         }
         overflow: visible;
         .expand-trigger {
-            transform: translateX($navigation-view-width-expanded);
+            transform: translateX($navigation-view-width-expanded-sm);
+            @include media-bp-min(tablet) {
+                transform: translateX($navigation-view-width-expanded);
+            }
         }
 
         &.expanded {
@@ -70,15 +105,47 @@ $navigation-view-width-expanded-sm: 80vw;
     }
 
     &.top {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        left: 0;
-        top: 0;
-        right: 0;
-        height: $navigation-view-height;
+        @include media-bp-min(tablet) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            height: $navigation-view-height;
+            left: 0;
+            top: 0;
+            right: 0;
+            transform: none;
+            .expand-trigger {
+                display: none;
+            }
+            &,
+            &.expanded {
+                width: 100vw;
+            }
+            header {
+                width: auto;
+                flex: 0 0 auto;
+            }
+            .navigation-view-items {
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin-top: 0;
+                line-height: $navigation-view-height;
+            }
+            footer {
+                position: relative;
+                flex: 0 0 auto;
+                border-top: none;
+                left: unset;
+                right: unset;
+                bottom: unset;
+                left: auto;
+            }
+        }
     }
 
     &.expanded {
@@ -118,34 +185,15 @@ $navigation-view-width-expanded-sm: 80vw;
             transform: translateY(-50%);
         }
     }
+
     .banner {
         font-weight: 300;
         letter-spacing: 0.0625rem;
         font-size: 1.25rem;
+        line-height: $navigation-view-expand-trigger-width;
         flex: 1 1 auto;
     }
     .navigation-view-items {
         margin-top: $grid-gutter;
     }
-
-    @include media-bp-min(tablet) {
-        transform: translateX(0);
-        top: $navigation-view-top-push-height;
-        width: $navigation-view-width;
-
-        &.expanded {
-            width: $navigation-view-width-expanded;
-        }
-    }
-
-    // @include media-bp-min(desktop) {
-    //   width: $navigation-view-width-expanded;
-    //   .banner {
-    //     display: block;
-    //     visibility: visible;
-    //   }
-    //   .expand-trigger {
-    //     display: none;
-    //   }
-    // }
 }
