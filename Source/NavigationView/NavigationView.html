@@ -5,36 +5,35 @@
 *----------------------------------------------------------------------------------------------
 -->
 <template>
-  <require from="./NavigationView.scss"></require>
-  <require from="./PaneDisplayModeValueConverter"></require>
+    <require from="./NavigationView.scss"></require>
+    <require from="./PaneDisplayModeValueConverter"></require>
 
-  <nav class="navigation-view left-compact" 
-       class.bind="paneDisplayMode | paneDisplayMode"
-       itemclicked.delegate="itemClicked($event)">
-    <header>
-      <!--
-      <a href="#" if.bind="isBackEnabled">
-        <img src="../../../assets/icons/Back.svg" class="arrow" alt="" />
-      </a>
-      -->
-      <div class="banner">
-        <a href="#" click.delegate="toggleExpansion()">
-          <img src="../../../assets/icons/Hamburger.svg" class="hamburger" alt="" />
-        </a>
-        <template part="banner" replaceable></template>
-      </div>
-      <template part="header" replaceable></template>
-    </header>
-    <ul class="navigation-view-items">
-      <template part="items" replaceable>
-        Hello world
-      </template>
-    </ul>
+    <nav
+        class="navigation-view ${expanded ? 'expanded' : 'collapsed'}"
+        class.bind="paneDisplayMode | paneDisplayMode"
+        itemclicked.delegate="itemClicked($event)"
+    >
+        <header>
+            <a href="#" click.delegate="toggleExpansion()" class="expand-trigger hamburger">
+                <img src="../../../assets/icons/Hamburger.svg" alt="" />
+            </a>
+            <span class="banner">
+                <template part="banner" replaceable></template>
+            </span>
+        </header>
 
-    <footer>
-      <ul>
-        <template part="footer" replaceable></template>
-      </ul>
-    </footer>
-  </nav>
+        <template part="navigation-header" replaceable>
+            <div class="navigation-header"></div>
+        </template>
+        <ul class="navigation-view-items">
+            <template part="items" replaceable>
+                Hello world
+            </template>
+        </ul>
+        <footer>
+            <ul>
+                <template part="footer" replaceable></template>
+            </ul>
+        </footer>
+    </nav>
 </template>
