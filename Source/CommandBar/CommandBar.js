@@ -2,11 +2,15 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { customElement, containerless, bindable } from 'aurelia-framework';
-import globals from '../globals';
+import { customElement, bindable } from 'aurelia-framework';
+import { hasParts } from '../Templating/hasParts';
+import { labelPosition } from './labelPosition';
 
 @customElement('command-bar')
-@containerless()
+@hasParts()
 export class menuItem {
-    constructor() {}
+    @bindable defaultLabelPosition;
+    constructor() {
+        this.defaultLabelPosition = labelPosition.bottom;
+    }
 }
