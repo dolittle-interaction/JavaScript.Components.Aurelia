@@ -177,7 +177,7 @@ $navigation-view-width-expanded-sm: 80vw;
         width: $navigation-view-expand-trigger-width;
         margin-right: $grid-gutter/2;
         flex: 0 0 $navigation-view-expand-trigger-width;
-        img {
+        svg, img {
             display: block;
             margin: 0 auto;
             position: relative;
