@@ -1,6 +1,18 @@
-@import './styles/Settings/all.scss';
-@import './styles/Tools/all.scss';
+@import '~DolittleStyles/Settings/all.scss';
+@import '~DolittleStyles/Tools/all.scss';
 
+main {
+    &.navigation-left {
+      padding-left: $navigation-view-width-expanded;
+    }
+    &.navigation-left-compact {
+      padding-left: $navigation-view-width-compact;
+    }
+    &.navigation-left-minimal {
+    }
+    &.navigation-top {
+    }
+}
 .index {
     .splash-header {
         background-image: url('../assets/splash.png');
