@@ -7,6 +7,14 @@
 
 <template>
     <require from="./CommandBar.scss"></require>
-
-    <slot></slot>
+    <require from="./LabelPositionValueConverter"></require>
+    <nav class="command-bar" class.bind="defaulLabelPosition | labelPosition">
+        <template part="content-block" replaceable>
+        </template>
+        <template part="primary-commands" replaceable>
+        </template>
+        <template part="secondary-commands" replaceable>
+        </template>
+    </nav>
 </template>
+
