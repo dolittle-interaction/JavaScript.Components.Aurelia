@@ -13,7 +13,8 @@ export function configure(aurelia) {
     aurelia.use
         .standardConfiguration()
         .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
-        .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'));
+        .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'))
+        .feature(PLATFORM.moduleName('Resources/index'));
 
     if (environment.debug) {
         aurelia.use.developmentLogging();
