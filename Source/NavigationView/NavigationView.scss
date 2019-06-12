@@ -127,7 +127,7 @@ $navigation-view-width-expanded-sm: 80vw;
                 width: auto;
                 flex: 0 0 auto;
             }
-            .navigation-view-items {
+            .navigation-items {
                 flex: 1 1 auto;
                 display: flex;
                 flex-direction: row;
@@ -193,7 +193,7 @@ $navigation-view-width-expanded-sm: 80vw;
         line-height: $navigation-view-expand-trigger-width;
         flex: 1 1 auto;
     }
-    .navigation-view-items {
+    .navigation-items {
         margin-top: $grid-gutter;
     }
 }

@@ -4,17 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 import { processContent, FEATURE } from 'aurelia-framework';
 
-function handlePart(name, element) {
+function handlePart(name, element, replacementTag) {
     let partContainer = element.querySelector(name);
     if (partContainer) {
         const template = document.createElement('template');
         FEATURE.ensureHTMLTemplateElement(template);
         template.setAttribute('replace-part', name);
+
+        let childWrapper = document.createElement(replacementTag || 'div');
+        childWrapper.className = name;
         let child;
         while (child = partContainer.firstChild) {
             partContainer.removeChild(child);
-            template.content.appendChild(child);
+            childWrapper.appendChild(child);
         }
+        template.content.appendChild(childWrapper);
         element.appendChild(template);
     }
 }
@@ -29,13 +33,9 @@ export function hasParts() {
     function contentProcessor(viewCompiler, viewResources, element, parentInstruction) {
         let partTemplates = parentInstruction.type.viewFactory.template.querySelectorAll('[part]');
         partTemplates.forEach(partTemplate => {
-            for (let attributeIndex = 0; attributeIndex < partTemplate.attributes.length; attributeIndex++) {
-                let attribute = partTemplate.attributes[attributeIndex];
-                if (attribute.localName === 'part') {
-                    handlePart(attribute.value, element);
-                    break;
-                }
-            }
+            let partName = partTemplate.getAttribute('part');
+            let replacementTag = partTemplate.getAttribute('replacement-tag');
+            handlePart(partName, element, replacementTag);
         });
         return true;
     }
