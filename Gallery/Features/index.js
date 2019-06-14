@@ -11,7 +11,7 @@ export class index {
     @bindable selectedItem;
     navigationStrategy;
     constructor(structure) {
-        this.navigationStrategy = 'left';
+        this.navigationStrategy = 'left-compact';
         this.structure = structure;
 
         this.profile = {
