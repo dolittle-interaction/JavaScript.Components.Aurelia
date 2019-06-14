@@ -15,6 +15,7 @@ export class NavigationView {
     @bindable showTrigger = true;
     @bindable paneDisplayMode;
     @bindable isBackEnabled;
+    @bindable linkUrl;
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.auto;
