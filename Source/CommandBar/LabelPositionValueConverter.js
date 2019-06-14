@@ -5,6 +5,6 @@
 
 export class LabelPositionValueConverter {
     toView(value) {
-        return 'labe-' + value;
+        return 'label-' + value;
     }
 }
