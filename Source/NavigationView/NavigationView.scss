@@ -6,7 +6,7 @@
 @import '~DolittleStyles/Settings/all';
 @import '~DolittleStyles/Tools/all';
 
-$navigation-view-bg-color: $color-black-60 !default;
+$navigation-view-bg-color: lighten($color-gray-darkest, 5%) !default;
 $navigation-view-top-push-height: 0 !default;
 $navigation-view-height: 3rem !default;
 $navigation-view-width-compact: 3rem !default;
@@ -21,6 +21,7 @@ $navigation-view-expand-trigger-width: 2rem !default;
     transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
     white-space: nowrap;
     overflow: hidden;
+    z-index: 100;
     @include media-bp-min(tablet) {
         transform: translateX(0);
         top: $navigation-view-top-push-height;
