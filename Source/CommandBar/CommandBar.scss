@@ -16,7 +16,6 @@ $command-bar-bg-color: $color-gray-darkest;
         height: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
         align-items: center;
         flex-wrap: nowrap;
         font-size: 0.75rem;
@@ -24,6 +23,26 @@ $command-bar-bg-color: $color-gray-darkest;
         position: relative;
         width: 100%;
         z-index: 99;
+
+        &.commands-left {
+            justify-content: flex-start;
+        }
+        &.commands-center {
+            justify-content: center;
+        }
+        &.commands-right {
+            justify-content: flex-end;
+            .content-block {
+                margin-right: auto;
+            }
+        }
+        &.commands-distributed {
+            justify-content: space-between;
+            .primary-commands {
+                flex: 1;
+                justify-content: space-evenly;
+            }
+        }
     }
 
     &.collapsed {
@@ -39,8 +58,8 @@ $command-bar-bg-color: $color-gray-darkest;
     &.label-hidden {
         height: $command-bar-height-default;
     }
+
     .content-block {
-        margin-right: auto;
         padding: 0 $grid-gutter;
     }
     .primary-commands {
@@ -65,13 +84,14 @@ $command-bar-bg-color: $color-gray-darkest;
             padding: $grid-gutter/1.5 0;
             background-color: lighten($command-bar-bg-color, 5%);
             border: 0.0625rem solid $color-gray-dark;
-            transition: all 0.3s;
-            transform: translate(0, -100%);
+            transition: all 0.15s;
+            transform: scale(0);
+            transform-origin: 80% 0;
         }
 
         &.visible {
             .secondary-commands {
-                transform: translate(0, 0);
+                transform: scale(1);
             }
         }
     }
