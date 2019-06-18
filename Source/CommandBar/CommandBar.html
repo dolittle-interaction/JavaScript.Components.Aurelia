@@ -7,8 +7,7 @@
 
 <template>
     <require from="./CommandBar.scss"></require>
-    <require from="./LabelPositionValueConverter"></require>
-    <nav class="command-bar" class.bind="defaultLabelPosition | labelPosition">
+    <nav class="command-bar ${labelPosition ? 'label-' + labelPosition : ''}">
         <div class="footprint ${commandLocation ? 'commands-'+ commandLocation : ''}">
             <template part="content-block" replaceable> </template>
             <template part="primary-commands" replaceable> </template>

@@ -9,13 +9,13 @@ import { commandLocation } from './commandLocation';
 
 @customElement('command-bar')
 @hasParts()
-export class menuItem {
+export class CommandBar {
     @bindable commandLocation;
-    @bindable defaultLabelPosition;
+    @bindable labelPosition;
     @observable displaySecondaryCommands;
 
     constructor() {
-        this.defaultLabelPosition = labelPosition.right;
+        this.labelPosition = labelPosition.right;
         this.commandLocation = commandLocation.right;
         this.displaySecondaryCommands = false;
     }

@@ -14,4 +14,14 @@
     .secondary-commands & {
         padding: 0 $grid-gutter/1.5;
     }
+
+    .label-bottom & {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .label-hidden & {
+        .label {
+            display: none;
+        }
+    }
 }

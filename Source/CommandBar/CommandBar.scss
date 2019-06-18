@@ -48,13 +48,11 @@ $command-bar-bg-color: $color-gray-darkest;
     &.collapsed {
         height: 1.5rem;
     }
-    &.label-top,
     &.label-bottom {
         height: $command-bar-height-extended;
     }
 
     &.label-right,
-    &.label-left,
     &.label-hidden {
         height: $command-bar-height-default;
     }
