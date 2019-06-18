@@ -67,6 +67,7 @@ $command-bar-bg-color: $color-gray-darkest;
         align-items: center;
     }
     .secondary-commands-toggle {
+        display: none;
         svg {
             fill: #fff;
         }
@@ -85,6 +86,10 @@ $command-bar-bg-color: $color-gray-darkest;
             transition: all 0.15s;
             transform: scale(0);
             transform-origin: 80% 0;
+
+            & + .secondary-commands-toggle {
+                display: block;
+            }
         }
 
         &.visible {

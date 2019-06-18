@@ -12,6 +12,7 @@
             <template part="content-block" replaceable> </template>
             <template part="primary-commands" replaceable> </template>
             <div class="secondary-commands-wrapper ${displaySecondaryCommands ? 'visible' : ''}">
+                <template part="secondary-commands" replaceable></template>
                 <a href="#" class="secondary-commands-toggle" click.delegate="toggleSecondaryCommands()">
                     <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -19,7 +20,6 @@
                         />
                     </svg>
                 </a>
-                <template part="secondary-commands" replaceable></template>
             </div>
         </div>
     </nav>
