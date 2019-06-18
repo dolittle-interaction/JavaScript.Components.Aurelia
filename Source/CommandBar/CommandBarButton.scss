@@ -13,6 +13,11 @@
     }
     .secondary-commands & {
         padding: 0 $grid-gutter/1.5;
+
+        .label-bottom & {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
     }
 
     .label-bottom & {
