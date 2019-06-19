@@ -6,29 +6,41 @@
 -->
 <template>
     <require from="./index.scss"></require>
-
-    <navigation-view selected-item.bind="selectedItem" pane-display-mode="left">
-        <banner>
-            Navigation
-        </banner>
-        <navigation-header> </navigation-header>
-        <items>
-            <navigation-view-item
-                icon="book"
-                hierarchy-repeat.for="component of structure.components"
-                hierarchy-children-property="children"
-                tag.bind="component.name"
-                data.bind="component"
-                >${component.name}
-            </navigation-view-item>
-        </items>
-
-        <footer>
-            <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
-        </footer>
-    </navigation-view>
-
-    <section class="content">
-        <router-view containerless></router-view>
-    </section>
+    <main class.bind="navigationStrategy | navigationStrategyCssClass">
+        <navigation-view selected-item.bind="selectedItem" pane-display-mode.bind="navigationStrategy">
+            <banner>
+                Navigation
+            </banner>
+            <navigation-items>
+                <navigation-view-item
+                    icon="book"
+                    hierarchy-repeat.for="component of structure.components"
+                    hierarchy-children-property="children"
+                    tag.bind="component.name"
+                    data.bind="component"
+                    >${component.name}
+                </navigation-view-item>
+            </navigation-items>
+            <footer-items>
+                <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
+            </footer-items>
+        </navigation-view>
+        <command-bar command-location="right" label-position="bottom">
+            <primary-commands>
+                <command-bar-button label="Ham" icon="burger"></command-bar-button>
+                <command-bar-button label="Cheese" icon="cheddar"></command-bar-button>
+                <command-bar-button label="Bacon" icon="bacon"></command-bar-button>
+            </primary-commands>
+            <secondary-commands>
+                <command-bar-button label="Sauce" icon="heinz"></command-bar-button>
+                <command-bar-button label="Spices" icon="chili"></command-bar-button>
+            </secondary-commands>
+            <content-block>
+                <em>Content block</em>
+            </content-block>
+        </command-bar>
+        <section class="content">
+            <router-view containerless></router-view>
+        </section>
+    </main>
 </template>

@@ -2,14 +2,9 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-@import '~DolittleStyles/Settings/all';
-@import '~DolittleStyles/Tools/all';
-main {
-    flex: 1 1 auto;
-    width: 100vw;
-    &.default_layout {
-        @include media-bp-min(tablet) {
-            padding: $grid-gutter;
-        }
+
+export class NavigationStrategyCssClassValueConverter {
+    toView(value) {
+        return 'navigation-' + value;
     }
 }

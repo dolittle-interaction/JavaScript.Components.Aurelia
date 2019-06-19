@@ -15,25 +15,16 @@
     >
         <header>
             <a href="#" click.delegate="toggleExpansion()" class="expand-trigger hamburger">
-                <img src="../../../assets/icons/Hamburger.svg" alt="" />
+                <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 1H0V0H16V1ZM12 9H0V8H12V9ZM16 4.99219H0V4H16V4.99219Z" fill="white" />
+                </svg>
             </a>
-            <span class="banner">
-                <template part="banner" replaceable></template>
-            </span>
+            <template part="banner" replaceable></template>
         </header>
-
-        <template part="navigation-header" replaceable>
-            <div class="navigation-header"></div>
-        </template>
-        <ul class="navigation-view-items">
-            <template part="items" replaceable>
-                Hello world
-            </template>
-        </ul>
+        <template part="navigation-header" replaceable> </template>
+        <template part="navigation-items" replacement-tag="ul" replaceable></template>
         <footer>
-            <ul>
-                <template part="footer" replaceable></template>
-            </ul>
+            <template part="footer-items" replacement-tag="ul" replaceable></template>
         </footer>
     </nav>
 </template>

@@ -1,0 +1,32 @@
+@import '~DolittleStyles/Settings/all';
+.command-bar-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 $grid-gutter/2;
+    &:hover {
+        background-color: $color-white-20;
+    }
+    svg {
+        fill: #fff;
+    }
+    .secondary-commands & {
+        padding: 0 $grid-gutter/1.5;
+
+        .label-bottom & {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
+    .label-bottom & {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .label-hidden & {
+        .label {
+            display: none;
+        }
+    }
+}

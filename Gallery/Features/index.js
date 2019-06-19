@@ -9,15 +9,15 @@ import { bindable } from 'aurelia-framework';
 @inject(structure)
 export class index {
     @bindable selectedItem;
-
+    navigationStrategy;
     constructor(structure) {
+        this.navigationStrategy = 'left-compact';
         this.structure = structure;
 
         this.profile = {
-            userName : 'Jane Doe'
-        }
+            userName: 'Jane Doe'
+        };
     }
 
-    selectedItemChanged(item) {
-    }
+    selectedItemChanged(item) {}
 }

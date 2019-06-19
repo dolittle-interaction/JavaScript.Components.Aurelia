@@ -2,5 +2,100 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+@import '~DolittleStyles/Settings/all';
+
+$command-bar-height-default: 2.5rem;
+$command-bar-height-extended: 3.75rem;
+$command-bar-bg-color: $color-gray-darkest;
 .command-bar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    .footprint {
+        background-color: $command-bar-bg-color;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        font-size: 0.75rem;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        z-index: 99;
+
+        &.commands-left {
+            justify-content: flex-start;
+        }
+        &.commands-center {
+            justify-content: center;
+        }
+        &.commands-right {
+            justify-content: flex-end;
+            .content-block {
+                margin-right: auto;
+            }
+        }
+        &.commands-distributed {
+            justify-content: space-between;
+            .primary-commands {
+                flex: 1;
+                justify-content: space-evenly;
+            }
+        }
+    }
+
+    &.collapsed {
+        height: 1.5rem;
+    }
+    &.label-bottom {
+        height: $command-bar-height-extended;
+    }
+
+    &.label-right,
+    &.label-hidden {
+        height: $command-bar-height-default;
+    }
+
+    .content-block {
+        padding: 0 $grid-gutter;
+    }
+    .primary-commands {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .secondary-commands-toggle {
+        display: none;
+        svg {
+            fill: #fff;
+        }
+    }
+    .secondary-commands-wrapper {
+        position: relative;
+        z-index: 49;
+
+        .secondary-commands {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            padding: $grid-gutter/1.5 0;
+            background-color: lighten($command-bar-bg-color, 5%);
+            border: 0.0625rem solid $color-gray-dark;
+            transition: all 0.15s;
+            transform: scale(0);
+            transform-origin: 80% 0;
+
+            & + .secondary-commands-toggle {
+                display: block;
+            }
+        }
+
+        &.visible {
+            .secondary-commands {
+                transform: scale(1);
+            }
+        }
+    }
 }

@@ -6,14 +6,14 @@
 @import '~DolittleStyles/Settings/all';
 @import '~DolittleStyles/Tools/all';
 
-$navigation-view-bg-color: $color-black-60 !default;
+$navigation-view-bg-color: lighten($color-gray-darkest, 5%) !default;
 $navigation-view-top-push-height: 0 !default;
-$navigation-view-width: 3rem !default;
 $navigation-view-height: 3rem !default;
+$navigation-view-width-compact: 3rem !default;
 $navigation-view-width-expanded: 20rem !default;
+$navigation-view-width-expanded-sm: 80vw;
 $navigation-view-transition-time: 0.3s !default;
 $navigation-view-expand-trigger-width: 2rem !default;
-$navigation-view-width-expanded-sm: 80vw;
 
 .navigation-view {
     background-color: $navigation-view-bg-color;
@@ -21,10 +21,11 @@ $navigation-view-width-expanded-sm: 80vw;
     transition: transform $navigation-view-transition-time, width $navigation-view-transition-time;
     white-space: nowrap;
     overflow: hidden;
+    z-index: 100;
     @include media-bp-min(tablet) {
         transform: translateX(0);
         top: $navigation-view-top-push-height;
-        width: $navigation-view-width;
+        width: $navigation-view-width-compact;
 
         &.expanded {
             width: $navigation-view-width-expanded;
@@ -71,7 +72,7 @@ $navigation-view-width-expanded-sm: 80vw;
     }
 
     &.left-compact {
-        width: $navigation-view-width;
+        width: $navigation-view-width-compact;
         &.expanded {
             width: $navigation-view-width-expanded-sm;
             @include media-bp-min(tablet) {
@@ -127,7 +128,7 @@ $navigation-view-width-expanded-sm: 80vw;
                 width: auto;
                 flex: 0 0 auto;
             }
-            .navigation-view-items {
+            .navigation-items {
                 flex: 1 1 auto;
                 display: flex;
                 flex-direction: row;
@@ -177,6 +178,7 @@ $navigation-view-width-expanded-sm: 80vw;
         width: $navigation-view-expand-trigger-width;
         margin-right: $grid-gutter/2;
         flex: 0 0 $navigation-view-expand-trigger-width;
+        svg,
         img {
             display: block;
             margin: 0 auto;
@@ -193,7 +195,7 @@ $navigation-view-width-expanded-sm: 80vw;
         line-height: $navigation-view-expand-trigger-width;
         flex: 1 1 auto;
     }
-    .navigation-view-items {
+    .navigation-items {
         margin-top: $grid-gutter;
     }
 }
