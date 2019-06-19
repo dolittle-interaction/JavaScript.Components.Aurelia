@@ -3,16 +3,14 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 @import '~DolittleStyles/Settings/all';
-$plus-icon-size: 1.125rem !default;
 $navigation-item-transition-time: 0.15s !default;
 
 $navigation-view-item-max-height: 3rem !default;
 $navigation-view-item-transition: all $navigation-item-transition-time !default;
 $navigation-view-item-child-transition: transform $navigation-item-transition-time !default;
+$navigation-view-item-toggle-expand-transition: $navigation-view-item-child-transition !default;
 
 $navigation-view-item-link-text-color: #f2f2f2 !default;
-$navigation-view-item-link-justify-content: flex-start !default;
-$navigation-view-item-link-align-items: center !default;
 $navigation-view-item-link-font-size: 1rem !default;
 $navigation-view-item-link-line-height: $grid-gutter !default;
 $navigation-view-item-link-padding: 0 $grid-gutter !default;
@@ -21,22 +19,23 @@ $navigation-view-item-link-flex-basis: 1.5rem !default;
 $navigation-view-item-link-margin-right: 0.75rem !default;
 $navigation-view-item-link-padding: $grid-gutter/2 0 !default;
 $navigation-view-item-link-hover-bg-color: rgba(255, 255, 255, 0.02) !default;
-$navigation-view-item-link-border-left:  0.375rem solid $color-secondary-blue !default;
-$navigation-view-item-link-bg-color:  rgba(255, 255, 255, 0.05) !default;
+$navigation-view-item-link-border-left: 0.375rem solid $color-secondary-blue !default;
+$navigation-view-item-link-bg-color: rgba(255, 255, 255, 0.05) !default;
 
 $navigation-view-item-toggle-expand-text-color: $color-white-40 !default;
 $navigation-view-item-toggle-expand-top: 0.25rem !default;
 $navigation-view-item-toggle-expand-height: 2.5rem !default;
 $navigation-view-item-toggle-expand-width: 2.5rem !default;
-$navigation-view-item-toggle-expand-after-bg-color: #f2f2f2 !default;
-$navigation-view-item-toggle-expand-before-width: 0.0625rem !default;
-$navigation-view-item-toggle-expand-before-height: $plus-icon-size !default;
+$navigation-view-item-toggle-expand-before-height: 1.125rem !default;
 $navigation-view-item-toggle-expand-before-margin-top: -$navigation-view-item-toggle-expand-before-height/2 !default;
-$navigation-view-item-toggle-expand-after-height: $navigation-view-item-toggle-expand-before-width !default;
-$navigation-view-item-toggle-expand-after-width: $plus-icon-size !default;
+$navigation-view-item-toggle-expand-before-width: 0.0625rem !default;
+$navigation-view-item-toggle-expand-after-bg-color: #f2f2f2 !default;
+$navigation-view-item-toggle-expand-after-height: 0.0625rem !default;
+$navigation-view-item-toggle-expand-after-width: 1.125rem !default;
 $navigation-view-item-toggle-expand-after-margin-left: -$navigation-view-item-toggle-expand-after-width/2 !default;
 
 $navigation-view-item-expanded-bg-color: $color-black-40 !default;
+$navigation-view-item-link-text-indent: -0.375rem;
 
 .navigation-view-item {
     flex: 0 0 auto;
@@ -48,8 +47,8 @@ $navigation-view-item-expanded-bg-color: $color-black-40 !default;
     > a {
         color: $navigation-view-item-link-text-color;
         display: flex;
-        justify-content: $navigation-view-item-link-justify-content;
-        align-items: $navigation-view-item-link-align-items;
+        justify-content: flex-start;
+        align-items: center;
         font-size: $navigation-view-item-link-font-size;
         line-height: $navigation-view-item-link-line-height;
         padding: $navigation-view-item-link-padding;
@@ -71,9 +70,9 @@ $navigation-view-item-expanded-bg-color: $color-black-40 !default;
         }
     }
     a.selected {
-        border-left:$navigation-view-item-link-border-left;
-        text-indent: -0.375rem;
-        background-color:$navigation-view-item-link-bg-color;
+        border-left: $navigation-view-item-link-border-left;
+        text-indent: $navigation-view-item-link-text-indent;
+        background-color: $navigation-view-item-link-bg-color;
     }
 
     > ul {
@@ -91,7 +90,7 @@ $navigation-view-item-expanded-bg-color: $color-black-40 !default;
         height: $navigation-view-item-toggle-expand-height;
         width: $navigation-view-item-toggle-expand-width;
         transform: rotate(0);
-        transition: transform $navigation-item-transition-time;
+        transition: $navigation-view-item-toggle-expand-transition;
         &::before,
         &::after {
             content: '';

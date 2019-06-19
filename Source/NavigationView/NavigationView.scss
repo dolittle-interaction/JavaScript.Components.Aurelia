@@ -7,12 +7,8 @@
 @import '~DolittleStyles/Tools/all';
 
 $navigation-view-bg-color: lighten($color-gray-darkest, 5%) !default;
-$navigation-view-push-from-top: 0 !default;
-$navigation-view-overflow: hidden !default;
-$navigation-view-position: fixed !default;
 $navigation-view-transition-time: 0.3s !default;
 $navigation-view-transition: transform $navigation-view-transition-time, width $navigation-view-transition-time !default;
-$navigation-view-white-space: nowrap !default;
 $navigation-view-z-index: 100 !default;
 
 $navigation-view-width-compact: 3rem !default;
@@ -20,18 +16,10 @@ $navigation-view-width-default: 20rem !default;
 $navigation-view-width-expanded: $navigation-view-width-default !default;
 $navigation-view-width-expanded-sm: 80vw !default;
 
+$navigation-view-top-height: 3rem !default;
+
 $navigation-view-expand-trigger-width: 2rem !default;
 $navigation-view-expand-trigger-margin-right: $grid-gutter/2 !default;
-
-$navigation-view-fixed-left-position-bottom: 0 !default;
-$navigation-view-fixed-left-position-left: 0 !default;
-$navigation-view-fixed-left-position-top: 0 !default;
-
-$navigation-view-top-height: 3rem !default;
-$navigation-view-top-position-left: 0 !default;
-$navigation-view-top-position-top: 0 !default;
-$navigation-view-top-position-right: 0 !default;
-$navigation-view-top-width: 100vw !default;
 
 $navigation-view-header-padding: $grid-gutter/2 !default;
 
@@ -39,20 +27,19 @@ $navigation-view-banner-font-weight: 300 !default;
 $navigation-view-banner-letter-spacing: 0.0625rem !default;
 $navigation-view-banner-font-size: 1.25rem !default;
 $navigation-view-banner-line-height: $navigation-view-expand-trigger-width !default;
-$navigation-view-banner-flex:  1 1 auto !default;
 
 $navigation-view-navigation-items-margin-top: $grid-gutter !default;
 
 .navigation-view {
     background-color: $navigation-view-bg-color;
-    position: $navigation-view-position;
+    position: fixed;
     transition: $navigation-view-transition;
-    white-space: $navigation-view-white-space;
-    overflow: $navigation-view-overflow;
+    white-space: nowrap;
+    overflow: hidden;
     z-index: $navigation-view-z-index;
     @include media-bp-min(tablet) {
         transform: translateX(0);
-        top: $navigation-view-push-from-top;
+        top: 0;
         width: $navigation-view-width-compact;
 
         &.expanded {
@@ -63,9 +50,9 @@ $navigation-view-navigation-items-margin-top: $grid-gutter !default;
     &.left-compact,
     &.left-minimal,
     &.top {
-        bottom: $navigation-view-fixed-left-position-bottom;
-        left: $navigation-view-fixed-left-position-left;
-        top: $navigation-view-fixed-left-position-top;
+        bottom: 0;
+        left: 0;
+        top: 0;
         width: $navigation-view-width-expanded-sm;
     }
 
@@ -141,16 +128,16 @@ $navigation-view-navigation-items-margin-top: $grid-gutter !default;
             justify-content: flex-start;
             align-items: center;
             height: $navigation-view-top-height;
-            left: $navigation-view-top-position-left;
-            top: $navigation-view-top-position-top;
-            right: $navigation-view-top-position-right;
+            left: 0;
+            top: 0;
+            right: 0;
             transform: none;
             .expand-trigger {
                 display: none;
             }
             &,
             &.expanded {
-                width: $navigation-view-top-width;
+                width: 100vw;
             }
             header {
                 width: auto;
@@ -221,7 +208,7 @@ $navigation-view-navigation-items-margin-top: $grid-gutter !default;
         letter-spacing: $navigation-view-banner-letter-spacing;
         font-size: $navigation-view-banner-font-size;
         line-height: $navigation-view-banner-line-height;
-        flex:$navigation-view-banner-flex;
+        flex:1 1 auto;
     }
     .navigation-items {
         margin-top: $navigation-view-navigation-items-margin-top;
