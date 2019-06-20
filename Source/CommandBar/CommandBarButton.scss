@@ -1,18 +1,24 @@
 @import '~DolittleStyles/Settings/all';
+
+$command-bar-button-padding: 0 $grid-gutter/2 !default;
+$command-bar-button-hover-bg-color: $color-white-20 !default;
+$command-bar-button-svg-fill-color: #fff !default;
+$command-bar-button-in-secondary-commands-padding: 0 $grid-gutter/1.5 !default;
+
 .command-bar-button {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 $grid-gutter/2;
+    padding: $command-bar-button-padding;
     &:hover {
-        background-color: $color-white-20;
+        background-color: $command-bar-button-hover-bg-color;
     }
     svg {
-        fill: #fff;
+        fill: $command-bar-button-svg-fill-color;
     }
     .secondary-commands & {
-        padding: 0 $grid-gutter/1.5;
+        padding: $command-bar-button-in-secondary-commands-padding;
 
         .label-bottom & {
             flex-direction: row;

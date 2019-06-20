@@ -4,13 +4,27 @@
  *--------------------------------------------------------------------------------------------*/
 @import '~DolittleStyles/Settings/all';
 
-$command-bar-height-default: 2.5rem;
-$command-bar-height-extended: 3.75rem;
-$command-bar-bg-color: $color-gray-darkest;
+$command-bar-height-default: 2.5rem !default;
+$command-bar-height-collapsed: 1.5rem !default;
+$command-bar-height-extended: 3.75rem !default;
+
+$command-bar-bg-color: $color-gray-darkest !default;
+$command-bar-font-size: 0.75rem !default;
+
+$command-bar-content-block-padding:  0 $grid-gutter !default;
+
+$command-bar-secondary-commands-toggle-svg-fill:  #fff !default;
+$command-bar-secondary-commands-padding: $grid-gutter/1.5 0 !default;
+$command-bar-secondary-commands-bg-color: lighten($command-bar-bg-color, 5%) !default;
+$command-bar-secondary-commands-border: 0.0625rem solid $color-gray-dark !default;
+$command-bar-secondary-commands-transition: all 0.15s !default;
+
 .command-bar {
     position: relative;
     width: 100%;
     height: auto;
+    font-size: $command-bar-font-size;
+
     .footprint {
         background-color: $command-bar-bg-color;
         height: 100%;
@@ -18,7 +32,6 @@ $command-bar-bg-color: $color-gray-darkest;
         flex-direction: row;
         align-items: center;
         flex-wrap: nowrap;
-        font-size: 0.75rem;
         padding: 0;
         position: relative;
         width: 100%;
@@ -27,15 +40,18 @@ $command-bar-bg-color: $color-gray-darkest;
         &.commands-left {
             justify-content: flex-start;
         }
+
         &.commands-center {
             justify-content: center;
         }
+
         &.commands-right {
             justify-content: flex-end;
             .content-block {
                 margin-right: auto;
             }
         }
+
         &.commands-distributed {
             justify-content: space-between;
             .primary-commands {
@@ -46,8 +62,9 @@ $command-bar-bg-color: $color-gray-darkest;
     }
 
     &.collapsed {
-        height: 1.5rem;
+        height: $command-bar-height-collapsed;
     }
+
     &.label-bottom {
         height: $command-bar-height-extended;
     }
@@ -58,7 +75,7 @@ $command-bar-bg-color: $color-gray-darkest;
     }
 
     .content-block {
-        padding: 0 $grid-gutter;
+        padding:$command-bar-content-block-padding;
     }
     .primary-commands {
         display: flex;
@@ -69,7 +86,7 @@ $command-bar-bg-color: $color-gray-darkest;
     .secondary-commands-toggle {
         display: none;
         svg {
-            fill: #fff;
+            fill:$command-bar-secondary-commands-toggle-svg-fill;
         }
     }
     .secondary-commands-wrapper {
@@ -80,10 +97,10 @@ $command-bar-bg-color: $color-gray-darkest;
             position: absolute;
             right: 0;
             top: 100%;
-            padding: $grid-gutter/1.5 0;
-            background-color: lighten($command-bar-bg-color, 5%);
-            border: 0.0625rem solid $color-gray-dark;
-            transition: all 0.15s;
+            padding: $command-bar-secondary-commands-padding;
+            background-color: $command-bar-secondary-commands-bg-color;
+            border: $command-bar-secondary-commands-border;
+            transition: $command-bar-secondary-commands-transition;
             transform: scale(0);
             transform-origin: 80% 0;
 
