@@ -12,20 +12,12 @@ import { paneDisplayMode } from './paneDisplayMode';
 export class NavigationView {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
     @bindable expanded = false;
-    @bindable showTrigger = true;
+    @bindable showTrigger = true; // Not implemented
     @bindable paneDisplayMode;
-    @bindable isBackEnabled;
-    @bindable linkUrl;
+    @bindable isBackEnabled; // Not implemented
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.auto;
-    }
-
-    @computedFrom('paneDisplayMode', 'expanded')
-    get actualPaneDisplayMode() {
-        if (this.paneDisplayMode == paneDisplayMode.top) return paneDisplayMode.top;
-
-        return this.paneDisplayMode;
     }
 
     toggleExpansion() {
