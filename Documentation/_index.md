@@ -4,7 +4,7 @@ description: Get an overview over the Aurelia Components
 keywords: Components, Overview
 author: einari
 weight: 2
-repository: https://githib.com/dolittle-interaction/JavaScript.Components.Aurelia
+repository: https://github.com/dolittle-interaction/JavaScript.Components.Aurelia
 ---
 A component is a UI element that displays content and/or enables interaction.
 Components are the building blocks of the user interface. These components
