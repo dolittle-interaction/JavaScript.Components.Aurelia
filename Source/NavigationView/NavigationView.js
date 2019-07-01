@@ -17,7 +17,7 @@ export class NavigationView {
     @bindable isBackEnabled; // Not implemented
 
     constructor() {
-        this.paneDisplayMode = paneDisplayMode.auto;
+        this.paneDisplayMode = paneDisplayMode.left;
     }
 
     toggleExpansion() {
