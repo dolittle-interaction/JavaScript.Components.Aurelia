@@ -2,7 +2,6 @@
 title: Navigation view
 description: Describes how to use the Navigation view control
 keywords: Using, navigationview, navigation
-author: Vidar Aune Westrum
 ---
 
 The Navigation view intended for top-level navigation for your app. It has multiple options and will adapt and change behaviour for different screen sizes.
@@ -21,11 +20,11 @@ The purpose of this is a header block on top of the navigation with content that
 
 ### Navigation items
 
-Here you can put your navigation links. Navigation items is rendered as an `<ul class="navigation-items"></ul>` so you should insert your links wrapped in `<li></li>`. We recommend that you use our special made `<navigation-view-item></navigation-view-item>` for your navigation. This component renders as `<li class="navigation-view-item"></li>` and has bulild in functionality that is perfectly fit for this navigation. [Read more about NavigationViewItem here.]({{< ref NavigationViewItem >}})
+Here you can put your navigation links. Navigation items is rendered as an `<ul class="navigation-items">` so you should insert your links wrapped in `<li>`. We recommend that you use our special made `<navigation-view-item>` for your navigation. This component renders as `<li class="navigation-view-item">` and has bulild in functionality that is perfectly fit for this navigation. [Read more about NavigationViewItem here.]({{< ref NavigationViewItem >}})
 
 ### Footer items
 
-Often we see that we need some navigation links that is different from each other. That the links serves different purposes within the application. E.g Settings, User profile, My page etc. These can be placed in the `footer-items` block. Footer-items is as navigation-items, rendered as an `<ul class="footer-items"></ul>` . You need to insert `<li></li>` items into the footer-items. Also here, we recommend to use our special made `<navigation-view-item></navigation-view-item>` for your footer links.
+Often we see that we need some navigation links that is different from each other. That the links serves different purposes within the application. E.g Settings, User profile, My page etc. These can be placed in the `footer-items` block. Footer-items is as navigation-items, rendered as an `<ul class="footer-items">` . You need to insert `<li>` items into the footer-items. Also here, we recommend to use our special made `<navigation-view-item>` for your footer links.
 
 ### Code example
 
@@ -74,10 +73,27 @@ The paneDisplayMode is be default set to left. You can change this by setting th
 <navigation-view pane-display-mode="top">
 ```
 
+{{% notice tip %}}
+We use `rem` units in our styling. When `font-size` is set to `100%` on `body`, `rem` refers to the default `font-size` set in the browser. The default `font-size` in most major browsers, is `16px`. That is what our calculations is based of. `1rem = 16px`
+{{% /notice %}}
+
+
 #### left
+`paneDisplayMode.left` will always act fully expanded on the left side of the screen. Stretched in full height and `20rem` (`320px` when base `font-size` equals `16px`) width. This counts for screen sizes tablet and up. On screen smaller than `37.5rem(600px)`, the menu will be out of view on the left side, an hamburger icon will appear top, left on the screen, and when toggeled, the menu will slide in from the left.
+
+{{% notice note %}}
+[You can see the breakpoints here](/interaction/styles/settings/base/#layout-small-breakpoints-scss-small)
+{{% /notice %}}
 
 #### left-compact
+`paneDisplayMode.left-compact` will display the navigation view as a compact sidebar on the left. It'll be `3rem` wide, and it can be toggled with the always visible hamburger icon. It will then animate to `20rem` width.
+This behavior will be the same on all screen sizes. Except for the width when it's expanded. It'll be `80vw` (80% of viewport) on smal screens. On tablet size and up, it'll be `20rem`.
 
 #### left-minimal
+`paneDisplayMode.left-minimal` will make the menu be out of view on the left side, as `paneDisplayMode.left` on small screens, but this mode will force it to stay that way on all screen sizes. Whan toggeled by the hamburger, it'll slide in `80vw` on small screens and `20rem` on tablet and up.
 
 #### top
+The navigation view will act as a navigation bar on top of the screen. `3rem` high. 
+{{% notice warning %}}
+This `paneDisplayMode.top` is not completly implemented yet.
+{{% /notice %}}
