@@ -52,7 +52,7 @@ Add a scss file where you can put your overrides.
 
 E.g `Styles/Settings/NavigationView.scss`
 
-![NavigationView.scss in file tree](../component_override.png)
+![NavigationView.scss in file tree](/interaction/aurelia/aurelia-components/controls/navigationview/component_override.png)
 
 ![NavigationView.scss in file tree](../component_override_2.png)
 
