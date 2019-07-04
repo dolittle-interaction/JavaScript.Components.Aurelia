@@ -19,7 +19,7 @@ These are the variables you can override in your application.
 | `$navigation-view-transition-time` | decimal seconds | The time the navigation view spends on animation. | `0.3s` |
 | `$navigation-view-expand-trigger-width` | Numeric | The width of the axpand-trigger (Hamburger icon) | `2rem` |
 
-### Step 1
+### Step 1 - Configure Webpack
 Make sure you have added an alias to DolittleStyles in your webpack config file. This is essential to make your component look for the settings file from your application, not only the settings file from [Styles](http://localhost:1313/interaction/styles/)
 
 ```js
