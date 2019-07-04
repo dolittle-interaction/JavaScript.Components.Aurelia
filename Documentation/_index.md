@@ -2,7 +2,6 @@
 title: Components
 description: Get an overview over the Aurelia Components
 keywords: Components, Overview
-author: einari
 weight: 2
 repository: https://github.com/dolittle-interaction/JavaScript.Components.Aurelia
 ---

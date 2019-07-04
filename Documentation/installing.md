@@ -1,8 +1,7 @@
 ---
 title: Installing
 description: Get an overview over the Aurelia Components
-keywords: Installing
-author: einari
+keywords: installing
 weight: 1
 ---
 In order to use the components, you need to add the package to your project:
