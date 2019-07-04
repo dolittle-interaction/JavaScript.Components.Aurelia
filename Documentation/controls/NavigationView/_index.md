@@ -79,7 +79,7 @@ We use `rem` units in our styling. When `font-size` is set to `100%` on `body`, 
 
 
 #### left
-`paneDisplayMode.left` will always act fully expanded on the left side of the screen. Stretched in full height and `20rem` (`320px` when base `font-size` equals `16px`) width. This counts for screen sizes tablet and up. On screen smaller than `37.5rem(600px)`, the menu will be out of view on the left side, an hamburger icon will appear top, left on the screen, and when toggeled, the menu will slide in from the left.
+`paneDisplayMode.left` will always act fully expanded on the left side of the screen. Stretched in full height and `20rem` (`320px` when base `font-size` equals `16px`) width. This counts for screen sizes tablet and up. On screen smaller than `37.5rem(600px)`, the menu will be out of view on the left side, a hamburger icon will appear top, left on the screen, and when toggeled, the menu will slide in from the left.
 
 {{% notice note %}}
 [You can see the breakpoints here](/interaction/styles/settings/base/#layout-small-breakpoints-scss-small)
