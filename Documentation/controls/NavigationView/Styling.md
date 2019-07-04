@@ -11,7 +11,7 @@ These are the variables you can override in your application.
 | Variable | Value / Type | Description | Default value|
 | ---- | ---- | ---- | ---- |
 | `$navigation-view-bg-color` | CSS color HEX/RGB/RGBA/COLOR| The background color for the navigation view. | `lighten($color-gray-darkest, 5%)` |
-| `$navigation-view-top-push-height`| Numeric | The space between viewport top and navigation-view top. | `0` |
+| `$navigation-view-top-push-height` | Numeric | The space between viewport top and navigation-view top. | `0` |
 | `$navigation-view-height` | Numeric | The height of the Navigation View | `3rem` |
 | `$navigation-view-width-compact` | Numeric | The width when in `left-compact` mode | `3rem` |
 | `$navigation-view-width-expanded` | Numeric | The width when expanded in `left-compact` or `left-minimal` mode | `20rem` |
