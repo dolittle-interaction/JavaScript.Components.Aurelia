@@ -46,7 +46,7 @@ module.exports = () => {
 
 ```
 
-### Step 2
+### Step 2 - Custom Overrides
 
 Add a scss file where you can put your overrides.
 
