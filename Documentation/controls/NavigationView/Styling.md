@@ -60,5 +60,5 @@ E.g `Styles/Settings/NavigationView.scss`
 
 You need an all.scss in settings, and you should add your overrides there as well. Make sure that you import the original setings from Styles in this file as well. Then the component will get it all.
 
-![NavigationView.scss in file tree](../settings_all.png)
+![NavigationView.scss in file tree](/interaction/aurelia/aurelia-components/controls/navigationview/settings_all.png)
 
