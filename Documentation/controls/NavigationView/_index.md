@@ -20,7 +20,7 @@ The purpose of this is a header block on top of the navigation with content that
 
 ### Navigation items
 
-Here you can put your navigation links. Navigation imtes are rendered as an `<ul class="navigation-items">` so you should insert your links wrapped in `<li>`. We recommend that you use our specially made `<navigation-view-item>` for your navigation. This component renders as `<li class="navigation-view-item">` and has built-in functionality that is perfectly fit for this navigation. [Read more about NavigationViewItem here.]({{< ref NavigationViewItem >}})
+Here you can put your navigation links. Navigation items are rendered as an `<ul class="navigation-items">` so you should insert your links wrapped in `<li>`. We recommend that you use our specially made `<navigation-view-item>` for your navigation. This component renders as `<li class="navigation-view-item">` and has built-in functionality that is perfectly fit for this navigation. [Read more about NavigationViewItem here.]({{< ref NavigationViewItem >}})
 
 ### Footer items
 
