@@ -56,7 +56,7 @@ E.g `Styles/Settings/NavigationView.scss`
 
 ![NavigationView.scss in file tree](../component_override_2.png)
 
-### Step 3
+### Step 3 - Including Overrides
 
 You need an all.scss in settings, and you should add your overrides there as well. Make sure that you import the original settings from Styles in this file as well. Then the component will get it all.
 
