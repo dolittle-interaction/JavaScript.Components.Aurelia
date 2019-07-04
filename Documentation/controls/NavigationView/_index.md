@@ -90,7 +90,7 @@ We use `rem` units in our styling. When `font-size` is set to `100%` on `body`, 
 This behavior will be the same on all screen sizes. Except for the width when it's expanded. It'll be `80vw` (80% of viewport) on smal screens. On tablet size and up, it'll be `20rem`.
 
 #### left-minimal
-`paneDisplayMode.left-minimal` will make the menu be out of view on the left side, as `paneDisplayMode.left` on small screens, but this mode will force it to stay that way on all screen sizes. Whan toggeled by the hamburger, it'll slide in `80vw` on small screens and `20rem` on tablet and up.
+`paneDisplayMode.left-minimal` will have the same behaviour as `paneDisplayMode.left` on small screens, but will force it to stay this way on all screen sizes. When toggled by the hamburger, it will slide in `80vw` on small screens and `20rem` on tablet and up.
 
 #### top
 The navigation view will act as a navigation bar on top of the screen. `3rem` high. 
