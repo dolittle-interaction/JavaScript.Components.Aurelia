@@ -24,7 +24,7 @@ Here you can put your navigation links. Navigation imtes are rendered as an `<ul
 
 ### Footer items
 
-Often we see that we need some navigation links that is different from each other. That the links serve different purposes within the application. E.g Settings, User profile, My page, etc. These can be placed in the `footer-items` block. Footer-imtes are as navigation-items, rendered as an `<ul class="footer-items">` . You need to insert `<li>` items into the footer-items. Also here, we recommend using our specially made `<navigation-view-item>` for your footer links.
+Often we see that we need some navigation links that is different from each other. That the links serve different purposes within the application. E.g Settings, User profile, My page, etc. These can be placed in the `footer-items` block. Footer-items are as navigation-items, rendered as an `<ul class="footer-items">` . You need to insert `<li>` items into the footer-items. Also here, we recommend using our specially made `<navigation-view-item>` for your footer links.
 
 ### Code example
 
