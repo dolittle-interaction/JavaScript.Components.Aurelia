@@ -55,7 +55,7 @@ Often we see that we need some navigation links that is different from each othe
 
 
 ### paneDisplayMode
-The paneDisplayMode is be default set to left. You can change this by setting the attribute of the custom element to be `left`, `left-compact`, `left-minimal` and `top`.
+The paneDisplayMode is by default set to left. You can change this by setting the attribute of the custom element to be `left`, `left-compact`, `left-minimal` and `top`.
 
 ```html
 <navigation-view pane-display-mode="left">
