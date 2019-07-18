@@ -31,6 +31,7 @@ steps:
       cd ../../../..
       git add Source/repositories/
       git config user.name "mminguez"
+      env GIT_TERMINAL_PROMPT=1
       git commit -m "Updating Documentation"
       git push
       cd ..
