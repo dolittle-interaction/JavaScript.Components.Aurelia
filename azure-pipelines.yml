@@ -8,27 +8,27 @@ resources:
       name: dolittle-tools/AzureDevOps
       endpoint: dolittle-tools
 
-- task: Bash
-  inputs:
-    arguments: $(Build.Repository.Uri)
-
+  
 steps:
+  - task: Bash@3
+    inputs:
+      arguments: $(Build.Repository.Uri)
   - bash: |
 
-URL=$1
+      URL=$1
 
-submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
+      submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
 
-mkdir tmp
-cd tmp/
-git clone git@github.com:dolittle/Documentation.git
-cd Documentation/Source/repositories/
-git submodule init && git submodule update $submodule_name
-cd $submodule_name
-git checkout master && git pull
-cd ../../../..
-git add Source/repositories/
-git commit -m "Updating Documentation" --username "Dolittle Documentation"
-git push
-cd ..
-rm -rf Documentation/
+      mkdir tmp
+      cd tmp/
+      git clone git@github.com:dolittle/Documentation.git
+      cd Documentation/Source/repositories/
+      git submodule init && git submodule update $submodule_name
+      cd $submodule_name
+      git checkout master && git pull
+      cd ../../../..
+      git add Source/repositories/
+      git commit -m "Updating Documentation" --username "Dolittle Documentation"
+      git push
+      cd ..
+      rm -rf Documentation/
