@@ -22,10 +22,10 @@ steps:
       mkdir tmp
       cd tmp/
       git clone https://github.com/dolittle/Documentation.git
-      git submodule init && git submodule update $submodule_name
       cd Documentation/Source/repositories/
-      /usr/bin/tree
+      git submodule init && git submodule update $submodule_name
       cd $submodule_name
+      /usr/bin/tree
       git checkout master && git pull
       cd ../../../..
       git add Source/repositories/
