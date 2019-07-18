@@ -8,11 +8,14 @@ resources:
       name: dolittle-tools/AzureDevOps
       endpoint: dolittle-tools
 
+- task: Bash
+  inputs:
+    arguments: $(Build.Repository.Uri)
 
 steps:
   - bash: |
 
-URL=Build.Repository.Uri
+URL=$1
 
 submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
 
