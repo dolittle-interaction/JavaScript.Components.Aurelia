@@ -17,7 +17,7 @@ steps:
   - bash: |
       URL=$(Build.Repository.Uri)
 
-      submodule_name=`echo "$URL" | awk -F "dolittle-" '{ print $2 }' | tr '[:upper:]' '[:lower:]'`
+      submodule_name=`echo "$URL" | awk -F "dolittle-" '{ print $2 }'
 
       mkdir tmp
       cd tmp/
