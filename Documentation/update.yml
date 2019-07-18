@@ -11,7 +11,7 @@ resources:
 steps:
   - bash: |
 
-URL=$(Build.Repository.Uri) #do this command in the updated repo
+URL=$(Build.Repository.Uri)
 
 submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
 
