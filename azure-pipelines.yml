@@ -9,6 +9,6 @@ resources:
       endpoint: dolittle-tools
 
 jobs:
-- template: Source/Documentation/update.yml@templates
+- template: Documentation/update.yml@templates
   parameters:
     CASCADES: dolittle-runtime/Runtime
