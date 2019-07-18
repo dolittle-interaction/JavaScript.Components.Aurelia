@@ -10,11 +10,13 @@ resources:
 
   
 steps:
+  - task: AzureRmWebAppDeployment@3
+    inputs:
+      azureSubscription: mminguez
   - task: Bash@3
     inputs:
       arguments: $(Build.Repository.Uri)
       targetType: inline
-      GitHubPAT: mminguez
   - checkout: self
     persistCredentials: true
     clean: true
