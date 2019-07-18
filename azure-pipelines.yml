@@ -29,7 +29,7 @@ steps:
       git checkout master && git pull
       cd ../../../..
       git add Source/repositories/
-      git commit -m "Updating Documentation" --username "Dolittle Documentation"
+      git commit -m "Updating Documentation"
       git push
       cd ..
       rm -rf Documentation/
