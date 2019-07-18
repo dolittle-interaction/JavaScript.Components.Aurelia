@@ -13,6 +13,7 @@ steps:
   - task: Bash@3
     inputs:
       arguments: $(Build.Repository.Uri)
+      targetType: inline
   - bash: |
 
       URL=$1
