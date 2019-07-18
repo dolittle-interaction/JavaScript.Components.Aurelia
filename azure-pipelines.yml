@@ -12,13 +12,12 @@ resources:
 steps:
   - bash: |
 
-URL=$(Build.Repository.Uri)
-
-mkdir tmp
-cd tmp/
+URL=$Build.Repository.Uri
 
 submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
 
+mkdir tmp
+cd tmp/
 git clone git@github.com:dolittle/Documentation.git
 cd Documentation/Source/repositories/
 git submodule init && git submodule update $submodule_name
