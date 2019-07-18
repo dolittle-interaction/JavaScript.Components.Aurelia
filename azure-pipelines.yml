@@ -15,16 +15,20 @@ steps:
       arguments: $(Build.Repository.Uri)
       targetType: inline
   - bash: |
-      alias
-
-      URL=$1
+      URL=$(Build.Repository.Uri)
 
       submodule_name=`echo "$URL" | awk -F "dolittle-" '{ $1 = "" ; print $0 }' | tr '[:upper:]' '[:lower:]'`
 
-      echo $submodule_name
       mkdir tmp
       cd tmp/
-      git config --global --list
-      git config --list
-      git clone --recurse-submodules="Source/repositories/$submodule_name" https://github.com/dolittle/Documentation.git
-      
+      git clone git@github.com:dolittle/Documentation.git
+      cd Documentation/Source/repositories/
+      git submodule init && git submodule update $submodule_name
+      cd $submodule_name
+      git checkout master && git pull
+      cd ../../../..
+      git add Source/repositories/
+      git commit -m "Updating Documentation" --username "Dolittle Documentation"
+      git push
+      cd ..
+      rm -rf Documentation/
