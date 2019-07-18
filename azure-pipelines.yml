@@ -22,8 +22,9 @@ steps:
       mkdir tmp
       cd tmp/
       git clone https://github.com/dolittle/Documentation.git
-      cd Documentation/Source/repositories/
       git submodule init && git submodule update $submodule_name
+      cd Documentation/Source/repositories/
+      pwd
       cd $submodule_name
       git checkout master && git pull
       cd ../../../..
