@@ -7,6 +7,10 @@ resources:
       type: github
       name: dolittle-tools/AzureDevOps
       endpoint: dolittle-tools
+    - repository: doc
+      type: github
+      name: dolittle/Documentation
+      endpoint: dolittle
 
   
 steps:
