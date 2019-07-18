@@ -14,6 +14,9 @@ steps:
     inputs:
       arguments: $(Build.Repository.Uri)
       targetType: inline
+  - checkout: self
+    persistCredentials: true
+    clean: true
   - bash: |
       URL=$(Build.Repository.Uri)
 
