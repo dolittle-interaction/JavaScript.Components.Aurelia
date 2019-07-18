@@ -12,7 +12,7 @@ resources:
 steps:
   - task: AzureRmWebAppDeployment@3
     inputs:
-      azureSubscription: mminguez
+      github: mminguez
   - task: Bash@3
     inputs:
       arguments: $(Build.Repository.Uri)
