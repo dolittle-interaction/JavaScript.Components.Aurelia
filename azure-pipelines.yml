@@ -21,7 +21,7 @@ steps:
 
       mkdir tmp
       cd tmp/
-      git clone git@github.com:dolittle/Documentation.git
+      git clone https://github.com/dolittle-interaction/JavaScript.Components.Aurelia.git
       cd Documentation/Source/repositories/
       git submodule init && git submodule update $submodule_name
       cd $submodule_name
