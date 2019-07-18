@@ -33,8 +33,7 @@ steps:
       git checkout master && git pull
       cd ../../../..
       git add Source/repositories/
-      git config user.name "mminguez"
-      env GIT_TERMINAL_PROMPT=1
+      git config user.name "Dolittle Documentation"
       git commit -m "Updating Documentation"
       git push
       cd ..
