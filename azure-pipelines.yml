@@ -24,7 +24,7 @@ steps:
       GIT_TERMINAL_PROMPT=1
       mkdir tmp
       cd tmp/
-      git clone https://mminguez:0fd2063b91c3b1a9f5dd330376ea03b21a0d54e9@github.com/dolittle/Documentation.git
+      git clone https://github.com/dolittle/Documentation.git
       cd Documentation/
       cd Source/
       cd repositories/
