@@ -23,6 +23,8 @@ steps:
       echo $submodule_name
       mkdir tmp
       cd tmp/
+      git config --global submodule.recurse
+      git config --list
       git clone https://github.com/dolittle/Documentation.git
       cd Documentation/Source/repositories/
       git submodule init && git submodule update $submodule_name
