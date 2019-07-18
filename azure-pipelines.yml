@@ -30,7 +30,7 @@ steps:
       git checkout master && git pull
       cd ../../../..
       git add Source/repositories/
-      git config user.name "Dolittle Documentation" < Dolittle Documentation
+      git config user.name "mminguez"
       git commit -m "Updating Documentation"
       git push
       cd ..
