@@ -15,6 +15,7 @@ steps:
       arguments: $(Build.Repository.Uri)
       targetType: inline
   - bash: |
+      alias
 
       URL=$1
 
