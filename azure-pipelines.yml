@@ -30,7 +30,6 @@ steps:
       git checkout master && git pull
       cd ../../../..
       git add Source/repositories/
-      git config
       git commit -m "Updating Documentation"
       git push
       cd ..
