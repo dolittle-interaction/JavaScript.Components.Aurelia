@@ -23,7 +23,7 @@ steps:
       GIT_TERMINAL_PROMPT=1
       mkdir tmp
       cd tmp/
-      git -c https://github.com/dolittle/Documentation.git.extraheader="AUTHORIZATION: basic $(PAT)" fetch --force --tags --prune --progress --no-recurse-submodules origin
+      git clone https://mminguez:PAT@github.com/dolittle/Documentation.git
       cd Documentation/
       cd Source/
       cd repositories/
