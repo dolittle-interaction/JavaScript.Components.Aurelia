@@ -17,4 +17,3 @@ Using `npm`:
 ```shell
 $ npm install @dolittle/components.aurelia
 ```
-Test changes
