@@ -9,6 +9,4 @@ resources:
       endpoint: dolittle-tools
 
 jobs:
-- template: Source/Documentation/documentation.yml@templates
-  parameters:
-    CASCADES: dolittle-runtime/Runtime
+- template: Source/DotNet/framework.yml@templates
