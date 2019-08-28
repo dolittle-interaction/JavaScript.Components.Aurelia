@@ -1,0 +1,19 @@
+<template>
+  <require from="./ComboBoxItem.html"></require>
+
+  <div style="width:160px"> 
+    <h1>${header}</h1>
+    
+    <input click.delegate="onSelect()" type="text" 
+      value.bind="placeholderText" readonly>
+
+      <combo-box-item 
+        style="display:${showContent}; 
+        justify-content:center; 
+        background-color:pink" repeat.for="item of items"
+        click.trigger="placeholderText = item[displayMemberPath]" 
+        click.delegate="onSelect()">
+        ${item[displayMemberPath]}
+      </combo-box-item>
+  </div>
+</template>
