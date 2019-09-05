@@ -20,7 +20,9 @@ export class ComboBox {
      this.selectedItem;
      this.showContent="none";
   }
-
+/**
+ * Display or Hide content and Select content to be displayed
+ */
   onSelect(){
     this.selectedItem=this.placeholderText
     this.showContent==="none"?
