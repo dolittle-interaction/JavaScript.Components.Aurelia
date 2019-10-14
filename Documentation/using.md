@@ -3,6 +3,8 @@ title: Using
 description: Describes how to use the package
 keywords: Using
 weight: 2
+aliases: 
+    - /interaction/aurelia/javascript.components.aurelia/using
 ---
 The components is a Aurelia plugin, which means that once you've configured it -
 it will become globally available.
