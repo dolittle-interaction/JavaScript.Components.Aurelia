@@ -3,6 +3,7 @@ title: Working locally
 description: How to set everything up locally
 keywords: Contributing
 author: einari
+aliases: /interaction/aurelia/javascript.components.aurelia/contributing/working_locally
 ---
 The repository lives on GitHub [here](https://github.com/dolittle-interaction/JavaScript.Components.Aurelia).
 If you just want to work locally with it, clone it and follow the instructions below.

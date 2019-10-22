@@ -35,7 +35,8 @@ $navigation-view-item-toggle-expand-after-width: 1.125rem !default;
 $navigation-view-item-toggle-expand-after-margin-left: -$navigation-view-item-toggle-expand-after-width/2 !default;
 
 $navigation-view-item-expanded-bg-color: $color-black-40 !default;
-$navigation-view-item-link-text-indent: -0.375rem;
+$navigation-view-item-link-text-indent: -0.375rem !default;
+$navigation-view-item-link-text-padding: 0.75rem 0 !default;
 
 .navigation-view-item {
     flex: 0 0 auto;
