@@ -16,13 +16,14 @@ import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 @templateController
 @inject(BindingEngine, BoundViewFactory, TargetInstruction, ViewSlot, ViewResources, RepeatStrategyLocator)
 export class HierarchyRepeatChildren extends HierarchyRepeater {
-    #bindingEngine;
-    #viewFactory;
-    #lookupFunctions;
-    #parentHierarchyRepeat;
+    private bindingEngine: BindingEngine;
+    private viewFactory: BoundViewFactory;
+    private lookupFunctions: any;
+    private parentHierarchyRepeat: MissingParentHierarchyRepeat;
+    scope: any;
 
-    @bindable local;
-    @bindable items;
+    @bindable local: any;
+    @bindable items: any;
 
     /**
      * Initializes a new instance of {HierarchyRepeatChildren}
@@ -33,22 +34,22 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
      * @param {ViewResources} viewResources The available view resources
      * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
      */
-    constructor(bindingEngine, viewFactory, instruction, viewSlot, viewResources, strategyLocator) {
+    constructor(bindingEngine :BindingEngine, viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, viewResources: ViewResources, strategyLocator: RepeatStrategyLocator) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
 
-        this.#bindingEngine = bindingEngine;
-        this.#viewFactory = viewFactory;
-        this.#lookupFunctions = viewResources.lookupFunctions;
-        this.#parentHierarchyRepeat = null;
+        this.bindingEngine = bindingEngine;
+        this.viewFactory = viewFactory;
+        this.lookupFunctions = viewResources.lookupFunctions;
+        this.parentHierarchyRepeat = null;
     }
 
     /** @inheritdoc */
-    bindItems(bindingContext, overrideContext) {
-        this.#ensureParentHierarchyRepeat();
-        if (this.#parentHierarchyRepeat) {
-            let bindingExpression = this.#bindingEngine.createBindingExpression('component', `$this.data.${this.#parentHierarchyRepeat.childrenProperty
+    bindItems(bindingContext: any, overrideContext: any) {
+        this.ensureParentHierarchyRepeat();
+        if (this.parentHierarchyRepeat) {
+            let bindingExpression = this.bindingEngine.createBindingExpression('component', `$this.data.${this.parentHierarchyRepeat.childrenProperty
         } `);
-            this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.#lookupFunctions);
+            this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.lookupFunctions);
         } else {
             this.items = null;
         }       
@@ -56,18 +57,18 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
 
     /** @inheritdoc */
     createView() {
-        this.#ensureParentHierarchyRepeat();
-        this.#throwIfMissingParentHiearchyRepeat();
+        this.ensureParentHierarchyRepeat();
+        this.throwIfMissingParentHiearchyRepeat();
 
-        let view = this.#parentHierarchyRepeat.createView();
+        let view :any = this.parentHierarchyRepeat.createView();
         return view;
     }
 
     /** @inheritdoc */
-    handleRepeaterItem(item) {
-        let hierarchyLevel = 0;
-        let current = this.#viewFactory.parentContainer;
-        let previousViewModel = item;
+    handleRepeaterItem(item: any) {
+        let hierarchyLevel: number = 0;
+        let current: any = this.viewFactory.parentContainer;
+        let previousViewModel: any = item;
 
         while (current) {
             if( current.viewModel && current.viewModel instanceof HierarchyRepeaterItem ) {
@@ -79,10 +80,10 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
             }
 
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => instruction.attrName == 'hierarchy-repeat')) {
                     break;
                 }
-                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat-children')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => instruction.attrName == 'hierarchy-repeat-children')) {
                     hierarchyLevel++;
                 }
             }
@@ -91,19 +92,19 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         item.hierarchyLevel = hierarchyLevel;
     }
 
-    #ensureParentHierarchyRepeat() {
-        if( this.#parentHierarchyRepeat == null ) {
-            this.#parentHierarchyRepeat = this.#getParrentHierarchyRepeat();
+    private ensureParentHierarchyRepeat() {
+        if( this.parentHierarchyRepeat == null ) {
+            this.parentHierarchyRepeat = this.getParrentHierarchyRepeat();
         }
     }
 
-    #getParrentHierarchyRepeat() {
-        let current = this.#viewFactory.parentContainer;
-        let parentHierarchyRepeat = null;
+    private getParrentHierarchyRepeat() {
+        let current: any = this.viewFactory.parentContainer;
+        let parentHierarchyRepeat: any = null;
         
         while (current) {
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some(instruction => instruction.attrName == 'hierarchy-repeat')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => instruction.attrName == 'hierarchy-repeat')) {
                     
                     for (let property in current) {                       
                         if (current[property] instanceof HierarchyRepeat) {
@@ -119,7 +120,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         return parentHierarchyRepeat;
     }
 
-    #throwIfMissingParentHiearchyRepeat() {
-        if (this.#parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();
+    private throwIfMissingParentHiearchyRepeat() {
+        if (this.parentHierarchyRepeat == null) MissingParentHierarchyRepeat.throw();
     }
 }

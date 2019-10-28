@@ -11,7 +11,7 @@ import {contentProcessor} from './contentProcessor';
 @processContent(contentProcessor)
 export class pivotView {
   
-    @bindable header;
+    @bindable header: any;
 
     constructor() {
     }

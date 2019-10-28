@@ -5,7 +5,7 @@
 import { paneDisplayMode } from './paneDisplayMode';
 
 export class PaneDisplayModeValueConverter {
-    toView(value) {
+    toView(value: any) {
         if (value === paneDisplayMode.auto) {
             return 'left';
         }

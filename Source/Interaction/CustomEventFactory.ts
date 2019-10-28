@@ -13,7 +13,7 @@ export class CustomEventFactory {
      * @param {string} name Name of the event
      * @param {*} details Any object that you want associated with the event
      */
-    create(name, details) {
+    create(name: string, details: any) {
         return new CustomEvent(name, {
             bubbles: true,
             detail: details

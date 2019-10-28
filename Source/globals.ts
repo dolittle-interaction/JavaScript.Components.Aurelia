@@ -1,4 +1,5 @@
 class globals {
+  iconBaseFolder: string;
     constructor() {
         this.iconBaseFolder = '';
     }

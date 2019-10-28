@@ -4,16 +4,16 @@
  *--------------------------------------------------------------------------------------------*/
 import { processContent, FEATURE } from 'aurelia-framework';
 
-function handlePart(name, element, replacementTag) {
+function handlePart(name: any, element: any, replacementTag: any) {
     let partContainer = element.querySelector(name);
     if (partContainer) {
-        const template = document.createElement('template');
+        const template: any = document.createElement('template');
         FEATURE.ensureHTMLTemplateElement(template);
         template.setAttribute('replace-part', name);
 
-        let childWrapper = document.createElement(replacementTag || 'div');
+        let childWrapper: any = document.createElement(replacementTag || 'div');
         childWrapper.className = name;
-        let child;
+        let child: any;
         while (child = partContainer.firstChild) {
             partContainer.removeChild(child);
             childWrapper.appendChild(child);
@@ -30,11 +30,11 @@ function handlePart(name, element, replacementTag) {
  * inside the use of the custom element.
  */
 export function hasParts() {
-    function contentProcessor(viewCompiler, viewResources, element, parentInstruction) {
-        let partTemplates = parentInstruction.type.viewFactory.template.querySelectorAll('[part]');
-        partTemplates.forEach(partTemplate => {
-            let partName = partTemplate.getAttribute('part');
-            let replacementTag = partTemplate.getAttribute('replacement-tag');
+    function contentProcessor(viewCompiler: any, viewResources: any, element: any, parentInstruction: any) {
+        let partTemplates: any = parentInstruction.type.viewFactory.template.querySelectorAll('[part]');
+        partTemplates.forEach((partTemplate: any) => {
+            let partName: any = partTemplate.getAttribute('part');
+            let replacementTag: any = partTemplate.getAttribute('replacement-tag');
             handlePart(partName, element, replacementTag);
         });
         return true;

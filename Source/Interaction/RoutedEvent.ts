@@ -12,39 +12,39 @@ import { CustomEventFactory } from "./CustomEventFactory";
 @customAttribute('routed-event')
 @inject(Element, CustomEventFactory)
 export class RoutedEvent {
-    #element;
-    #customEventFactory;
+    private element: Element;
+    private customEventFactory: any;
 
     /**
      * Name of the input event to listen to
      */
-    @bindable input;
+    @bindable input: any;
 
     /**
      * Name of the output event to procude
      */
-    @bindable output;
+    @bindable output: any;
 
     /**
      * Details you want to associate with the event. This is optional and can be left undefined
      */
-    @bindable details;
+    @bindable details: any;
 
     /**
      * Initializes a new instance of {RoutedEvent}
      * @param {Element} element The DOM {Element} in which the input event can be listened to
      * @param {CustomEventFactory} customEventFactory The {CustomEventFactory} for creating custom events
      */
-    constructor(element, customEventFactory) {
-        this.#element = element;
-        this.#customEventFactory = customEventFactory;
+    constructor(element: Element, customEventFactory: CustomEventFactory) {
+        this.element = element;
+        this.customEventFactory = customEventFactory;
     }
 
     /** @inheritdoc */
     bind(bindingContext, overrideContext) {       
-        this.#element.addEventListener(this.input, () => {
-            let event = this.#customEventFactory.create(this.output, this.details);
-            this.#element.dispatchEvent(event);
+        this.element.addEventListener(this.input, () => {
+            let event = this.customEventFactory.create(this.output, this.details);
+            this.element.dispatchEvent(event);
         });
     }
 }

@@ -17,16 +17,16 @@ const attributeName = 'hierarchy-children-property';
 @templateController
 @inject(BoundViewFactory, TargetInstruction, ViewSlot, RepeatStrategyLocator)
 export class HierarchyRepeat extends HierarchyRepeater {  
-    #childrenProperty = null;
+    private childrenProperty: any = null;
 
-    @bindable local;
-    @bindable items;
+    @bindable local: any;
+    @bindable items: any;
 
     /**
      * Get the children property to use recursively
      */
     get childrenProperty() {
-        return this.#childrenProperty;
+        return this.childrenProperty;
     }
 
     /**
@@ -36,21 +36,21 @@ export class HierarchyRepeat extends HierarchyRepeater {
      * @param {ViewSlot} viewSlot The viewslot to render to
      * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
      */
-    constructor(viewFactory, instruction, viewSlot, strategyLocator) {
+    constructor(viewFactory: any, instruction: any, viewSlot: any, strategyLocator: any) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
 
         let childrenPropertyElements = viewFactory.viewFactory.template.querySelectorAll(`[${attributeName}]`);
-        this.#throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements);
-        this.#throwIfMissingHierarchyChildrenProperty(childrenPropertyElements);
+        this.throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements);
+        this.throwIfMissingHierarchyChildrenProperty(childrenPropertyElements);
 
-        this.#childrenProperty = childrenPropertyElements[0].getAttribute(attributeName);
+        this.childrenProperty = childrenPropertyElements[0].getAttribute(attributeName);
     }
 
-    #throwIfMissingHierarchyChildrenProperty(childrenPropertyElements) {
+    private throwIfMissingHierarchyChildrenProperty(childrenPropertyElements: any) {
         if (childrenPropertyElements.length == 0) MissingHierarchyChildrenProperty.throw();
     }
 
-    #throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements) {
+    private throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements: any) {
         if (childrenPropertyElements.length > 1) TooManyElementsWithHierarchyChildrenProperty.throw();
     }
 }

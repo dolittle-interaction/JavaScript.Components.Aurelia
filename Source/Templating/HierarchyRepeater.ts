@@ -11,11 +11,14 @@ import { HierarchyRepeaterItem } from './HierarchyRepeaterItem';
  */
 @inject(BoundViewFactory, TargetInstruction, ViewSlot, ViewResources, ObserverLocator, RepeatStrategyLocator)
 export class HierarchyRepeater extends AbstractRepeater {
-    #viewFactory;
-    #instruction;
-    #viewSlot;
-    #strategyLocator;
-    #strategy;
+    private viewFactory: BoundViewFactory;
+    private instruction: TargetInstruction;
+    private viewSlot: ViewSlot;
+    private strategyLocator: RepeatStrategyLocator;
+    private strategy: any;
+  matcherBinding: any;
+
+    //-----------------------Suggestion:-----> items: HierarchyRepeaterItem[]
 
     /**
      * Initializes a new instance of {HierarchyRepeater}
@@ -24,16 +27,16 @@ export class HierarchyRepeater extends AbstractRepeater {
      * @param {ViewSlot} viewSlot The viewslot to render to
      * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
      */
-    constructor(viewFactory, instruction, viewSlot, strategyLocator) {
+    constructor(viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, strategyLocator: RepeatStrategyLocator) {
         super({
             local: 'component',
             viewsRequireLifecycle: viewsRequireLifecycle(viewFactory)
         });
 
-        this.#viewFactory = viewFactory;
-        this.#instruction = instruction;
-        this.#viewSlot = viewSlot;
-        this.#strategyLocator = strategyLocator;
+        this.viewFactory = viewFactory;
+        this.instruction = instruction;
+        this.viewSlot = viewSlot;
+        this.strategyLocator = strategyLocator;
     }
 
     /**
@@ -47,7 +50,7 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Method that gets called for creating a new new view - overridable
      */
     createView() {
-        let view = this.#viewFactory.create();
+        let view: BoundViewFactory = this.viewFactory.create();
         return view;
     }
 
@@ -55,7 +58,7 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Method that gets called when a repeater item needs handling
      * @param {HierarchyRepeaterItem} item The item - typically a view model
      */
-    handleRepeaterItem(item) {}
+    handleRepeaterItem(item: HierarchyRepeaterItem) {}
 
     /** @inheritdoc */
     call() {
@@ -66,7 +69,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     }
 
     /** @inheritdoc */
-    bind(bindingContext, overrideContext) {
+    bind(bindingContext: any, overrideContext: any) {
         this.scope = { bindingContext, overrideContext };
         this.bindItems(bindingContext, overrideContext);
         this.itemsChanged();
@@ -80,67 +83,67 @@ export class HierarchyRepeater extends AbstractRepeater {
     /** @inheritdoc */
     itemsChanged() {
         let items = this.items;
-        this.#strategy = this.#strategyLocator.getStrategy(items);
-        this.#strategy.instanceChanged(this, items);
+        this.strategy = this.strategyLocator.getStrategy(items);
+        this.strategy.instanceChanged(this, items);
     }
 
 
     // @override AbstractRepeater
 
     /** @inheritdoc */
-    viewCount() { return this.#viewSlot.children.length; }
+    viewCount() { return this.viewSlot.children.length; }
 
     /** @inheritdoc */
-    views() { return this.#viewSlot.children; }
+    views() { return this.viewSlot.children; }
 
     /** @inheritdoc */
-    view(index) { return this.#viewSlot.children[index]; }
+    view(index: number) { return this.viewSlot.children[index]; }
 
     /** @inheritdoc */
     matcher() { return this.matcherBinding ? this.matcherBinding.sourceExpression.evaluate(this.scope, this.matcherBinding.lookupFunctions) : null; }
 
     /** @inheritdoc */
-    addView(bindingContext, overrideContext) {
+    addView(bindingContext: any, overrideContext: any) {
         let view = this.createView();
-        this.#handleNewView(view);
+        this.handleNewView(view);
         view.bind(bindingContext, overrideContext);
-        this.#viewSlot.add(view);
+        this.viewSlot.add(view);
     }
 
     /** @inheritdoc */
-    insertView(index, bindingContext, overrideContext) {
+    insertView(index: number, bindingContext: any, overrideContext: any) {
         let view = this.createView();
-        this.#handleNewView(view);
+        this.handleNewView(view);
         view.bind(bindingContext, overrideContext);
-        this.#viewSlot.insert(index, view);
+        this.viewSlot.insert(index, view);
     }
 
     /** @inheritdoc */
-    moveView(sourceIndex, targetIndex) {
-        this.#viewSlot.move(sourceIndex, targetIndex);
+    moveView(sourceIndex: number, targetIndex: number) {
+        this.viewSlot.move(sourceIndex, targetIndex);
     }
 
     /** @inheritdoc */
-    removeAllViews(returnToCache, skipAnimation) {
-        return this.#viewSlot.removeAll(returnToCache, skipAnimation);
+    removeAllViews(returnToCache: any, skipAnimation: any) {
+        return this.viewSlot.removeAll(returnToCache, skipAnimation);
     }
 
     /** @inheritdoc */
-    removeViews(viewsToRemove, returnToCache, skipAnimation) {
-        return this.#viewSlot.removeMany(viewsToRemove, returnToCache, skipAnimation);
+    removeViews(viewsToRemove: any, returnToCache: any, skipAnimation: any) {
+        return this.viewSlot.removeMany(viewsToRemove, returnToCache, skipAnimation);
     }
 
     /** @inheritdoc */
-    removeView(index, returnToCache, skipAnimation) {
-        return this.#viewSlot.removeAt(index, returnToCache, skipAnimation);
+    removeView(index: number, returnToCache: any, skipAnimation: any) {
+        return this.viewSlot.removeAt(index, returnToCache, skipAnimation);
     }
 
     /** @inheritdoc */
-    updateBindings(view) {
+    updateBindings(view: any) {
     }
 
-    #handleNewView(view) {
-        let viewModels = view.controllers.filter(_ => _.viewModel instanceof HierarchyRepeaterItem);
-        viewModels.forEach(_ => this.handleRepeaterItem(_.viewModel));
+    private handleNewView(view: ViewResources) {
+        let viewModels = view.controllers.filter((_: any) => _.viewModel instanceof HierarchyRepeaterItem);
+        viewModels.forEach((_: any)=> this.handleRepeaterItem(_.viewModel));
     }
 }

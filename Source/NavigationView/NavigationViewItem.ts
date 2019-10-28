@@ -11,11 +11,11 @@ import { HierarchyRepeaterItem } from '../Templating/HierarchyRepeaterItem';
 @customElement('navigation-view-item')
 @containerless()
 export class NavigationViewItem extends HierarchyRepeaterItem {
-    @bindable icon;
-    @bindable tag;
-    @bindable data;
-    @bindable isSelected;
-    @bindable isExpanded;
+    @bindable icon: any;
+    @bindable tag: any;
+    @bindable data: any;
+    @bindable isSelected: boolean;
+    @bindable isExpanded: boolean;
 
     /**
      * Initializes a new instance of {NavigationViewItem}

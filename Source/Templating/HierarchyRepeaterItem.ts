@@ -7,44 +7,45 @@
  * Represents the base class for any item that should be part of a hierarchy
  */
 export class HierarchyRepeaterItem {
-    #children = [];
+    private children: any = [];
+    isRootLevel: any;
 
     /**
      * Gets or sets the hierarchy level of the item - 0 = root
      */
-    hierarchyLevel = 0;
+    hierarchyLevel: number = 0;
 
     /**
      * Gets or sets the parent for the item
      */
-    parent = null;
+    parent: any = null;
 
     /**
      * Gets wether or not the item is considered to be at the root level of the hierarchy or not
      */
     get isRootLevel() {
-        return isRootLevel === 0;
+        return this.isRootLevel === 0;
     }
 
     /**
      * Gets the children for the item
      */
     get children() {
-        return this.#children;
+        return this.children;
     }
 
     /**
      * Check if the item has children
      */
     get hasChildren() {
-        return this.#children.length > 0;
+        return this.children.length > 0;
     }
 
     /**
      * Adds a child to the item
      * @param {HierarchyRepeaterItem} child Child to add
      */
-    addChild(child) {
-        this.#children.push(child);
+    addChild(child: any) {
+        this.children.push(child);
     }
 }

@@ -11,10 +11,11 @@ import { paneDisplayMode } from './paneDisplayMode';
 @hasParts()
 export class NavigationView {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
-    @bindable expanded = false;
-    @bindable showTrigger = true; // Not implemented
-    @bindable paneDisplayMode;
-    @bindable isBackEnabled; // Not implemented
+    @bindable expanded: boolean = false;
+    @bindable showTrigger: boolean = true; // Not implemented
+    @bindable paneDisplayMode: paneDisplayMode;
+    @bindable isBackEnabled: boolean; // Not implemented
+    
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.left;
@@ -25,20 +26,21 @@ export class NavigationView {
         this.expanded = !this.expanded;
     }
 
-    selectedItemChanged(newItem, previousItem) {
+    selectedItemChanged(newItem: any, previousItem: any) {
         if (previousItem) {
             previousItem.isSelected = false;
-            this.#setIsSelectedForParentFor(previousItem, false);
+            this.setIsSelectedForParentFor(previousItem, false);
         }
         newItem.isSelected = true;
-        this.#setIsSelectedForParentFor(newItem, true);
+        this.setIsSelectedForParentFor(newItem, true);
     }
 
-    itemClicked(event) {
+    itemClicked(event: any) {
         this.selectedItem = event.detail;
     }
 
-    #setIsSelectedForParentFor(item, isSelected) {
+    
+    private setIsSelectedForParentFor(item: any, isSelected: boolean) {
         let parent = item.parent;
         while (parent) {
             parent.isSelected = isSelected;
