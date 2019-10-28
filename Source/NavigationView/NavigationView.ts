@@ -12,9 +12,9 @@ import { paneDisplayMode } from './paneDisplayMode';
 export class NavigationView {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
     @bindable expanded: boolean = false;
-    @bindable showTrigger: boolean = true; // Not implemented
+    @bindable isToggleButtonVisible: boolean = true; // Not implemented
     @bindable paneDisplayMode: paneDisplayMode;
-    @bindable isBackEnabled: boolean; // Not implemented
+   //Not to be implemented------------------ @bindable isBackEnabled: boolean; // Not implemented
     
 
     constructor() {
