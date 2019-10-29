@@ -201,6 +201,9 @@ $navigation-view-navigation-items-margin-top: $grid-gutter !default;
             top: 50%;
             transform: translateY(-50%);
         }
+        &.hidden {
+            display: none;
+        }
     }
 
     .banner {
@@ -208,7 +211,7 @@ $navigation-view-navigation-items-margin-top: $grid-gutter !default;
         letter-spacing: $navigation-view-banner-letter-spacing;
         font-size: $navigation-view-banner-font-size;
         line-height: $navigation-view-banner-line-height;
-        flex:1 1 auto;
+        flex: 1 1 auto;
     }
     .navigation-items {
         margin-top: $navigation-view-navigation-items-margin-top;

@@ -2,7 +2,7 @@
 title: Navigation view item
 description: Describes how to use the Navigation view item control
 keywords: Using, navigationviewitem, navigation
-author: Vidar Aune Westrum
+author: Dolittle
 ---
 
 The navigation view item is made for being used within the [Navigation View](/interaction/aurelia/aurelia-components/controls/navigationview/). This component supports the templating feature [Hierarchy Reapeat and Children](/interaction/aurelia/aurelia-components/templating/hierarchy_repeat/)

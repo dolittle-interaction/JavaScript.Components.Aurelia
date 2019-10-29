@@ -9,13 +9,15 @@ import { paneDisplayMode } from './paneDisplayMode';
 // https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview
 @customElement('navigation-view')
 @hasParts()
+
+/**
+ * should'nt "previousItem" be a varaiable of NV instead of a paramter??l
+ */
 export class NavigationView {
     @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
     @bindable expanded: boolean = false;
-    @bindable isToggleButtonVisible: boolean = true; // Not implemented
-    @bindable paneDisplayMode: paneDisplayMode;
-   //Not to be implemented------------------ @bindable isBackEnabled: boolean; // Not implemented
-    
+    @bindable isToggleButtonVisible: boolean = true;
+    @bindable paneDisplayMode: number;
 
     constructor() {
         this.paneDisplayMode = paneDisplayMode.left;
@@ -39,7 +41,6 @@ export class NavigationView {
         this.selectedItem = event.detail;
     }
 
-    
     private setIsSelectedForParentFor(item: any, isSelected: boolean) {
         let parent = item.parent;
         while (parent) {
