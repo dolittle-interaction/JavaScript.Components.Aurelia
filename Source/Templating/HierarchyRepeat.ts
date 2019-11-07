@@ -17,7 +17,7 @@ const attributeName = 'hierarchy-children-property';
 @templateController
 @inject(BoundViewFactory, TargetInstruction, ViewSlot, RepeatStrategyLocator)
 export class HierarchyRepeat extends HierarchyRepeater {  
-    private childrenProperty: any = null;
+    private _childrenProperty: any = null;
 
     @bindable local: any;
     @bindable items: any;
@@ -26,7 +26,7 @@ export class HierarchyRepeat extends HierarchyRepeater {
      * Get the children property to use recursively
      */
     get childrenProperty() {
-        return this.childrenProperty;
+        return this._childrenProperty;
     }
 
     /**
@@ -43,7 +43,7 @@ export class HierarchyRepeat extends HierarchyRepeater {
         this.throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements);
         this.throwIfMissingHierarchyChildrenProperty(childrenPropertyElements);
 
-        this.childrenProperty = childrenPropertyElements[0].getAttribute(attributeName);
+        this._childrenProperty = childrenPropertyElements[0].getAttribute(attributeName);
     }
 
     private throwIfMissingHierarchyChildrenProperty(childrenPropertyElements: any) {

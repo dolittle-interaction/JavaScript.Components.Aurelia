@@ -41,7 +41,7 @@ export class RoutedEvent {
     }
 
     /** @inheritdoc */
-    bind(bindingContext, overrideContext) {       
+    bind(bindingContext: any, overrideContext: any) {       
         this.element.addEventListener(this.input, () => {
             let event = this.customEventFactory.create(this.output, this.details);
             this.element.dispatchEvent(event);

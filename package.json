@@ -5,9 +5,14 @@
         "Source"
     ],
     "scripts": {
-        "build": "gulp build"
+        "tasks": "gulp --tasks --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js",
+        "clean": "gulp clean --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js",
+        "build": "gulp build --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js",
+        "test": "gulp test --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js",
+        "test:run": "gulp test-run --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js",
+        "test:clean": "gulp test-clean --gulpfile node_modules/@dolittle/typescript.build.node/Gulpfile.js"
     },
     "devDependencies": {
-        "@dolittle/build": "^6.3.4"
+        "@dolittle/typescript.build.node": "^1.1.3"
     }
 }

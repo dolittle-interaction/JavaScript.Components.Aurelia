@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { AbstractRepeater, viewsRequireLifecycle, RepeatStrategyLocator } from 'aurelia-templating-resources';
-import { inject, BoundViewFactory, bindable, TargetInstruction, ViewSlot, ViewResources, ObserverLocator } from 'aurelia-framework';
+import { inject, BoundViewFactory, bindable, TargetInstruction, ViewSlot, ViewResources, ObserverLocator, View } from 'aurelia-framework';
 import { HierarchyRepeaterItem } from './HierarchyRepeaterItem';
 
 /**
@@ -16,8 +16,10 @@ export class HierarchyRepeater extends AbstractRepeater {
     private viewSlot: ViewSlot;
     private strategyLocator: RepeatStrategyLocator;
     private strategy: any;
-  matcherBinding: any;
-
+    matcherBinding: any;
+    scope: any
+    
+    
     //-----------------------Suggestion:-----> items: HierarchyRepeaterItem[]
 
     /**
@@ -44,13 +46,13 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Typically implemented in those cases where there is no expression for
      * the repeater and we get the items from other sources
      */
-    bindItems() {}
+    bindItems(...args: any[]) {}
 
     /**
      * Method that gets called for creating a new new view - overridable
      */
     createView() {
-        let view: BoundViewFactory = this.viewFactory.create();
+        let view: View = this.viewFactory.create();
         return view;
     }
 

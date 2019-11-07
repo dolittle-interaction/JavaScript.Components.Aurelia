@@ -14,7 +14,7 @@ import { paneDisplayMode } from './paneDisplayMode';
  * should'nt "previousItem" be a varaiable of NV instead of a paramter??l
  */
 export class NavigationView {
-    @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem;
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) selectedItem: any;
     @bindable expanded: boolean = false;
     @bindable isToggleButtonVisible: boolean = true;
     @bindable paneDisplayMode: number;

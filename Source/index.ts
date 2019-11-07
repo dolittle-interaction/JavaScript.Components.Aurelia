@@ -1,7 +1,7 @@
 import { PLATFORM } from 'aurelia-pal';
 import globals from './globals';
 
-export function configure(aurelia, config) {
+export function configure(aurelia: any, config: any) {
     //config();
 
     aurelia.globalResources(PLATFORM.moduleName('./Interaction/RoutedEvent'));

@@ -8,7 +8,7 @@ function handlePart(name: any, element: any, replacementTag: any) {
     let partContainer = element.querySelector(name);
     if (partContainer) {
         const template: any = document.createElement('template');
-        FEATURE.ensureHTMLTemplateElement(template);
+        (FEATURE as any).ensureHTMLTemplateElement(template);
         template.setAttribute('replace-part', name);
 
         let childWrapper: any = document.createElement(replacementTag || 'div');

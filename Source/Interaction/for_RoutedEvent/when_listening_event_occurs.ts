@@ -3,24 +3,25 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { RoutedEvent } from '../RoutedEvent';
+import sinon from 'sinon';
 
 describe('when listening events occur', () => {
-    let element = null;
-    let routedEvent = null;
-    let createdEvent = null;
+    let element: any = null;
+    let routedEvent: any = null;
+    let createdEvent: any = null;
     
 
     (beforeEach => {
-        let listener = null;
+        let listener: any = null;
         element = {
-            addEventListener: (input, callback) => {
+            addEventListener: (input: any, callback: any) => {
                 listener = callback;
             },
             dispatchEvent: sinon.stub()
         };
 
         let customEventFactory = {
-            create: (name, details) => {
+            create: (name: any, details: any) => {
                 createdEvent = {
                     name: name,
                     details: details

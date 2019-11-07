@@ -9,7 +9,7 @@ import {contentProcessor} from './contentProcessor';
 @customElement('pivot-view')
 @containerless()
 @processContent(contentProcessor)
-export class pivotView {
+export class PivotView {
   
     @bindable header: any;
 

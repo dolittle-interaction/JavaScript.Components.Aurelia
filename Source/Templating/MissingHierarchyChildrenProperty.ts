@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Exception } from '@dolittle/exceptions';
-
+// import { Exception } from '@dolittle/exceptions';
+const Exception = require('@dolittle/exceptions').Exception;
 /**
  * Exception that gets thrown when there is no hierarchy-children-property attribute set on the
  * element or within the element that uses a hierarchy repeater

@@ -6,7 +6,7 @@ import { NavigationView } from '../NavigationView';
 
 describe('when item is clicked', () => {
     let item = { my: 'item' };
-    let view = null;
+    let view: any = null;
 
     (beforeEach => {
         view = new NavigationView();

@@ -6,8 +6,8 @@ import { customElement, containerless, bindable } from 'aurelia-framework';
 
 @customElement('pivot-item')
 @containerless()
-export class pivotItem {
-    @bindable   text: string;
-    @bindable   title: string;
+export class PivotItem {
+    @bindable   text?: string;
+    @bindable   title?: string;
     @bindable   current: any;
 }

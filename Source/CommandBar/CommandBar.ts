@@ -10,9 +10,9 @@ import { commandLocation } from './commandLocation';
 @customElement('command-bar')
 @hasParts()
 export class CommandBar {
-    @bindable commandLocation;
-    @bindable labelPosition;
-    @observable displaySecondaryCommands;
+    @bindable commandLocation: any;
+    @bindable labelPosition: any;
+    @observable displaySecondaryCommands: any;
 
     constructor() {
         this.labelPosition = labelPosition.right;
