@@ -17,7 +17,8 @@ export class HierarchyRepeater extends AbstractRepeater {
     private strategyLocator: RepeatStrategyLocator;
     private strategy: any;
     matcherBinding: any;
-    scope: any
+    scope: any;
+    items:any;
     
     
     //-----------------------Suggestion:-----> items: HierarchyRepeaterItem[]

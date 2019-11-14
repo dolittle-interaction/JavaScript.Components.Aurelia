@@ -4,4 +4,6 @@
  *--------------------------------------------------------------------------------------------*/
 const build = require('@dolittle/typescript.build.node');
 
-module.exports = build.wallaby();
+module.exports = build.wallaby(undefined, w => {
+    require('reflect-metadata')
+});

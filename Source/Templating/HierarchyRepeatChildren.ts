@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { RepeatStrategyLocator } from 'aurelia-templating-resources';
-import { bindable, BindingEngine, inject, BoundViewFactory, customAttribute, templateController, TargetInstruction, ViewSlot, ViewResources } from 'aurelia-framework';
+import { bindable, BindingEngine, inject, BoundViewFactory,BindingExpression, ViewFactory, customAttribute, templateController, TargetInstruction, ViewSlot, ViewResources } from 'aurelia-framework';
 import { HierarchyRepeater } from './HierarchyRepeater';
 import { HierarchyRepeaterItem } from './HierarchyRepeaterItem';
 import { HierarchyRepeat } from './HierarchyRepeat';
@@ -16,11 +16,14 @@ import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 @templateController
 @inject(BindingEngine, BoundViewFactory, TargetInstruction, ViewSlot, ViewResources, RepeatStrategyLocator)
 export class HierarchyRepeatChildren extends HierarchyRepeater {
-    private bindingEngine: BindingEngine;
-    private viewFactory: BoundViewFactory;
-    private lookupFunctions: any;
-    private parentHierarchyRepeat: MissingParentHierarchyRepeat;
+  
+    // private bindingEngine: BindingEngine;
+        viewFactory: BoundViewFactory;
+    // private lookupFunctions: any;
+    // private parentHierarchyRepeat: MissingParentHierarchyRepeat;
     scope: any;
+    parentHierarchyRepeat:any;
+    lookupFunctions:any
 
     @bindable local: any;
     @bindable items: any;
@@ -34,21 +37,20 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
      * @param {ViewResources} viewResources The available view resources
      * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
      */
-    constructor(bindingEngine :BindingEngine, viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, viewResources: ViewResources, strategyLocator: RepeatStrategyLocator) {
+    constructor(private bindingEngine :BindingEngine, viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, viewResources: ViewResources, strategyLocator: RepeatStrategyLocator) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
 
-        this.bindingEngine = bindingEngine;
-        this.viewFactory = viewFactory;
-        this.lookupFunctions = viewResources.lookupFunctions;
-        this.parentHierarchyRepeat = null;
-    }
+    //     this.bindingEngine = bindingEngine;
+              this.viewFactory = viewFactory;
+    //     this.lookupFunctions = viewResources.lookupFunctions;
+         this.parentHierarchyRepeat = null;
+     }
 
     /** @inheritdoc */
     bindItems(bindingContext: any, overrideContext: any) {
         this.ensureParentHierarchyRepeat();
         if (this.parentHierarchyRepeat) {
-            let bindingExpression = this.bindingEngine.createBindingExpression('component', `$this.data.${this.parentHierarchyRepeat.childrenProperty
-        } `);
+            let bindingExpression: BindingExpression = this.bindingEngine.createBindingExpression('component', `$this.data.${this.parentHierarchyRepeat.childrenProperty} `);
             this.items = bindingExpression.sourceExpression.evaluate(this.scope, this.lookupFunctions);
         } else {
             this.items = null;
