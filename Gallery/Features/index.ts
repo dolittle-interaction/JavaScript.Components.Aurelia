@@ -8,9 +8,11 @@ import { bindable } from 'aurelia-framework';
 
 @inject(structure)
 export class index {
-    @bindable selectedItem;
-    navigationStrategy;
-    constructor(structure) {
+    @bindable selectedItem: any;
+    navigationStrategy: any;
+    structure: any
+    profile: any
+    constructor(structure: any) {
         this.navigationStrategy = 'left-compact';
         this.structure = structure;
 
@@ -19,5 +21,5 @@ export class index {
         };
     }
 
-    selectedItemChanged(item) {}
+    selectedItemChanged(item: any) {}
 }

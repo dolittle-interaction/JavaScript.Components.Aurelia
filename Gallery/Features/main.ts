@@ -4,15 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
-import * as Bluebird from 'bluebird';
+import { Aurelia } from 'aurelia-framework';
 
-// remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-Bluebird.config({ warnings: { wForgottenReturn: false } });
-
-export function configure(aurelia) {
+export function configure(aurelia: Aurelia) {
     aurelia.use
         .standardConfiguration()
-        .plugin(PLATFORM.moduleName('@dolittle/aurelia'))
         .plugin(PLATFORM.moduleName('@dolittle/components.aurelia'))
         .feature(PLATFORM.moduleName('Resources/index'));
 

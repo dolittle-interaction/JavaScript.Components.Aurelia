@@ -94,13 +94,13 @@ export class HierarchyRepeater extends AbstractRepeater {
     // @override AbstractRepeater
 
     /** @inheritdoc */
-    viewCount() { return this.viewSlot.children.length; }
+    viewCount() { return (this.viewSlot as any).children.length; }
 
     /** @inheritdoc */
-    views() { return this.viewSlot.children; }
+    views() { return (this.viewSlot as any).children; }
 
     /** @inheritdoc */
-    view(index: number) { return this.viewSlot.children[index]; }
+    view(index: number) { return (this.viewSlot as any).children[index]; }
 
     /** @inheritdoc */
     matcher() { return this.matcherBinding ? this.matcherBinding.sourceExpression.evaluate(this.scope, this.matcherBinding.lookupFunctions) : null; }
@@ -108,7 +108,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     /** @inheritdoc */
     addView(bindingContext: any, overrideContext: any) {
         let view = this.createView();
-        this.handleNewView(view);
+        this.handleNewView(view as any);
         view.bind(bindingContext, overrideContext);
         this.viewSlot.add(view);
     }
@@ -116,7 +116,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     /** @inheritdoc */
     insertView(index: number, bindingContext: any, overrideContext: any) {
         let view = this.createView();
-        this.handleNewView(view);
+        this.handleNewView(view as any);
         view.bind(bindingContext, overrideContext);
         this.viewSlot.insert(index, view);
     }
@@ -146,7 +146,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     }
 
     private handleNewView(view: ViewResources) {
-        let viewModels = view.controllers.filter((_: any) => _.viewModel instanceof HierarchyRepeaterItem);
+        let viewModels = (view as any).controllers.filter((_: any) => _.viewModel instanceof HierarchyRepeaterItem);
         viewModels.forEach((_: any)=> this.handleRepeaterItem(_.viewModel));
     }
 }
