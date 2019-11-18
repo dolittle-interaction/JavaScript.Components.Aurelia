@@ -6,6 +6,8 @@ import environment from './environment';
 import { PLATFORM } from 'aurelia-pal';
 import { Aurelia } from 'aurelia-framework';
 
+require('../styles/style.scss');
+
 export function configure(aurelia: Aurelia) {
     aurelia.use
         .standardConfiguration()
