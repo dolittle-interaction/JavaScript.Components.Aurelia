@@ -4,6 +4,7 @@ description: The core principles and expectations
 keywords: Contributing, Principles
 author: einari
 weight: 1
+aliases: /interaction/aurelia/javascript.components.aurelia/contributing/principles
 ---
 This page talks about the core principles at play, our mindset going into
 this project and what is expected from any contributions to the project.

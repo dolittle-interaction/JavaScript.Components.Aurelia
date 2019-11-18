@@ -3,6 +3,7 @@ title: Hierarchy Repeat & Children
 description: Details on how to work with the hierarchy repeat
 keywords: 
 author: einari
+aliases: /interaction/aurelia/javascript.components.aurelia/templateing/hierarchy_repeat
 ---
 Some components require more than repeating over a flat list and data binding
 to a recursive hierarchical structure is not supported out of the box in
