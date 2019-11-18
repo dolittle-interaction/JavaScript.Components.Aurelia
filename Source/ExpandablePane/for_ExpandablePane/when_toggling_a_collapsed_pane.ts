@@ -2,8 +2,17 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-const build = require('@dolittle/typescript.build');
+import { ExpandablePane } from './../ExpandablePane';
 
-module.exports = build.wallaby(undefined, w => {
-    require('reflect-metadata')
+describe('when toggling a collapsed pane', () => {
+  
+  let expandablePane : ExpandablePane;
+
+  (beforeEach => {
+    expandablePane = new ExpandablePane();
+
+    expandablePane.toggleExpansion();
+  })();
+
+  it('should be expanded', () => expandablePane.should.be.true);
 });

@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-const build = require('@dolittle/typescript.build');
+import { PLATFORM } from 'aurelia-pal';
 
-module.exports = build.wallaby(undefined, w => {
-    require('reflect-metadata')
-});
+export function configure(config: any) {
+  config.globalResources([PLATFORM.moduleName('./ValueConverters/converters')]);
+}

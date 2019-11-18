@@ -2,8 +2,13 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-const build = require('@dolittle/typescript.build');
+import { paneDisplayMode } from './paneDisplayMode';
 
-module.exports = build.wallaby(undefined, w => {
-    require('reflect-metadata')
-});
+export class PaneDisplayModeValueConverter {
+    toView(value: any) {
+        if (value === (paneDisplayMode as any).auto) {
+            return 'left';
+        }
+        return value;
+    }
+}

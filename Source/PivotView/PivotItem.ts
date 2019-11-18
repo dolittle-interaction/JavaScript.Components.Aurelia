@@ -2,8 +2,12 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-const build = require('@dolittle/typescript.build');
+import { customElement, containerless, bindable } from 'aurelia-framework';
 
-module.exports = build.wallaby(undefined, w => {
-    require('reflect-metadata')
-});
+@customElement('pivot-item')
+@containerless()
+export class PivotItem {
+    @bindable   text?: string;
+    @bindable   title?: string;
+    @bindable   current: any;
+}

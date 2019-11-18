@@ -15,7 +15,7 @@ The repeater itself is represented as an Aurelia custom attribute and can be
 utilized on anything. It is not linked to any particular component or specific
 constraint.
 
-It you're used to the [`repeat.for`](https://aurelia.io/docs/templating/basics#repeaters)
+If you're used to the [`repeat.for`](https://aurelia.io/docs/templating/basics#repeaters)
 attribute from Aurelia, you'll find yourself right at home.
 
 ```html
@@ -39,7 +39,7 @@ The `hierarchy-children-property` is referring to what property of the data item
 given holds the children items.
 
 {{% notice tip %}}
-Keep in mind that everything is recursive, so what you put inside the the element
+Keep in mind that everything is recursive, so what you put inside the element
 with the `hierarchy-repeat.for` attribute, will be repeated subsequently throughout
 the hierarchy. Remember also that the `hierarchy-children-property` is referring to
 a property that is expected to be on every level of the hierarchy in your data.
