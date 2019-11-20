@@ -2,17 +2,17 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { ExpandablePane } from './../ExpandablePane';
+import { ExpandableCard } from '../ExpandableCard';
 
 describe('when toggling a collapsed pane', () => {
   
-  let expandablePane : ExpandablePane;
+  let expandableCard : ExpandableCard;
 
   (beforeEach => {
-    expandablePane = new ExpandablePane();
+    expandableCard = new ExpandableCard();
 
-    expandablePane.toggleExpansion();
+    expandableCard.toggleExpansion();
   })();
 
-  it('should be expanded', () => expandablePane.should.be.true);
+  it('should be expanded', () => expandableCard.should.be.true);
 });

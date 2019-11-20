@@ -6,7 +6,7 @@
 import { hasParts } from '../Templating/hasParts';
 import { bindable } from 'aurelia-framework';
 
-export class ExpandablePane {
+export class ExpandableCard {
   @bindable isExpanded: boolean=false;
 
   toggleExpansion(){
