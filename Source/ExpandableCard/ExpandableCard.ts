@@ -3,9 +3,10 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { hasParts } from '../Templating/hasParts';
 import { bindable } from 'aurelia-framework';
+import { hasParts } from '../Templating/hasParts';
 
+@hasParts()
 export class ExpandableCard {
   @bindable isExpanded: boolean=false;
 
