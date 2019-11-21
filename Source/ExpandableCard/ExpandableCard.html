@@ -5,8 +5,9 @@
 *----------------------------------------------------------------------------------------------
 -->
 <template>
-<section class="expandable-card">
-    <template part="banner" replacable replacement-tag="header"></template>
-    <template part="content" replacable replacement-tag="main"></template>
-</section>
+  <require from="./ExpandableCard.scss"></require>
+  <section class="expandable-card ${isExpanded ? 'is-expanded' : ''}" click.delegate="toggleExpansion()">
+      <template part="banner" replaceable replacement-tag="header"></template>
+      <template part="content" replaceable replacement-tag="main"></template>
+  </section>
 </template>

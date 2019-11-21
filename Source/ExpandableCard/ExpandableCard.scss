@@ -2,3 +2,37 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+@import '~DolittleStyles/Settings/all';
+@import '~DolittleStyles/Tools/all';
+@import '~@dolittle/styles/src/styles/Components/acrylic';
+
+$expandable-card-width-tablet: 22rem !default;
+
+.expandable-card {
+  @extend .acrylic;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+  @include media-bp-min(tablet) {
+    width: $expandable-card-width-tablet;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  header.banner {
+    padding: $grid-gutter;
+  }
+  .content {
+    max-height: 0;
+    padding: 0 $grid-gutter;
+    transform: translateX(0);
+    transition: all 0.2s ease-in-out;
+  }
+  &.is-expanded {
+    .content {
+      max-height: 1000rem;
+      padding: $grid-gutter;
+    }
+  }
+}
