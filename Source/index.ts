@@ -18,5 +18,6 @@ export function configure(aurelia: any, config: any) {
     aurelia.globalResources(PLATFORM.moduleName('./PivotView/PivotItem'), PLATFORM.moduleName('./PivotView/PivotItem.html'));
     aurelia.globalResources(PLATFORM.moduleName('./MenuList/MenuList'), PLATFORM.moduleName('./MenuList/MenuList.html'));
     aurelia.globalResources(PLATFORM.moduleName('./MenuList/MenuListItem'), PLATFORM.moduleName('./MenuList/MenuListItem.html'));
+    aurelia.globalResources(PLATFORM.moduleName('./TextField/TextField'), PLATFORM.moduleName('./TextField/TextField.html'));
     //globals.iconBaseFolder = config.iconBaseFolder;
 }
