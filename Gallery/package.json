@@ -6,9 +6,9 @@
   "version": "1.0.14",
   "description": "",
   "scripts": {
-    "start": "npx webpack-dev-server --open --watch --progress --hot",
-    "build": "npx webpack --env.production",
-    "build:dev": "npx webpack --config webpack.config.prod.js"
+    "webpack": "npx webpack --env.production --extractCss",
+    "webpack:dev": "npx webpack --extractCss",
+    "start": "npx webpack-dev-server --open --watch --progress --hot"
   },
   "devDependencies": {
     "@dolittle/typescript.webpack.aurelia": "^1.1.0",
