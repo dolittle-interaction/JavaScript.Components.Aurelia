@@ -6,8 +6,12 @@
 -->
 <template>
   <require from="./ExpandableCard.scss"></require>
-  <section class="expandable-card ${isExpanded ? 'is-expanded' : ''}" click.delegate="toggleExpansion()">
-      <template part="banner" replaceable replacement-tag="header"></template>
+  <section class="expandable-card ${isExpanded ? 'is-expanded' : ''}">
+    <div class="footprint" click.delegate="toggleExpansion()">
+      <header>
+        <template part="banner" replaceable></template>
+      </header>
       <template part="content" replaceable replacement-tag="main"></template>
+    </div>
   </section>
 </template>
