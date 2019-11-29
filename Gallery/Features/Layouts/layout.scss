@@ -6,8 +6,3 @@
 @import '~DolittleStyles/Tools/all.scss';
 $app-background-image: '../assets/images/rawpixel-653764-unsplash.jpg';
 
-body {
-    table tbody tr:nth-child(2n) {
-        background-color: rgba(#333333, 0.6);
-    }
-}

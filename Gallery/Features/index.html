@@ -6,7 +6,7 @@
 -->
 <template>
   <require from="./index.scss"></require>
-  <main class.bind="navigationStrategy | navigationStrategyCssClass">
+  <main class="main-body ${navigationStrategy | navigationStrategyCssClass}">
     <navigation-view selected-item.bind="selectedItem" pane-display-mode.bind="navigationStrategy">
       <banner>
         Navigation
@@ -48,8 +48,24 @@
         </content>
       </acrylic-card>
       <expandable-card>
-        <banner>I'm the banner of Expandable card</banner>
-        <content>I'm supposed to hidden</content>
+        <banner>
+            <h3>
+              Expandable card
+            </h3>
+        </banner>
+        <content>
+          <p>
+            I'm supposed to hidden
+          </p>
+          <p>
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus
+            mollis interdum.
+          </p>
+          <p>
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus
+            mollis interdum.
+          </p>
+        </content>
       </expandable-card>
       <router-view containerless></router-view>
     </section>
