@@ -7,6 +7,12 @@
 @import '~@dolittle/styles/src/styles/Components/acrylic';
 
 $expandable-card-width-tablet: 22rem !default;
+$expandable-card-content-transition: all 0.3s ease-in-out !default;
+$expandable-card-arrow-bottom-gutter: 0.3125rem !default;
+$expandable-card-arrow-left-gutter: 50% !default;
+$expandable-card-arrow-width: 1.25rem !default;
+$expandable-card-arrow-height: 0.3125rem !default;
+$expandable-card-arrow-transition: all 0.3s ease-in-out !default;
 
 .expandable-card {
   @extend .acrylic;
@@ -27,16 +33,15 @@ $expandable-card-width-tablet: 22rem !default;
       content: '';
       display: block;
       position: absolute;
-      bottom: 0.125rem;
-      left: 50%;
-      bottom: 0.3125rem;
-      width: 1.25rem;
-      height: 0.3125rem;
+      bottom: $expandable-card-arrow-bottom-gutter;
+      left: $expandable-card-arrow-left-gutter;
+      width: $expandable-card-arrow-width;
+      height: $expandable-card-arrow-height;
       background-image: url('expand_arrow.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      transition: all 0.15s ease-in-out;
-      transform: rotate(0) translateX(-50%);
+      transition: $expandable-card-arrow-transition;
+      transform: rotate(0);
       transform-origin: center;
     }
     .banner {
@@ -53,20 +58,19 @@ $expandable-card-width-tablet: 22rem !default;
   .content {
     transform: scaleY(0);
     transform-origin: center top;
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
+    transition: $expandable-card-content-transition;
+
     max-height: 0;
   }
   &.is-expanded {
     .content {
       transform: scaleY(1);
-      visibility: visible;
       max-height: 30rem;
       overflow-y: scroll;
     }
     .footprint {
       &::after {
-        transform: rotate(180deg) translateX(50%);
+        transform: rotate(180deg);
       }
     }
   }
