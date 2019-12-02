@@ -9,9 +9,9 @@
   <section class="expandable-card ${isExpanded ? 'is-expanded' : ''}">
     <div class="footprint" click.delegate="toggleExpansion()">
       <header>
-        <template part="banner" replaceable></template>
+        <template part="banner" replaceable css-class="expandable-card-banner"></template>
       </header>
-      <template part="content" replaceable replacement-tag="main"></template>
+      <template part="content" replaceable css-class="expandable-card-content"></template>
     </div>
   </section>
 </template>

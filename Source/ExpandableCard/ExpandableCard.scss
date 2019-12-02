@@ -46,7 +46,7 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
       transform: rotate(0);
       transform-origin: center;
     }
-    .banner {
+    .expandable-card-banner {
       h1,
       h2,
       h3,
@@ -57,7 +57,7 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
       }
     }
   }
-  .content {
+  .expandable-card-content {
     transform: scaleY(0);
     transform-origin: center top;
     transition: $expandable-card-content-transition;
@@ -65,7 +65,7 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
     max-height: 0;
   }
   &.is-expanded {
-    .content {
+    .expandable-card-content {
       transform: scaleY(1);
       max-height: 30rem;
       overflow-y: scroll;
