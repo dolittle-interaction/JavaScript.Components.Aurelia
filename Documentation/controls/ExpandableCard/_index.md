@@ -15,11 +15,11 @@ The control consists of the following sections: **banner** and **content**.
 
 ### Banner
 
-The banner is intended to be used for the content that is always visible. It renders as a `<div>` with the class `expandable-card-banner` within a `<header>`, so you are free to us whatever HTML tags inside the `<content>` tag.
+The banner is intended to be used for the content that is always visible. It renders as a `<div>` with the class `expandable-card-banner` within a `<header>`, so you are free to us whatever HTML tags you decire inside the `<banner>` tag.
 
 ### Content
 
-The content part where you put your hidden content. When you click the card, this dontent will be animated to be visible.
+The content part where you put your hidden content. When you click the card, this dontent will be animated to be visible. It renders as a `<div>` with the class `expandable-card-content`, so you are free to us whatever HTML tags you decire inside the `<content>` tag.
 
 ## Code Example
 
