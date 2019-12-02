@@ -8,9 +8,9 @@ import { hasParts } from '../Templating/hasParts';
 
 @hasParts()
 export class ExpandableCard {
-  @bindable isExpanded: boolean=false;
+  @bindable isExpanded: boolean = false;
 
-  toggleExpansion(){
-    this.isExpanded=!this.isExpanded;
+  toggleExpansion() {
+    this.isExpanded = !this.isExpanded;
   }
 }
