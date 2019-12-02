@@ -5,15 +5,13 @@
 import { ExpandableCard } from '../ExpandableCard';
 
 describe('when toggling a collapsed pane', () => {
-  
-  let expandableCard : ExpandableCard;
+  let expandableCard: ExpandableCard;
 
-  (beforeEach => {
+  beforeEach(() => {
     expandableCard = new ExpandableCard();
     expandableCard.isExpanded = true;
-
     expandableCard.toggleExpansion();
-  })();
+  });
 
-  it('should be expanded', () => expandableCard.should.be.false);
+  it('should be expanded', () => expandableCard.isExpanded.should.be.false);
 });
