@@ -13,6 +13,7 @@ $expandable-card-arrow-left-gutter: 50% !default;
 $expandable-card-arrow-width: 1.25rem !default;
 $expandable-card-arrow-height: 0.3125rem !default;
 $expandable-card-arrow-transition: all 0.3s ease-in-out !default;
+$expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
 
 .expandable-card {
   @extend .acrylic;
@@ -37,6 +38,7 @@ $expandable-card-arrow-transition: all 0.3s ease-in-out !default;
       left: $expandable-card-arrow-left-gutter;
       width: $expandable-card-arrow-width;
       height: $expandable-card-arrow-height;
+      margin-left: $expandable-card-arrow-margin-left;
       background-image: url('expand_arrow.svg');
       background-repeat: no-repeat;
       background-position: center center;
