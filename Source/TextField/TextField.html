@@ -1,7 +1,12 @@
+<!--
+*----------------------------------------------------------------------------------------------
+*  Copyright (c) Dolittle. All rights reserved.
+*  Licensed under the MIT License. See LICENSE in the project root for license information.
+*----------------------------------------------------------------------------------------------
+-->
 <template>
-  <input 
-  type='text' 
-  value.bind='value' 
-  placeholder.bind='placeHolder' 
-  disabled.bind='isDisabled'>
+  <label>${label}
+    <input type='text' value.bind='value' placeholder.bind='placeholder' 
+    disabled.bind='isDisabled'} />
+  </label>
 </template>
