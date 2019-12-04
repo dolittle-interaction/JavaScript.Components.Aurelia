@@ -19,7 +19,7 @@ The banner is intended to be used for the content that is always visible. It ren
 
 ### Content
 
-The content part where you put your hidden content. When you click the card, this dontent will be animated to be visible. It renders as a `<div>` with the class `expandable-card-content`, so you are free to us whatever HTML tags you decire inside the `<content>` tag.
+The content part where you put your hidden content. When you click the card, this content will be animated to be visible. It renders as a `<div>` with the class `expandable-card-content`, so you are free to use whatever HTML tags you desire inside the `<content>` tag.
 
 ## Code Example
 
