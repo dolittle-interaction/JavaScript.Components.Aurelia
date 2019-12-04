@@ -15,7 +15,7 @@ The control consists of the following sections: **banner** and **content**.
 
 ### Banner
 
-The banner is intended to be used for the content that is always visible. It renders as a `<div>` with the class `expandable-card-banner` within a `<header>`, so you are free to us whatever HTML tags you decire inside the `<banner>` tag.
+The banner is intended to be used for the content that is always visible. It renders as a `<div>` with the class `expandable-card-banner` within a `<header>`, so you are free to use whatever HTML tags you desire inside the `<banner>` tag.
 
 ### Content
 
