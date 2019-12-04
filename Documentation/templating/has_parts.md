@@ -53,7 +53,7 @@ The elements based on their tag names will then be mapped across and appear with
 
 ### Overrides
 
-As you can see in the above example, the output will create an invlid HTML when we know that the standards says that an `<li>` element is requiring to live within an `<ul>`element. This can we solve by overriding the tag type.
+As you can see in the above example, the output will create an invalid HTML when we know that the standards says that an `<li>` element is requiring to live within an `<ul>`element. This can we solve by overriding the tag type.
 
 You can override the tag type and the class name with attributes in the components template file.
 
