@@ -5,11 +5,22 @@
 import { TextField } from '../TextField';
 
 describe('when initiating a standard textfield', () => {
-  let textField: TextField = { label: 'Label', value: 'Value', placeholder: 'Placeholder', errorMessage: 'errorMessage', isDisabled: false, isRequired: false };
+  let textField: TextField = new TextField();
+  beforeEach(() => {
+    textField.label = 'Label';
+    textField.value = 'Value';
+    textField.placeholder = 'Placeholder';
+    textField.errorMessage = 'errorMessage';
+    textField.description = 'description text';
+    textField.isDisabled = false;
+    textField.isRequired = false;
+  });
   it('should have label set to "Label"', () => textField.label.should.equal('Label'));
   it('should have value set to "Value"', () => textField.value.should.equal('Value'));
   it('should have placeholder set to "Placeholder"', () => textField.placeholder.should.equal('Placeholder'));
   it('should have errorMessage set to "errorMessage"', () => textField.errorMessage.should.equal('errorMessage'));
+  it('should have description set to "description text"', () => textField.description.should.equal('description text'));
+  it('should have fieldName set to "input-' + textField.uniqueIdentifier + '"', () => textField.fieldName.should.equal('input-' + textField.uniqueIdentifier));
   it('isDisabled should be false', () => {
     textField.isDisabled.should.be.false;
   });

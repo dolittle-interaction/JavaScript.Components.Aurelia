@@ -5,8 +5,8 @@
 *----------------------------------------------------------------------------------------------
 -->
 <template>
-  <label>${label}
-    <input type='text' value.bind='value' placeholder.bind='placeholder' 
-    disabled.bind='isDisabled'} />
-  </label>
+  <label if.bind="label">${label}</label>
+  <input name="${field_name}" type="text" class="${errorMessage ? 'invalid' : ''}" value.bind="value" placeholder.bind="placeholder" disabled.bind="isDisabled" />
+  <small class="description-text" if.bind="description">${description}</small>
+  <small class="error-text" if.bind="errorMessage">${errorMessage}</small>
 </template>

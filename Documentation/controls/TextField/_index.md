@@ -1,7 +1,7 @@
 ---
-title: TextField
-description: Describes how to use the TextField control
-keywords: TextField, input, text
+title: text-field
+description: Describes how to use the text-field control
+keywords: text-field, input, text
 ---
 
 Description
@@ -13,6 +13,7 @@ Description
 | `label`        | **String**  | The label indicator for the text field.                             | ''            |
 | `value`        | **String**  | The default value when initiating the text field.                   | ''            |
 | `placeholder`  | **String**  | The text that goes in the placeholder attribute for the text field. | ''            |
+| `description`  | **String**  | The text that goes in the placeholder attribute for the text field. | ''            |
 | `isDisabled`   | **Boolean** | Decides if the field should be disabled or not                      | false         |
 | `isRequired`   | **Boolean** | Decides if the field should be required or not                      | false         |
 | `errorMessage` | **String**  | The error message that shows if validation fails                    | false         |
@@ -24,7 +25,7 @@ Above all text fields there should be alabel that describes the purpose/content 
 Is to be set in an `label`attribute from the consumer application.
 
 ```html
-<TextField label="Some nice input"></TextField>
+<text-field label="Some nice input"></text-field>
 ```
 
 ![Label](./Label.png)
@@ -32,7 +33,7 @@ Is to be set in an `label`attribute from the consumer application.
 Or if bound to an object:
 
 ```html
-<TextField label.bind="command.propertyInputName"></TextField>
+<text-field label.bind="command.propertyInputName"></text-field>
 ```
 
 ### value
@@ -40,10 +41,10 @@ Or if bound to an object:
 The `value` is the input value of the text field. This will typically be bound to a command input.
 
 ```html
-<TextField label=Label input.bind="command.propertyInputValue">
+<text-field label=Label input.bind="command.propertyInputValue">
 ```  
 
-![TextField with focus](./Focus.png)
+![text-field with focus](./Focus.png)
 
 ### placeholder
 
@@ -51,7 +52,7 @@ The placeholder is text that is displayed in the text field as if it was value, 
   dissapears when the field gets focus and reappear when it loses focus if there is no value. 
 
 ```html
-<TextField label="Label" placeholder="Placeholder"></TextField>
+<text-field label="Label" placeholder="Placeholder"></text-field>
 ```
 
 ![Placeholder](./Placeholder.png)
@@ -59,7 +60,7 @@ The placeholder is text that is displayed in the text field as if it was value, 
 ### isDisabled
 
 ```html
-<TextField is-disabled="true" placeholder="Disabled"></TextField>
+<text-field is-disabled="true" placeholder="Disabled"></text-field>
 ```
 
 ![Placeholder](./Disabled.png)
