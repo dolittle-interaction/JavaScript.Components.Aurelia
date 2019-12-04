@@ -4,12 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { hasParts } from '../Templating/hasParts';
-import { bindable } from 'aurelia-framework';
+import { customElement, bindable } from 'aurelia-framework';
 
-export class ExpandablePane {
-  @bindable isExpanded: boolean=false;
-
-  toggleExpansion(){
-    this.isExpanded=!this.isExpanded;
-  }
+@customElement('acrylic-card')
+@hasParts()
+export class AcrylicCard {
+  @bindable width: Number = 22;
 }

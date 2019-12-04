@@ -2,3 +2,16 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
+@import '~DolittleStyles/Settings/all';
+@import '~DolittleStyles/Tools/all';
+@import '~@dolittle/styles/src/styles/Components/acrylic';
+
+$acrylic-card-width-tablet: 22rem !default;
+.acrylic-card {
+  @extend .acrylic;
+  max-width: 100%;
+  width: 100%;
+  @include media-bp-min(tablet) {
+    width: $acrylic-card-width-tablet;
+  }
+}
