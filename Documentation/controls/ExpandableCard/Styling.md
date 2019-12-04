@@ -23,7 +23,7 @@ These are the variables you can override in your application.
 Make sure you have added an alias to DolittleStyles in your webpack config file. This is essential to make your component look for the setting files from your application, not only the settings file from [Styles](/interaction/styles/)
 
 {{% notice note %}}
-If you ar using `@dolittle/typescript.webpack` or `@dolittle/typescript.webpack.aurelia`, this is allready taken care of. Skip to next step.
+If you are using `@dolittle/typescript.webpack` or `@dolittle/typescript.webpack.aurelia`, this is already taken care of. Skip to next step.
 {{% /notice %}}
 
 ```js
