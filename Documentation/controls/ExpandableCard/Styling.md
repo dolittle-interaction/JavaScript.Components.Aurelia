@@ -1,11 +1,11 @@
 ---
 title: Styling
-description: Describes how to use the Navigation view item control and how to change the styles
-keywords: Using, navigationviewitem, navigation, styles
+description: Describes how to use the Expandable card control and how to change the styles
+keywords: Using, expandable, card, styles
 author: Vidar Aune Westrum
 ---
 
-## Navigation View
+## Expandable Card
 These are the variables you can override in your application.
 
 | Variable | Value type | Description | Default value|
