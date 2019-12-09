@@ -5,6 +5,13 @@
 @import '~DolittleStyles/Settings/all.scss';
 @import '~DolittleStyles/Tools/all.scss';
 
+$acrylic-bg-image: url('https://picsum.photos/2000/1500');
+
+body {
+  background: $acrylic-bg-image fixed center;
+  background-size: cover;
+}
+
 main.main-body {
   flex: 1 1 auto;
   width: 100vw;
@@ -20,7 +27,7 @@ main.main-body {
   &.navigation-top {
   }
 
- > .content {
+  > .content {
     padding: $grid-gutter;
     display: grid;
     gap: $grid-gutter;
