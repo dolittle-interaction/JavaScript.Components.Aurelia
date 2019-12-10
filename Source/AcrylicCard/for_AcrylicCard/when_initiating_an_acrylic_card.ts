@@ -2,28 +2,16 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { StageComponent, ComponentTester } from 'aurelia-testing';
-import { bootstrap } from 'aurelia-bootstrapper';
 import { AcrylicCard } from '../AcrylicCard';
 
 describe('When initiating an acrylic card', () => {
   let acrylicCard: AcrylicCard;
-  let component: ComponentTester;
 
   beforeEach(() => {
-    component = StageComponent.withResources('acrylic-card').inView('<acrylic-card><content>acrylic</content></acrylic-card>');
+    acrylicCard = new AcrylicCard();
   });
 
-  it('should have not set width', () => {
-    component
-      .create(bootstrap)
-      .then((cardElement: any) => {
-       console.log(cardElement);
-       acrylicCard = new AcrylicCard(component);
-       console.log(acrylicCard);
-      })
-      .catch((e: any) => {
-        console.log(e.toString());
-      });
-  });
+  it('should not have set width', () => acrylicCard.width.should.equal(0));
+  it('should have set an unique identificator', () => acrylicCard.uniqueIdentifier.should.not.be.empty);
+  it('should have set an unique identificator', () => acrylicCard.uniqueCardCssClass.should.not.be.empty);
 });

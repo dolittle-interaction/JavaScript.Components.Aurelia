@@ -6,7 +6,7 @@
 -->
 <template>
   <require from="./AcrylicCard.scss"></require>
-  <div if.bind="width" innerhtml.bind="customCardStyle"></div>
+  <style if.bind="width">.${uniqueCardCssClass}{width:${width}rem;}</style>
   <div class="acrylic-card ${uniqueCardCssClass}">
     <slot></slot>
   </div>
