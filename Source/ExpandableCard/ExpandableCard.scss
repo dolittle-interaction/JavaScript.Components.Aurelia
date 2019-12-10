@@ -42,7 +42,6 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
       background-image: url('expand_arrow.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      transition: $expandable-card-arrow-transition;
       transform: rotate(0);
       transform-origin: center;
     }
@@ -61,7 +60,6 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
     transform: scaleY(0);
     transform-origin: center top;
     transition: $expandable-card-content-transition;
-
     max-height: 0;
   }
   &.is-expanded {
