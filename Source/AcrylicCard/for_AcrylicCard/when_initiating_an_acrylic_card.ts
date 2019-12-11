@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 import { AcrylicCard } from '../AcrylicCard';
 
-describe('When initiating an acrylic card', () => {
+describe('when initiating an acrylic card', () => {
   let acrylicCard: AcrylicCard;
 
   beforeEach(() => {
