@@ -6,12 +6,14 @@
 @import '~DolittleStyles/Tools/all';
 @import '~@dolittle/styles/src/styles/Components/acrylic';
 
-$acrylic-card-width-tablet: 22rem !default;
+$acrylic-card-width-phone: 100% !default;
+$acrylic-card-width-tablet-up: 22rem !default;
+
 .acrylic-card {
   @extend .acrylic;
   max-width: 100%;
-  width: 100%;
+  width: $acrylic-card-width-phone;
   @include media-bp-min(tablet) {
-    width: $acrylic-card-width-tablet;
+    width: $acrylic-card-width-tablet-up;
   }
 }

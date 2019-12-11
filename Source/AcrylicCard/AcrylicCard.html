@@ -6,7 +6,8 @@
 -->
 <template>
   <require from="./AcrylicCard.scss"></require>
-  <div class="acrylic-card">
-    <template part="content" replaceable></template>
+  <style if.bind="width">.${uniqueCardCssClass}{width:${width}rem;}</style>
+  <div class="acrylic-card ${uniqueCardCssClass}">
+    <slot></slot>
   </div>
 </template>
