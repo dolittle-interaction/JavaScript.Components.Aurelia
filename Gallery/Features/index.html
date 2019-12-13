@@ -9,7 +9,7 @@
   <main class="main-body ${navigationStrategy | navigationStrategyCssClass}">
     <navigation-view selected-item.bind="selectedItem" pane-display-mode.bind="navigationStrategy">
       <banner>
-        Navigation
+        Dolittle Components
       </banner>
       <navigation-items>
         <navigation-view-item
@@ -42,10 +42,19 @@
     </command-bar>
 
     <section class="content">
-      
+      <text-field label="Standard"></text-field>
+      <text-field placeholder="No label"></text-field>
+      <text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
+      <text-field label="Preset value" value="Value"></text-field>
+      <text-field label="Disabled" is-disabled="true" placeholder="This cannot be focused"></text-field>
+
       <acrylic-card>
         <h1>Yo, I'm acrylic</h1>
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Nulla vitae elit
+          libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
       </acrylic-card>
       <acrylic-card width="50">
         <h2>Hi</h2>
@@ -53,9 +62,9 @@
 
       <expandable-card>
         <banner>
-            <h3>
-              Expandable card
-            </h3>
+          <h3>
+            Expandable card
+          </h3>
         </banner>
         <content>
           <p>
@@ -71,12 +80,6 @@
           </p>
         </content>
       </expandable-card>
-
-      <text-field label="Standard"></text-field>
-      <text-field placeholder="No label"></text-field>
-      <text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
-      <text-field label="Preset value" value="Value"></text-field>
-      <text-field label="Disabled" is-disabled="true" placeholder="This cannot be focused"></text-field>
 
       <router-view containerless></router-view>
     </section>
