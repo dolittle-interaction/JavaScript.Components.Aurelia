@@ -42,11 +42,16 @@
     </command-bar>
 
     <section class="content">
-      <text-field label="Standard"></text-field>
-      <text-field placeholder="No label"></text-field>
-      <text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
-      <text-field label="Preset value" value="Value"></text-field>
-      <text-field label="Disabled" is-disabled="true" placeholder="This cannot be focused"></text-field>
+      <acrylic-card>
+        <h1>TextField</h1>
+        <text-field label="Standard"></text-field>
+        <text-field placeholder="No label"></text-field>
+        <text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
+        <text-field label="Preset value" value="Value"></text-field>
+        <text-field label="Required" placeholder="This field is required" is-required="true"></text-field>
+        <text-field label="Disabled" is-disabled="true" placeholder="This cannot be focused"></text-field>
+        <text-field label="Preset value" value="Value" error-message="The input provided is invalid"></text-field>
+      </acrylic-card>
 
       <acrylic-card>
         <h1>Yo, I'm acrylic</h1>
