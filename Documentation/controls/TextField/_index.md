@@ -25,7 +25,7 @@ Above all text fields there should be alabel that describes the purpose/content 
 Is to be set in an `label`attribute from the consumer application.
 
 ```html
-<text-field label="Some nice input"></text-field>
+<text-field label="Standard"></text-field>
 ```
 
 ![Label](./Label.png)
@@ -41,42 +41,65 @@ Or if bound to an object:
 The `value` is the input value of the text field. This will typically be bound to a command input.
 
 ```html
-<text-field label=Label input.bind="command.propertyInputValue">
-```  
+<text-field label="Standard" value.bind="command.propertyInputValue"></text-field>
+```
 
 ![text-field with focus](./Focus.png)
 
 ### placeholder
 
-The placeholder is text that is displayed in the text field as if it was value, but a bit faded color compared to the input value. It
-  dissapears when the field gets focus and reappear when it loses focus if there is no value. 
+The placeholder is text that is displayed in the text field as if it was value, but a bit faded color compared to the input value. It dissapears when the field gets focus and reappear when it loses focus if there is no value.
 
 ```html
-<text-field label="Label" placeholder="Placeholder"></text-field>
+<text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
 ```
 
 ![Placeholder](./Placeholder.png)
 
-### isDisabled
+### description
+
+Can be set to give a short description of expectation to the input or other small hints.
 
 ```html
-<text-field is-disabled="true" placeholder="Disabled"></text-field>
+<text-field label="Description text" description="Describe expected input"></text-field>
 ```
 
-![Placeholder](./Disabled.png)
+![Description](./description.png)
+
+### isDisabled
+
+Sets the input field to be disabled.
+
+```html
+<text-field is-disabled="true" label="Disabled" placeholder="This cannot be focused"></text-field>
+```
+
+![Disabled](./Disabled.png)
 
 ### isRequired
 
-{{% notice warning %}}
-Not implemented yet.
+Sets the input field as required. It will be indicated with a red asterix at the label and bolder text in placeholder.
 
-Needs styling from Styles
-{{% /notice %}}
+```html
+<text-field is-required="true" label="Required" placeholder="This field is required"></text-field>
+```
+
+![Required](./Required.png)
+
+### requiredText
+
+Is set default to `*`. Can be overridden to desired text.
+
+```html
+<text-field label="Required" required-text="This field is required" is-required="true"></text-field>
+```
+
+![Required text](./required_text.png)
 
 ### errorMessage
 
-{{% notice warning %}}
-Not implemented yet.
+Error message is typically populated from the commandResult from the app using this component.
 
-Needs styling from Styles
-{{% /notice %}}
+When `errorMessage` is populated, the field will appear invaøid by setting the border color to red and show the red error message below the input field.
+
+![Error message](./error_text.png)
