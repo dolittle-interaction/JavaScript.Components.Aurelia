@@ -4,12 +4,45 @@
  *--------------------------------------------------------------------------------------------*/
 @import '~DolittleStyles/Settings/all';
 
+$text-field-input-icon-size: 0.625rem;
+
 .text-field {
   margin-bottom: $grid-gutter;
+  .input-footprint {
+    display: inline-block;
+    padding: 0.5rem 0;
+    position: relative;
+    input {
+      margin: 0;
+      &:focus + .delete-cross {
+        opacity: 1;
+      }
+    }
+    .delete-cross {
+      display: block;
+      height: $text-field-input-icon-size;
+      width: $text-field-input-icon-size;
+      position: absolute;
+      top: 50%;
+      margin-top: -$text-field-input-icon-size/2;
+      right: $grid-gutter/2;
+      opacity: 0;
+      transform: translateY(0);
+      transition: opacity 0.2s;
+      svg{
+        display: block;
+      }
+    }
+  }
+
   label {
     .required {
       color: $color-secondary-light-red;
     }
+  }
+  .description-text,
+  .error-text {
+    display: block;
   }
   &.invalid {
     input {

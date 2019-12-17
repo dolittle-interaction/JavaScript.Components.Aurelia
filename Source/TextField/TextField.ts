@@ -13,8 +13,13 @@ export class TextField extends Component {
   @bindable isRequired: boolean = false;
   @bindable errorMessage: string = '';
   fieldName: string = '';
+  
   constructor() {
     super();
     this.fieldName = 'input-' + this.uniqueIdentifier;
+  }
+  
+  clearValue(){
+    this.value = '';
   }
 }
