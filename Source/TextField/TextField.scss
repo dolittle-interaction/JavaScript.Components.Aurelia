@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Dolittle. All rights reserved.
+ *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+@import '~DolittleStyles/Settings/all';
+
+$text-field-margin-bottom:                $grid-gutter !default;
+$text-field-input-footprint-padding:      0.5rem 0 !default;
+$text-field-input-delete-icon-size:       0.625rem !default;
+$text-field-required-text-color:          $color-secondary-light-red !default;
+$text-field-required-text-margin-left:    .5rem !default;
+$text-field-invalid-input-border-color:   $color-secondary-light-red !default;
+$text-field-invalid-error-text-color:     $color-secondary-light-red !default;
+
+.text-field {
+  margin-bottom: $text-field-margin-bottom;
+  .input-footprint {
+    display: inline-block;
+    padding: $text-field-input-footprint-padding;
+    position: relative;
+    input {
+      margin: 0;
+      &:focus + .delete-cross {
+        opacity: 1;
+      }
+    }
+    .delete-cross {
+      display: block;
+      height: $text-field-input-delete-icon-size;
+      width: $text-field-input-delete-icon-size;
+      position: absolute;
+      top: 50%;
+      margin-top: -$text-field-input-delete-icon-size/2;
+      right: $grid-gutter/2;
+      opacity: 0;
+      transform: translateY(0);
+      transition: opacity 0.2s;
+      svg{
+        display: block;
+      }
+    }
+  }
+
+  label {
+    .required {
+      color: $text-field-required-text-color;
+      margin-left: $text-field-required-text-margin-left;
+    }
+  }
+  .description-text,
+  .error-text {
+    display: block;
+  }
+  .description-text{
+    font-size: 0.6875rem;
+  }
+  &.invalid {
+    input {
+      border-color: $text-field-invalid-input-border-color;
+    }
+    .error-text {
+      color: $text-field-invalid-error-text-color
+    }
+  }
+}
