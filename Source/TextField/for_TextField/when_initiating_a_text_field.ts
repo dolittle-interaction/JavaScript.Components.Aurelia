@@ -12,6 +12,7 @@ describe('when initiating a standard textfield', () => {
     textField.placeholder = 'Placeholder';
     textField.errorMessage = 'errorMessage';
     textField.description = 'description text';
+    textField.requiredText = 'required text';
     textField.isDisabled = false;
     textField.isRequired = false;
   });
@@ -21,6 +22,9 @@ describe('when initiating a standard textfield', () => {
   it('should have errorMessage set to "errorMessage"', () => textField.errorMessage.should.equal('errorMessage'));
   it('should have description set to "description text"', () => textField.description.should.equal('description text'));
   it('should have fieldName set to "input-' + textField.uniqueIdentifier + '"', () => textField.fieldName.should.equal('input-' + textField.uniqueIdentifier));
+  it('should have set a requiredText', () => {
+    textField.requiredText.should.equal('required text');
+  });
   it('isDisabled should be false', () => {
     textField.isDisabled.should.be.false;
   });

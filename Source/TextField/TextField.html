@@ -7,8 +7,7 @@
 <template>
   <require from="./TextField.scss"></require>
   <div class="text-field ${errorMessage ? 'invalid' : ''}">
-    <label for="${fieldName}" if.bind="label">${label} <span class="required" if.bind="isRequired">*</span> </label>
-
+    <label for="${fieldName}" if.bind="label">${label} <span class="required" if.bind="isRequired">${requiredText}</span> </label>
     <div class="input-footprint">
       <input
         name="${fieldName}"

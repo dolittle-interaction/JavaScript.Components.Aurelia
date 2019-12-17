@@ -4,13 +4,19 @@
  *--------------------------------------------------------------------------------------------*/
 @import '~DolittleStyles/Settings/all';
 
-$text-field-input-icon-size: 0.625rem;
+$text-field-margin-bottom:                $grid-gutter !default;
+$text-field-input-footprint-padding:      0.5rem 0 !default;
+$text-field-input-delete-icon-size:       0.625rem !default;
+$text-field-required-text-color:          $color-secondary-light-red !default;
+$text-field-required-text-margin-left:    .5rem !default;
+$text-field-invalid-input-border-color:   $color-secondary-light-red !default;
+$text-field-invalid-error-text-color:     $color-secondary-light-red !default;
 
 .text-field {
-  margin-bottom: $grid-gutter;
+  margin-bottom: $text-field-margin-bottom;
   .input-footprint {
     display: inline-block;
-    padding: 0.5rem 0;
+    padding: $text-field-input-footprint-padding;
     position: relative;
     input {
       margin: 0;
@@ -20,11 +26,11 @@ $text-field-input-icon-size: 0.625rem;
     }
     .delete-cross {
       display: block;
-      height: $text-field-input-icon-size;
-      width: $text-field-input-icon-size;
+      height: $text-field-input-delete-icon-size;
+      width: $text-field-input-delete-icon-size;
       position: absolute;
       top: 50%;
-      margin-top: -$text-field-input-icon-size/2;
+      margin-top: -$text-field-input-delete-icon-size/2;
       right: $grid-gutter/2;
       opacity: 0;
       transform: translateY(0);
@@ -37,19 +43,23 @@ $text-field-input-icon-size: 0.625rem;
 
   label {
     .required {
-      color: $color-secondary-light-red;
+      color: $text-field-required-text-color;
+      margin-left: $text-field-required-text-margin-left;
     }
   }
   .description-text,
   .error-text {
     display: block;
   }
+  .description-text{
+    font-size: 0.6875rem;
+  }
   &.invalid {
     input {
-      border-color: $color-secondary-light-red;
+      border-color: $text-field-invalid-input-border-color;
     }
     .error-text {
-      color: $color-secondary-light-red;
+      color: $text-field-invalid-error-text-color
     }
   }
 }

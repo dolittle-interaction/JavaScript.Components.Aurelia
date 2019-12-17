@@ -11,15 +11,16 @@ export class TextField extends Component {
   @bindable description: string = '';
   @bindable isDisabled: boolean = false;
   @bindable isRequired: boolean = false;
+  @bindable requiredText: string = '*';
   @bindable errorMessage: string = '';
   fieldName: string = '';
-  
+
   constructor() {
     super();
     this.fieldName = 'input-' + this.uniqueIdentifier;
   }
-  
-  clearValue(){
+
+  clearValue() {
     this.value = '';
   }
 }
