@@ -1,5 +1,5 @@
 ---
-title: text-field
+title: TextField
 description: Describes how to use the text-field control
 keywords: text-field, input, text
 ---
