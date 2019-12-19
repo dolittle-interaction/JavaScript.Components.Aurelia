@@ -11,14 +11,14 @@ Example of how the component is rendered when all options are provided.
 ![All Inclusive](./all_inclusive.png)
 
 ```html
-        <text-field label="All inclusive" value="Value" placeholder="Placeholder text" description="Description text" is-disabled="true" is-required="Required" reuired-text="Field is required" error-message="The input provided is invalid"></text-field>
+<text-field label="All inclusive" value="Value" placeholder="Placeholder text" description="Description text" is-disabled="true" is-required="Required" reuired-text="Field is required" error-message="The input provided is invalid"></text-field>
 ```
 
 ```html
 <div class="text-field invalid">
     <label for="input-b87940db">All inclusive <span class="required">*</span></label>
     <div class="input-footprint">
-      <input type="text" value.bind="value" placeholder.bind="placeholder" disabled.bind="isDisabled" required.bind="isRequired" name="input-b87940db" id="input-b87940db"  placeholder="Placeholder text" disabled="" required="">
+      <input type="text" name="input-b87940db" id="input-b87940db" placeholder="Placeholder text" disabled="" required="">
       <i class="delete-cross" click.delegate="clearValue()">
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.57617 0.951172L5.5332 5L9.57617 9.04883L9.04883 9.57617L5 5.5332L0.951172 9.57617L0.423828 9.04883L4.4668 5L0.423828 0.951172L0.951172 0.423828L5 4.4668L9.04883 0.423828L9.57617 0.951172Z" fill="black" fill-opacity="0.8"></path>
