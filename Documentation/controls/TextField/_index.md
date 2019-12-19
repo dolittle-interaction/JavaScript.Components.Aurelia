@@ -30,6 +30,8 @@ Example of how the component is rendered when all options are provided.
   </div>
 ```
 
+You can override styling with your own styling in your app, or you can set your own values to a set of SCSS variables. [More information on styling with SCSS vaiables.](styling)
+
 ## Options
 
 | Property        | Type        | Description                                                         | Default value |

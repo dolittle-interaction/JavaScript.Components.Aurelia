@@ -5,7 +5,7 @@ keywords: Using, textfield, input, text, styles
 author: Vidar Aune Westrum
 ---
 
-## Acrylic card
+## TextField
 
 These are the variables you can override in your application.
 
