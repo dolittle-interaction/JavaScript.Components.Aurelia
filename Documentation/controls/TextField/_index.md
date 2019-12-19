@@ -4,19 +4,44 @@ description: Describes how to use the text-field control
 keywords: text-field, input, text
 ---
 
-Description
+TextField is a component that renders an intput field with the type of text. You can provide different options as described below. The field will be given an unique id.
+
+Example of how the component is rendered when all options are provided.
+
+![All Inclusive](./all_inclusive.png)
+
+```html
+        <text-field label="All inclusive" value="Value" placeholder="Placeholder text" description="Description text" is-disabled="true" is-required="Required" reuired-text="Field is required" error-message="The input provided is invalid"></text-field>
+```
+
+```html
+<div class="text-field invalid">
+    <label for="input-b87940db">All inclusive <span class="required">*</span></label>
+    <div class="input-footprint">
+      <input type="text" value.bind="value" placeholder.bind="placeholder" disabled.bind="isDisabled" required.bind="isRequired" name="input-b87940db" id="input-b87940db"  placeholder="Placeholder text" disabled="" required="">
+      <i class="delete-cross" click.delegate="clearValue()">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.57617 0.951172L5.5332 5L9.57617 9.04883L9.04883 9.57617L5 5.5332L0.951172 9.57617L0.423828 9.04883L4.4668 5L0.423828 0.951172L0.951172 0.423828L5 4.4668L9.04883 0.423828L9.57617 0.951172Z" fill="black" fill-opacity="0.8"></path>
+        </svg>
+      </i>
+    </div>
+    <small class="description-text">Description text</small>
+    <small class="error-text">The input provided is invalid</small>
+  </div>
+```
 
 ## Options
 
-| Property       | Type        | Description                                                         | Default value |
-| -------------- | ----------- | ------------------------------------------------------------------- | ------------- |
-| `label`        | **String**  | The label indicator for the text field.                             | ''            |
-| `value`        | **String**  | The default value when initiating the text field.                   | ''            |
-| `placeholder`  | **String**  | The text that goes in the placeholder attribute for the text field. | ''            |
-| `description`  | **String**  | The text that goes in the placeholder attribute for the text field. | ''            |
-| `isDisabled`   | **Boolean** | Decides if the field should be disabled or not                      | false         |
-| `isRequired`   | **Boolean** | Decides if the field should be required or not                      | false         |
-| `errorMessage` | **String**  | The error message that shows if validation fails                    | false         |
+| Property        | Type        | Description                                                         | Default value |
+| --------------- | ----------- | ------------------------------------------------------------------- | ------------- |
+| `label`         | **String**  | The label indicator for the text field.                             |               |
+| `value`         | **String**  | The default value when initiating the text field.                   |               |
+| `placeholder`   | **String**  | The text that goes in the placeholder attribute for the text field. |               |
+| `description`   | **String**  | The text that goes in the placeholder attribute for the text field. |               |
+| `isDisabled`    | **Boolean** | Decides if the field should be disabled or not                      | false         |
+| `isRequired`    | **Boolean** | Decides if the field should be required or not                      | false         |
+| `required-text` | **string**  | Text that indicates that the field is required                      | \*            |
+| `errorMessage`  | **String**  | The error message that shows if validation fails                    | false         |
 
 ### label
 
