@@ -35,5 +35,5 @@ Sometimes you need a card that is of another width than the default. Then you ar
 The width property renders in `rem` units. Please provide your width value in `rem`
 {{% /notice %}}
 {{% notice tip %}}
-If you know what width you need in pixles, devide it on 16, then you have your width in `rem`.
+If you know what width you need in pixles, divide it by 16, then you have your width in `rem`.
 {{% /notice %}}
