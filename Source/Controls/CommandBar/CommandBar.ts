@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { bindable, observable } from 'aurelia-framework';
-import { hasParts } from '../Templating/hasParts';
+import { hasParts } from '../../Templating/hasParts';
 import { labelPosition } from './labelPosition';
 import { commandLocation } from './commandLocation';
 

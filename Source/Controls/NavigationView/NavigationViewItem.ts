@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { customElement, containerless, bindable, inject, processContent } from 'aurelia-framework';
-import { HierarchyRepeaterItem } from '../Templating/HierarchyRepeaterItem';
+import { HierarchyRepeaterItem } from '../../Templating/HierarchyRepeaterItem';
 
 /**
  * Represents the view model for a navigation view item

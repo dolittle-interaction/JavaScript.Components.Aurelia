@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { bindable } from 'aurelia-framework';
-import { Component } from '../component';
+import { Component } from '../../Base/component';
 export class TextField extends Component {
   @bindable label: string = '';
   @bindable value: string = '';
