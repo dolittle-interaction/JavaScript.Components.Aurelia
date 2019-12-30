@@ -5,10 +5,8 @@ import { customElement, containerless, bindable } from 'aurelia-framework';
 @customElement('command-bar-button')
 @containerless()
 export class CommandBarButton {
-    @bindable icon: any;
-    @bindable label: any;
-    @bindable linkUrl: any;
-    constructor(){
-
-    }
+  @bindable label: any;
+  @bindable linkUrl: any;
+  @bindable iconUrl: any;
+  constructor() {}
 }
