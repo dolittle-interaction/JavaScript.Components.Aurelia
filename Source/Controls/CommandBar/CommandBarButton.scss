@@ -3,36 +3,47 @@
 $command-bar-button-padding: 0 $grid-gutter/2 !default;
 $command-bar-button-hover-bg-color: $color-white-20 !default;
 $command-bar-button-svg-fill-color: #fff !default;
-$command-bar-button-in-secondary-commands-padding: 0 $grid-gutter/1.5 !default;
+$command-bar-button-in-secondary-commands-padding: $grid-gutter/4 $grid-gutter/1.5 !default;
 
 .command-bar-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: $command-bar-button-padding;
-    &:hover {
-        background-color: $command-bar-button-hover-bg-color;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: $command-bar-button-padding;
+  &:hover {
+    background-color: $command-bar-button-hover-bg-color;
+  }
+  img {
+    height: 1.5rem;
+  }
+  svg {
+    fill: $command-bar-button-svg-fill-color;
+  }
+  .secondary-commands & {
+    padding: $command-bar-button-in-secondary-commands-padding;
+    .icon {
+      height: 1.25rem;
+      width: 1.25rem;
+      margin-right: $grid-gutter/2;
+      img {
+        max-height: 100%;
+      }
     }
-    svg {
-        fill: $command-bar-button-svg-fill-color;
-    }
-    .secondary-commands & {
-        padding: $command-bar-button-in-secondary-commands-padding;
-
-        .label-bottom & {
-            flex-direction: row;
-            justify-content: flex-start;
-        }
-    }
-
     .label-bottom & {
-        flex-direction: column;
-        justify-content: center;
+      flex-direction: row;
+      justify-content: flex-start;
     }
-    .label-hidden & {
-        .label {
-            display: none;
-        }
+  }
+
+  .label-bottom & {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .label-hidden & {
+    .label {
+      display: none;
     }
+  }
 }

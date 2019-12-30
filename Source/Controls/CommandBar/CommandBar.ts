@@ -7,17 +7,15 @@ import { commandLocation } from './commandLocation';
 
 @hasParts()
 export class CommandBar {
-    @bindable commandLocation: any;
-    @bindable labelPosition: any;
-    @observable displaySecondaryCommands: any;
+  @bindable commandLocation: string = commandLocation.right;
+  @bindable labelPosition: string = labelPosition.right;
+  
+  private displaySecondaryCommands: boolean = false;
 
-    constructor() {
-        this.labelPosition = labelPosition.right;
-        this.commandLocation = commandLocation.right;
-        this.displaySecondaryCommands = false;
-    }
+  constructor() {
+  }
 
-    toggleSecondaryCommands() {
-        this.displaySecondaryCommands = !this.displaySecondaryCommands;
-    }
+  toggleSecondaryCommands() {
+    this.displaySecondaryCommands = !this.displaySecondaryCommands;
+  }
 }

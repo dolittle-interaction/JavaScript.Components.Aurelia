@@ -1,6 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 @import '~DolittleStyles/Settings/all';
+@import '~DolittleStyles/Tools/all';
 
 $command-bar-height-default: 2.5rem !default;
 $command-bar-height-collapsed: 1.5rem !default;
@@ -9,108 +10,109 @@ $command-bar-height-extended: 3.75rem !default;
 $command-bar-bg-color: $color-gray-darkest !default;
 $command-bar-font-size: 0.75rem !default;
 
-$command-bar-content-block-padding:  0 $grid-gutter !default;
+$command-bar-content-block-padding: 0 $grid-gutter !default;
 
-$command-bar-secondary-commands-toggle-svg-fill:  #fff !default;
+$command-bar-secondary-commands-toggle-svg-fill: #fff !default;
 $command-bar-secondary-commands-padding: $grid-gutter/1.5 0 !default;
 $command-bar-secondary-commands-bg-color: lighten($command-bar-bg-color, 5%) !default;
 $command-bar-secondary-commands-border: 0.0625rem solid $color-gray-dark !default;
 $command-bar-secondary-commands-transition: all 0.15s !default;
 
 .command-bar {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: $command-bar-font-size;
+
+  .footprint {
+    background-color: $command-bar-bg-color;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
     position: relative;
     width: 100%;
-    height: auto;
-    font-size: $command-bar-font-size;
+    z-index: 99;
 
-    .footprint {
-        background-color: $command-bar-bg-color;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: nowrap;
-        padding: 0;
-        position: relative;
-        width: 100%;
-        z-index: 99;
-
-        &.commands-left {
-            justify-content: flex-start;
-        }
-
-        &.commands-center {
-            justify-content: center;
-        }
-
-        &.commands-right {
-            justify-content: flex-end;
-            .content-block {
-                margin-right: auto;
-            }
-        }
-
-        &.commands-distributed {
-            justify-content: space-between;
-            .primary-commands {
-                flex: 1;
-                justify-content: space-evenly;
-            }
-        }
+    &.commands-left {
+      justify-content: flex-start;
     }
 
-    &.collapsed {
-        height: $command-bar-height-collapsed;
+    &.commands-center {
+      justify-content: center;
     }
 
-    &.label-bottom {
-        height: $command-bar-height-extended;
+    &.commands-right {
+      justify-content: flex-end;
+      .content-block {
+        margin-right: auto;
+      }
     }
 
-    &.label-right,
-    &.label-hidden {
-        height: $command-bar-height-default;
+    &.commands-distributed {
+      justify-content: space-between;
+      .primary-commands {
+        flex: 1;
+        justify-content: space-evenly;
+      }
+    }
+  }
+
+  &.collapsed {
+    height: $command-bar-height-collapsed;
+  }
+
+  &.label-bottom {
+    height: $command-bar-height-extended;
+  }
+
+  &.label-right,
+  &.label-hidden {
+    height: $command-bar-height-default;
+  }
+
+  .content-block {
+    padding: $command-bar-content-block-padding;
+  }
+  .primary-commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-self: stretch;
+  }
+  .secondary-commands-toggle {
+    display: none;
+    svg {
+      fill: $command-bar-secondary-commands-toggle-svg-fill;
+    }
+  }
+  .secondary-commands-wrapper {
+    position: relative;
+    z-index: 49;
+
+    .secondary-commands {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      padding: $command-bar-secondary-commands-padding;
+      background-color: $command-bar-secondary-commands-bg-color;
+      border: $command-bar-secondary-commands-border;
+      transition: $command-bar-secondary-commands-transition;
+      transform: scale(0);
+      transform-origin: 80% 0;
+
+      & + .secondary-commands-toggle {
+        display: block;
+      }
     }
 
-    .content-block {
-        padding:$command-bar-content-block-padding;
+    &.visible {
+      .secondary-commands {
+        transform: scale(1);
+      }
     }
-    .primary-commands {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .secondary-commands-toggle {
-        display: none;
-        svg {
-            fill:$command-bar-secondary-commands-toggle-svg-fill;
-        }
-    }
-    .secondary-commands-wrapper {
-        position: relative;
-        z-index: 49;
-
-        .secondary-commands {
-            position: absolute;
-            right: 0;
-            top: 100%;
-            padding: $command-bar-secondary-commands-padding;
-            background-color: $command-bar-secondary-commands-bg-color;
-            border: $command-bar-secondary-commands-border;
-            transition: $command-bar-secondary-commands-transition;
-            transform: scale(0);
-            transform-origin: 80% 0;
-
-            & + .secondary-commands-toggle {
-                display: block;
-            }
-        }
-
-        &.visible {
-            .secondary-commands {
-                transform: scale(1);
-            }
-        }
-    }
+  }
 }
