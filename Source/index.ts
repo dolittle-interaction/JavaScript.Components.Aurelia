@@ -11,6 +11,7 @@ export function configure(aurelia: any, config: any) {
     aurelia.globalResources(PLATFORM.moduleName('./Controls/CommandBar/CommandBar'), PLATFORM.moduleName('./Controls/CommandBar/CommandBar.html'));
     aurelia.globalResources(PLATFORM.moduleName('./Controls/CommandBar/CommandBarButton'), PLATFORM.moduleName('./Controls/CommandBar/CommandBarButton.html'));
     aurelia.globalResources(PLATFORM.moduleName('./Controls/ExpandableCard/ExpandableCard'), PLATFORM.moduleName('./Controls/ExpandableCard/ExpandableCard.html'));
+    aurelia.globalResources(PLATFORM.moduleName('./Controls/FlexibleLayout/FlexibleLayout'), PLATFORM.moduleName('./Controls/FlexibleLayout/FlexibleLayout.html'));
     aurelia.globalResources(PLATFORM.moduleName('./Controls/NavigationView/NavigationView'), PLATFORM.moduleName('./Controls/NavigationView/NavigationView.html'));
     aurelia.globalResources(PLATFORM.moduleName('./Controls/NavigationView/NavigationViewItem'), PLATFORM.moduleName('./Controls/NavigationView/NavigationViewItem.html'));
     aurelia.globalResources(PLATFORM.moduleName('./Controls/NavigationView/NavigationViewItemSeparator'), PLATFORM.moduleName('./Controls/NavigationView/NavigationViewItemSeparator.html'));
