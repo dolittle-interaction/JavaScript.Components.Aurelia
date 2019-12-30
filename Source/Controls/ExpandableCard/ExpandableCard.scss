@@ -36,7 +36,7 @@ $expandable-card-arrow-margin-left: $expandable-card-arrow-width/2 !default;
       left: $expandable-card-arrow-left-gutter;
       width: $expandable-card-arrow-width;
       height: $expandable-card-arrow-height;
-      margin-left: $expandable-card-arrow-margin-left;
+      margin-left: -$expandable-card-arrow-margin-left;
       background-image: url('expand_arrow.svg');
       background-repeat: no-repeat;
       background-position: center center;
