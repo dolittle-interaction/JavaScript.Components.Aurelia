@@ -11,7 +11,7 @@ export class index {
     structure: any
     profile: any
     constructor(structure: any) {
-        this.navigationStrategy = 'left';
+        this.navigationStrategy = 'left-compact';
         this.structure = structure;
 
         this.profile = {
