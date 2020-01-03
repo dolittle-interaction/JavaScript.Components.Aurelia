@@ -13,16 +13,17 @@ body {
 main.main-body {
   @include media-bp-max(tablet) {
     .command-bar .footprint {
-      padding-left: $navigation-view-width-compact;
+      // padding-left: $navigation-view-width-compact;
     }
+  }
+  &.navigation-left-compact {
+    padding-left: $navigation-view-width-compact;
   }
   @include media-bp-min(tablet) {
     &.navigation-left {
       padding-left: $navigation-view-width-expanded;
     }
-    &.navigation-left-compact {
-      padding-left: $navigation-view-width-compact;
-    }
+
     &.navigation-left-minimal {
     }
     &.navigation-top {
@@ -34,6 +35,6 @@ main.main-body {
     display: grid;
     gap: $grid-gutter;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0,1fr)
+    grid-template-rows: minmax(0, 1fr);
   }
 }
