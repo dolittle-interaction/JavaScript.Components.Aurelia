@@ -2,6 +2,10 @@
 
 <template>
   <require from="./CommandBar.scss"></require>
+  <style if.bind="zIndex">
+    .${uniqueCommandBarCssClass}{z-index:${zIndex};}
+  </style>
+
   <nav class="command-bar ${uniqueCommandBarCssClass} ${commandLabelPosition ? 'label-' + commandLabelPosition : ''}">
     <div class="footprint ${commandLocation ? 'commands-'+ commandLocation : ''}">
       <template part="content-block" replaceable> </template>
