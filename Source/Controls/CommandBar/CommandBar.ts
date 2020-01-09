@@ -4,14 +4,20 @@ import { bindable } from 'aurelia-framework';
 import { hasParts } from '../../Templating/hasParts';
 import { commandLabelPosition } from './commandLabelPosition';
 import { commandLocation } from './commandLocation';
+import { Component } from '../../Base/component';
 
 @hasParts()
-export class CommandBar {
+export class CommandBar extends Component {
   @bindable commandLocation: string = commandLocation.right;
   @bindable commandLabelPosition: string = commandLabelPosition.right;
+  @bindable zIndex: Number = NaN;
+  uniqueCommandBarCssClass: string = '';
   private displaySecondaryCommands: boolean = false;
 
-  constructor() {}
+  constructor() {
+    super();
+    this.uniqueCommandBarCssClass = 'command-bar-' + this.uniqueIdentifier;
+  }
 
   toggleSecondaryCommands() {
     this.displaySecondaryCommands = !this.displaySecondaryCommands;
