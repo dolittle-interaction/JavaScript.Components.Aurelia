@@ -2,7 +2,7 @@
 
 <template>
   <require from="./CommandBar.scss"></require>
-  <style if.bind="zIndex">
+  <style if.bind="zIndex != 99">
     .${uniqueCommandBarCssClass}{z-index:${zIndex};}
   </style>
 

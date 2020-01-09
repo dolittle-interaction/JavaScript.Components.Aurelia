@@ -10,7 +10,7 @@ import { Component } from '../../Base/component';
 export class CommandBar extends Component {
   @bindable commandLocation: string = commandLocation.right;
   @bindable commandLabelPosition: string = commandLabelPosition.right;
-  @bindable zIndex: Number = NaN;
+  @bindable zIndex: Number = 99;
   uniqueCommandBarCssClass: string = '';
   private displaySecondaryCommands: boolean = false;
 
