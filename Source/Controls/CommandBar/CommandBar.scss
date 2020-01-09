@@ -3,9 +3,9 @@
 @import '~DolittleStyles/Settings/all';
 @import '~DolittleStyles/Tools/all';
 
-$command-bar-height-default: 2.5rem !default;
-$command-bar-height-collapsed: 1.5rem !default;
+$command-bar-height-default: 3rem !default;
 $command-bar-height-extended: 3.75rem !default;
+$command-bar-height-hidden: 3rem !default;
 
 $command-bar-bg-color: $color-gray-darkest !default;
 $command-bar-font-size: 0.75rem !default;
@@ -21,7 +21,7 @@ $command-bar-secondary-commands-transition: all 0.15s !default;
 .command-bar {
   position: relative;
   width: 100%;
-  height: auto;
+  height: $command-bar-height-default;
   font-size: $command-bar-font-size;
 
   .footprint {
@@ -60,17 +60,11 @@ $command-bar-secondary-commands-transition: all 0.15s !default;
     }
   }
 
-  &.collapsed {
-    height: $command-bar-height-collapsed;
-  }
-
   &.label-bottom {
     height: $command-bar-height-extended;
   }
-
-  &.label-right,
   &.label-hidden {
-    height: $command-bar-height-default;
+    height: $command-bar-height-hidden;
   }
 
   .content-block {
