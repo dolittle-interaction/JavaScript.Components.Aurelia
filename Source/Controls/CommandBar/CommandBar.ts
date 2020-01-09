@@ -2,14 +2,13 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 import { bindable } from 'aurelia-framework';
 import { hasParts } from '../../Templating/hasParts';
-import { labelPosition } from './labelPosition';
+import { commandLabelPosition } from './commandLabelPosition';
 import { commandLocation } from './commandLocation';
 
 @hasParts()
 export class CommandBar {
   @bindable commandLocation: string = commandLocation.right;
-  @bindable labelPosition: string = labelPosition.right;
-
+  @bindable commandLabelPosition: string = commandLabelPosition.right;
   private displaySecondaryCommands: boolean = false;
 
   constructor() {}
