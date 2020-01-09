@@ -2,7 +2,7 @@
 
 <template>
   <require from="./CommandBar.scss"></require>
-  <nav class="command-bar ${labelPosition ? 'label-' + labelPosition : ''}">
+  <nav class="command-bar ${uniqueCommandBarCssClass} ${commandLabelPosition ? 'label-' + commandLabelPosition : ''}">
     <div class="footprint ${commandLocation ? 'commands-'+ commandLocation : ''}">
       <template part="content-block" replaceable> </template>
       <template part="primary-commands" replaceable> </template>
