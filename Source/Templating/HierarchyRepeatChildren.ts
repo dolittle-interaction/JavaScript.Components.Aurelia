@@ -80,10 +80,10 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
             }
 
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat')) {
                     break;
                 }
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat-children')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat-children')) {
                     hierarchyLevel += 1;
                 }
             }
@@ -104,7 +104,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
 
         while (current) {
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat')) {
 
                     for (const property in current) {
                         if (current[property] instanceof HierarchyRepeat) {

@@ -11,10 +11,11 @@ function handlePart(name: string, element: any, replacementTag: string, cssClass
 
     const childWrapper: any = document.createElement(replacementTag || 'div');
     childWrapper.className = cssClass || name;
-    let child: any;
-    while ((child = partContainer.firstChild)) {
+    let child: any = partContainer.firstChild;
+    while (child) {
       partContainer.removeChild(child);
       childWrapper.appendChild(child);
+      child = partContainer.firstChild;
     }
     template.content.appendChild(childWrapper);
     element.appendChild(template);

@@ -45,7 +45,7 @@ export class HierarchyRepeat extends HierarchyRepeater {
     }
 
     private throwIfMissingHierarchyChildrenProperty(childrenPropertyElements: any) {
-        if (childrenPropertyElements.length == 0) MissingHierarchyChildrenProperty.throw();
+        if (childrenPropertyElements.length === 0) MissingHierarchyChildrenProperty.throw();
     }
 
     private throwIfTooManyElementsWithHierarchyChildrenProperty(childrenPropertyElements: any) {

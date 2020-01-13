@@ -45,6 +45,7 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Typically implemented in those cases where there is no expression for
      * the repeater and we get the items from other sources
      */
+    // tslint:disable-next-line: no-empty
     bindItems(...args: any[]) {}
 
     /**
@@ -59,13 +60,16 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Method that gets called when a repeater item needs handling
      * @param {HierarchyRepeaterItem} item The item - typically a view model
      */
+    // tslint:disable-next-line: no-empty
     handleRepeaterItem(item: HierarchyRepeaterItem) {}
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     call() {
     }
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     attached() {
     }
 
@@ -140,6 +144,7 @@ export class HierarchyRepeater extends AbstractRepeater {
     }
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     updateBindings(view: any) {
     }
 

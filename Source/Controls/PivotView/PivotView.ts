@@ -11,6 +11,6 @@ export class PivotView {
 
     @bindable header: any;
 
-    constructor() {
-    }
+    // tslint:disable-next-line: no-empty
+    constructor() {}
 }
