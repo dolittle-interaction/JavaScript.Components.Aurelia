@@ -8,7 +8,9 @@
   "scripts": {
     "webpack": "npx webpack --env.production --extractCss",
     "webpack:dev": "npx webpack --extractCss",
-    "start": "npx webpack-dev-server --open --watch --progress --hot"
+    "start": "npx webpack-dev-server --open --watch --progress --hot",
+    "lint": "gulp lint --gulpfile ../node_modules/@dolittle/typescript.build/Gulpfile.js",
+    "lint:fix": "gulp lint-fix --gulpfile ../node_modules/@dolittle/typescript.build/Gulpfile.js",
   },
   "devDependencies": {
     "@dolittle/typescript.webpack.aurelia": "^1.1.0",
