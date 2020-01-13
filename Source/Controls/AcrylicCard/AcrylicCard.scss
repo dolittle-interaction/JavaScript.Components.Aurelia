@@ -1,0 +1,17 @@
+// Copyright (c) Dolittle. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+@import '~DolittleStyles/Settings/all';
+@import '~DolittleStyles/Tools/all';
+@import '~@dolittle/styles/src/styles/Components/acrylic';
+
+$acrylic-card-width-phone: 100% !default;
+$acrylic-card-width-tablet-up: 22rem !default;
+
+.acrylic-card {
+  @extend .acrylic;
+  max-width: 100%;
+  width: $acrylic-card-width-phone;
+  @include media-bp-min(tablet) {
+    width: $acrylic-card-width-tablet-up;
+  }
+}

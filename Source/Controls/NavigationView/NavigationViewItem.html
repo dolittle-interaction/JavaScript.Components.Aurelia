@@ -1,0 +1,22 @@
+<!-- Copyright (c) Dolittle.  All Rights Reserved.  Licensed under the MIT License. See LICENSE file in the project root for full license information. -->
+<template>
+  <require from="./NavigationViewItem.scss"></require>
+
+  <li class="navigation-view-item ${isExpanded ? 'expanded': ''}">
+    <a href="#"
+      class.bind="isSelected ? 'selected' : ''"
+      click.delegate="toggleExpansion()"
+      routed-event="input: click; output: itemclicked; details.bind: $this">
+      <figure if.bind="icon">
+        <img src.bind="icon" alt="" />
+      </figure>
+      <span>
+        <slot></slot>
+      </span>
+      <i if.bind="hasChildren" class="toggle-expand"></i>
+    </a>
+    <ul>
+      <template hierarchy-repeat-children></template>
+    </ul>
+  </li>
+</template>

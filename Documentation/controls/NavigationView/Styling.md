@@ -8,7 +8,7 @@ author: Vidar Aune Westrum
 ## Navigation View
 These are the variables you can override in your application.
 
-| Variable | Value / Type | Description | Default value|
+| Variable | Value type | Description | Default value|
 | ---- | ---- | ---- | ---- |
 | `$navigation-view-bg-color` | CSS color HEX/RGB/RGBA/COLOR| The background color for the navigation view. | `lighten($color-gray-darkest, 5%)` |
 | `$navigation-view-top-push-height` | Numeric | The space between viewport top and navigation-view top. | `0` |
@@ -20,7 +20,7 @@ These are the variables you can override in your application.
 | `$navigation-view-expand-trigger-width` | Numeric | The width of the axpand-trigger (Hamburger icon) | `2rem` |
 
 ### Step 1 - Configure Webpack
-Make sure you have added an alias to DolittleStyles in your webpack config file. This is essential to make your component look for the settings file from your application, not only the settings file from [Styles](http://localhost:1313/interaction/styles/)
+Make sure you have added an alias to DolittleStyles in your webpack config file. This is essential to make your component look for the setting files from your application, not only the settings file from [Styles](/interaction/styles/)
 
 ```js
 const path = require('path');
@@ -57,8 +57,6 @@ E.g `Styles/Settings/NavigationView.scss`
 ![NavigationView.scss in file tree](/interaction/aurelia/aurelia-components/controls/navigationview/component_override_2.png)
 
 ### Step 3 - Including Overrides
-
-You need an all.scss in settings, and you should add your overrides there as well. Make sure that you import the original settings from Styles in this file as well. Then the component will get it all.
+You need an `all.scss` in `settings` where you import the original settings from Styles and your local overrides. Then the component will get it all and use the values from your local settings file.
 
 ![NavigationView.scss in file tree](/interaction/aurelia/aurelia-components/controls/navigationview/settings_all.png)
-

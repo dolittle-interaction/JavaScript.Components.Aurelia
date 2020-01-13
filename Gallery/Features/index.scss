@@ -1,41 +1,33 @@
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Dolittle. All rights reserved.
- *  Licensed under the MIT License. See LICENSE in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+// Copyright (c) Dolittle. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
 @import '~DolittleStyles/Settings/all.scss';
 @import '~DolittleStyles/Tools/all.scss';
 
-main {
-    &.navigation-left {
-      padding-left: $navigation-view-width-expanded;
-    }
-    &.navigation-left-compact {
-      padding-left: $navigation-view-width-compact;
-    }
-    &.navigation-left-minimal {
-    }
-    &.navigation-top {
-    }
-}
-.index {
-    .splash-header {
-        background-image: url('../assets/splash.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover; // background-blend-mode: multiply;
-        padding: $grid-gutter * 3 $grid-gutter $grid-gutter * 8;
+$acrylic-bg-image: url('https://picsum.photos/2000/1500');
 
-        .content {
-            padding: $grid-gutter;
-            background-color: rgba(51, 185, 230, 0.95);
-            border-radius: 0.1875rem;
-            color: #fff;
-            a {
-                color: inherit;
-            }
-            @include media-bp-min(tablet) {
-                width: 50%;
-            }
-        }
-    }
+body {
+  background: $acrylic-bg-image fixed center;
+  background-size: cover;
+}
+
+main.main-body {
+  flex: 1 1 auto;
+  width: 100vw;
+
+  &.navigation-left {
+    padding-left: $navigation-view-width-expanded;
+  }
+  &.navigation-left-compact {
+    padding-left: $navigation-view-width-compact;
+  }
+  &.navigation-left-minimal {
+  }
+  &.navigation-top {
+  }
+
+  > .content {
+    padding: $grid-gutter;
+    display: grid;
+    gap: $grid-gutter;
+  }
 }

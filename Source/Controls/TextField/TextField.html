@@ -1,0 +1,29 @@
+<!-- Copyright (c) Dolittle.  All Rights Reserved.  Licensed under the MIT License. See LICENSE file in the project root for full license information. -->
+<template>
+  <require from="./TextField.scss"></require>
+  <div class="text-field ${errorMessage ? 'invalid' : ''}">
+    <label for="${fieldName}" if.bind="label">${label} <span class="required" if.bind="isRequired">${requiredText}</span> </label>
+    <div class="input-footprint">
+      <input
+        name="${fieldName}"
+        id="${fieldName}"
+        type="text"
+        value.bind="value"
+        placeholder.bind="placeholder"
+        disabled.bind="isDisabled"
+        required.bind="isRequired"
+      />
+      <i class="delete-cross" click.delegate="clearValue()">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.57617 0.951172L5.5332 5L9.57617 9.04883L9.04883 9.57617L5 5.5332L0.951172 9.57617L0.423828 9.04883L4.4668 5L0.423828 0.951172L0.951172 0.423828L5 4.4668L9.04883 0.423828L9.57617 0.951172Z"
+            fill="black"
+            fill-opacity="0.8"
+          />
+        </svg>
+      </i>
+    </div>
+    <small class="description-text" if.bind="description">${description}</small>
+    <small class="error-text" if.bind="errorMessage">${errorMessage}</small>
+  </div>
+</template>

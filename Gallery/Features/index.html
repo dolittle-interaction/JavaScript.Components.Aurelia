@@ -1,46 +1,90 @@
-<!--
-*----------------------------------------------------------------------------------------------
-*  Copyright (c) Dolittle. All rights reserved.
-*  Licensed under the MIT License. See LICENSE in the project root for license information.
-*----------------------------------------------------------------------------------------------
--->
+<!-- Copyright (c) Dolittle.  All Rights Reserved.  Licensed under the MIT License. See LICENSE file in the project root for full license information. -->
 <template>
-    <require from="./index.scss"></require>
-    <main class.bind="navigationStrategy | navigationStrategyCssClass">
-        <navigation-view selected-item.bind="selectedItem" pane-display-mode.bind="navigationStrategy">
-            <banner>
-                Navigation
-            </banner>
-            <navigation-items>
-                <navigation-view-item
-                    icon="book"
-                    hierarchy-repeat.for="component of structure.components"
-                    hierarchy-children-property="children"
-                    tag.bind="component.name"
-                    data.bind="component"
-                    >${component.name}
-                </navigation-view-item>
-            </navigation-items>
-            <footer-items>
-                <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
-            </footer-items>
-        </navigation-view>
-        <command-bar command-location="right" label-position="bottom">
-            <primary-commands>
-                <command-bar-button label="Ham" icon="burger"></command-bar-button>
-                <command-bar-button label="Cheese" icon="cheddar"></command-bar-button>
-                <command-bar-button label="Bacon" icon="bacon"></command-bar-button>
-            </primary-commands>
-            <secondary-commands>
-                <command-bar-button label="Sauce" icon="heinz"></command-bar-button>
-                <command-bar-button label="Spices" icon="chili"></command-bar-button>
-            </secondary-commands>
-            <content-block>
-                <em>Content block</em>
-            </content-block>
-        </command-bar>
-        <section class="content">
-            <router-view containerless></router-view>
-        </section>
-    </main>
+  <require from="./index.scss"></require>
+  <main class="main-body ${navigationStrategy | navigationStrategyCssClass}">
+    <navigation-view selected-item.bind="selectedItem" pane-display-mode.bind="navigationStrategy">
+      <banner>
+        Dolittle Components
+      </banner>
+      <navigation-items>
+        <navigation-view-item
+          icon="book"
+          hierarchy-repeat.for="component of structure.components"
+          hierarchy-children-property="children"
+          tag.bind="component.name"
+          data.bind="component"
+          >${component.name}
+        </navigation-view-item>
+      </navigation-items>
+      <footer-items>
+        <navigation-view-item icon="user.png">${profile.userName}</navigation-view-item>
+      </footer-items>
+    </navigation-view>
+
+    <command-bar command-location="right" label-position="bottom">
+      <primary-commands>
+        <command-bar-button label="Ham" icon="burger"></command-bar-button>
+        <command-bar-button label="Cheese" icon="cheddar"></command-bar-button>
+        <command-bar-button label="Bacon" icon="bacon"></command-bar-button>
+      </primary-commands>
+      <secondary-commands>
+        <command-bar-button label="Sauce" icon="heinz"></command-bar-button>
+        <command-bar-button label="Spices" icon="chili"></command-bar-button>
+      </secondary-commands>
+      <content-block>
+        <em>Content block</em>
+      </content-block>
+    </command-bar>
+
+    <section class="content">
+      <acrylic-card>
+        <h1>TextField</h1>
+        <text-field label="Standard"></text-field>
+        <text-field placeholder="No label"></text-field>
+        <text-field label="Placeholder" placeholder="This is a placeholder"></text-field>
+        <text-field label="Preset value" value="Value"></text-field>
+        <text-field label="Required" placeholder="This field is required" is-required="true"></text-field>
+        <text-field label="Required" required-text="This field is required" is-required="true"></text-field>
+        <text-field label="Disabled" is-disabled="true" placeholder="This cannot be focused"></text-field>
+        <text-field label="Description text" description="Describe expected input"></text-field>
+        <text-field label="Error text" value="Value" error-message="The input provided is invalid"></text-field>
+        <text-field label="All inclusive" value="Value" placeholder="Placeholder text" description="Description text" is-disabled="true" is-required="Required" reuired-text="Field is required" error-message="The input provided is invalid"></text-field>
+      </acrylic-card>
+
+      <acrylic-card>
+        <h1>Yo, I'm acrylic</h1>
+        <p>
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Nulla vitae elit
+          libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac
+          cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </acrylic-card>
+      <acrylic-card width="50">
+        <h2>Hi</h2>
+      </acrylic-card>
+
+      <expandable-card>
+        <banner>
+          <h3>
+            Expandable card
+          </h3>
+        </banner>
+        <content>
+          <p>
+            More information
+          </p>
+          <p>
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus
+            mollis interdum.
+          </p>
+          <p>
+            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus
+            mollis interdum.
+          </p>
+        </content>
+      </expandable-card>
+
+      <router-view containerless></router-view>
+    </section>
+  </main>
 </template>

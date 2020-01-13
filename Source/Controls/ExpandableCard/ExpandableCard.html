@@ -1,0 +1,12 @@
+<!-- Copyright (c) Dolittle.  All Rights Reserved.  Licensed under the MIT License. See LICENSE file in the project root for full license information. -->
+<template>
+  <require from="./ExpandableCard.scss"></require>
+  <section class="expandable-card ${isExpanded ? 'is-expanded' : ''}">
+    <div class="footprint" click.delegate="toggleExpansion()">
+      <header>
+        <template part="banner" replaceable css-class="expandable-card-banner"></template>
+      </header>
+      <template part="content" replaceable css-class="expandable-card-content"></template>
+    </div>
+  </section>
+</template>

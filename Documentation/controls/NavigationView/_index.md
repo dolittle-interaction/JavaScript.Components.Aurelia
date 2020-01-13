@@ -52,6 +52,7 @@ Often we see that we need some navigation links that is different from each othe
 | ----------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `selectedItem`    | **NavigationViewItem**                                     | You set your selected navigation item from your view.                                                                               | null          |
 | `expanded`        | **Boolean**                                                | Tells the display pane if it's expanded or not. Can be set in the custom elements attribute. Will be toggled by the hamburger icon. | false         |
+| `isToggleButtonVisible`        | **Boolean**                                                | Show or hide the hamburger icon | true         |
 | `paneDisplayMode` | **String** ('left', 'left-compact', 'left-minimal', 'top') | Defines the main behavior of the control. You can read the details further down on this page.                                      | left          |
 
 
