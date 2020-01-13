@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-import { customAttribute, inject, bindable } from "aurelia-framework";
-import { CustomEventFactory } from "./CustomEventFactory";
+import { customAttribute, inject, bindable } from 'aurelia-framework';
+import { CustomEventFactory } from './CustomEventFactory';
 
 /**
  * Represents a way to handle routing and changing of events - enabling responding to one event
@@ -39,9 +39,9 @@ export class RoutedEvent {
     }
 
     /** @inheritdoc */
-    bind(bindingContext: any, overrideContext: any) {       
+    bind(bindingContext: any, overrideContext: any) {
         this.element.addEventListener(this.input, () => {
-            let event = this.customEventFactory.create(this.output, this.details);
+            const event = this.customEventFactory.create(this.output, this.details);
             this.element.dispatchEvent(event);
         });
     }

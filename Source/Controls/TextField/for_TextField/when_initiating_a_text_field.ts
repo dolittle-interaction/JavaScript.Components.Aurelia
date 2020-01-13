@@ -3,7 +3,7 @@
 import { TextField } from '../TextField';
 
 describe('when initiating a standard textfield', () => {
-  let textField: TextField = new TextField();
+  const textField: TextField = new TextField();
   beforeEach(() => {
     textField.label = 'Label';
     textField.value = 'Value';
@@ -32,7 +32,7 @@ describe('when initiating a standard textfield', () => {
 });
 
 describe('when text field is set to be disabled', () => {
-  let textField: TextField = new TextField();
+  const textField: TextField = new TextField();
 
   beforeEach(() => {
     textField.isDisabled = true;
@@ -42,7 +42,7 @@ describe('when text field is set to be disabled', () => {
   });
 });
 describe('when text field is set to be required', () => {
-  let textField: TextField = new TextField();
+  const textField: TextField = new TextField();
 
   beforeEach(() => {
     textField.isRequired = true;

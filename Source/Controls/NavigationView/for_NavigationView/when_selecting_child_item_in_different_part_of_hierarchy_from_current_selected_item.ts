@@ -3,10 +3,10 @@
 import { NavigationView } from '../NavigationView';
 
 describe('when selecting child item in different part of hierarchy from current selected item', () => {
-    let leftRootItem = { isSelected: true };
-    let leftChildItem = { parent: leftRootItem, isSelected: true };
-    let rightRootItem = { isSelected: false };
-    let rightChildItem = { parent: rightRootItem, isSelected: false };
+    const leftRootItem = { isSelected: true };
+    const leftChildItem = { parent: leftRootItem, isSelected: true };
+    const rightRootItem = { isSelected: false };
+    const rightChildItem = { parent: rightRootItem, isSelected: false };
 
     let view = null;
 
