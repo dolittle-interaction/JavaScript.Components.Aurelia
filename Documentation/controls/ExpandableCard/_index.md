@@ -44,16 +44,16 @@ The content part where you put your hidden content. When you click the card, thi
 
 ## Options
 
-| Property          | Type                                                   | Description              | Default value |
-| ----------------- | ------------------------------------------------------ | ------------------------ | ------------- |
-| `isExpanded`    | **Boolean** | Decides if the card is expanded or not. | false |
+| Property     | Type        | Description                             | Default value |
+| ------------ | ----------- | --------------------------------------- | ------------- |
+| `isExpanded` | **Boolean** | Decides if the card is expanded or not. | false         |
 
 ### isExpanded
 
-When clicking the card, this option will toggle `true` / `false`. 
+When clicking the card, this option will toggle `true` / `false`.
 
 It's also possible to set value to this option through an attribute in the app that consumes this component.
 
 ```html
-<expandable-card is-expanded="true">
+<expandable-card is-expanded="true"></expandable-card>
 ```

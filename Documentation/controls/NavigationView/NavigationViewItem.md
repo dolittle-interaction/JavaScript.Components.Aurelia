@@ -8,7 +8,7 @@ aliases: /interaction/aurelia/javascript.components.aurelia/controls/navigationv
 
 The navigation view item is made for being used within the [Navigation View](/interaction/aurelia/aurelia-components/controls/navigationview/). This component supports the templating feature [Hierarchy Reapeat and Children](/interaction/aurelia/aurelia-components/templating/hierarchy_repeat/)
 
-### Code example
+## Code example
 
 ```html
 <navigation-items>
