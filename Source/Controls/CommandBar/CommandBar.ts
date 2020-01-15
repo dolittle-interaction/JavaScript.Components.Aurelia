@@ -12,7 +12,7 @@ export class CommandBar extends Component {
   @bindable commandLabelPosition: string = commandLabelPosition.right;
   @bindable zIndex: Number = 99;
   uniqueCommandBarCssClass: string = '';
-  private displaySecondaryCommands: boolean = false;
+  displaySecondaryCommands: boolean = false;
 
   constructor() {
     super();
