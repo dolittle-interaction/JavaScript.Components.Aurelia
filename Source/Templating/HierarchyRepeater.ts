@@ -16,9 +16,9 @@ export class HierarchyRepeater extends AbstractRepeater {
     private strategy: any;
     matcherBinding: any;
     scope: any;
-    items:any;
-    
-    
+    items: any;
+
+
     //-----------------------Suggestion:-----> items: HierarchyRepeaterItem[]
 
     /**
@@ -45,13 +45,14 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Typically implemented in those cases where there is no expression for
      * the repeater and we get the items from other sources
      */
+    // tslint:disable-next-line: no-empty
     bindItems(...args: any[]) {}
 
     /**
      * Method that gets called for creating a new new view - overridable
      */
     createView() {
-        let view: View = this.viewFactory.create();
+        const view: View = this.viewFactory.create();
         return view;
     }
 
@@ -59,13 +60,16 @@ export class HierarchyRepeater extends AbstractRepeater {
      * Method that gets called when a repeater item needs handling
      * @param {HierarchyRepeaterItem} item The item - typically a view model
      */
+    // tslint:disable-next-line: no-empty
     handleRepeaterItem(item: HierarchyRepeaterItem) {}
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     call() {
     }
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     attached() {
     }
 
@@ -83,7 +87,7 @@ export class HierarchyRepeater extends AbstractRepeater {
 
     /** @inheritdoc */
     itemsChanged() {
-        let items = this.items;
+        const items = this.items;
         this.strategy = this.strategyLocator.getStrategy(items);
         this.strategy.instanceChanged(this, items);
     }
@@ -105,7 +109,7 @@ export class HierarchyRepeater extends AbstractRepeater {
 
     /** @inheritdoc */
     addView(bindingContext: any, overrideContext: any) {
-        let view = this.createView();
+        const view = this.createView();
         this.handleNewView(view as any);
         view.bind(bindingContext, overrideContext);
         this.viewSlot.add(view);
@@ -113,7 +117,7 @@ export class HierarchyRepeater extends AbstractRepeater {
 
     /** @inheritdoc */
     insertView(index: number, bindingContext: any, overrideContext: any) {
-        let view = this.createView();
+        const view = this.createView();
         this.handleNewView(view as any);
         view.bind(bindingContext, overrideContext);
         this.viewSlot.insert(index, view);
@@ -140,11 +144,12 @@ export class HierarchyRepeater extends AbstractRepeater {
     }
 
     /** @inheritdoc */
+    // tslint:disable-next-line: no-empty
     updateBindings(view: any) {
     }
 
     private handleNewView(view: ViewResources) {
-        let viewModels = (view as any).controllers.filter((_: any) => _.viewModel instanceof HierarchyRepeaterItem);
-        viewModels.forEach((_: any)=> this.handleRepeaterItem(_.viewModel));
+        const viewModels = (view as any).controllers.filter((_: any) => _.viewModel instanceof HierarchyRepeaterItem);
+        viewModels.forEach((_: any) => this.handleRepeaterItem(_.viewModel));
     }
 }

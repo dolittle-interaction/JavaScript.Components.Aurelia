@@ -14,14 +14,14 @@ import { MissingParentHierarchyRepeat } from './MissingParentHierarchyRepeat';
 @templateController
 @inject(BindingEngine, BoundViewFactory, TargetInstruction, ViewSlot, ViewResources, RepeatStrategyLocator)
 export class HierarchyRepeatChildren extends HierarchyRepeater {
-  
+
     private _viewFactory: BoundViewFactory;
     // private bindingEngine: BindingEngine;
     // private lookupFunctions: any;
     // private parentHierarchyRepeat: MissingParentHierarchyRepeat;
     scope: any;
-    parentHierarchyRepeat:any;
-    lookupFunctions:any
+    parentHierarchyRepeat: any;
+    lookupFunctions: any;
 
     @bindable local: any;
     @bindable items: any;
@@ -35,7 +35,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
      * @param {ViewResources} viewResources The available view resources
      * @param {RepeatStrategyLocator} strategyLocator A repeat strategy locator
      */
-    constructor(private bindingEngine :BindingEngine, viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, viewResources: ViewResources, strategyLocator: RepeatStrategyLocator) {
+    constructor(private bindingEngine: BindingEngine, viewFactory: BoundViewFactory, instruction: TargetInstruction, viewSlot: ViewSlot, viewResources: ViewResources, strategyLocator: RepeatStrategyLocator) {
         super(viewFactory, instruction, viewSlot, strategyLocator);
 
     //     this.bindingEngine = bindingEngine;
@@ -48,11 +48,11 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     bindItems(bindingContext: any, overrideContext: any) {
         this.ensureParentHierarchyRepeat();
         if (this.parentHierarchyRepeat) {
-            let bindingExpression: BindingExpression = this.bindingEngine.createBindingExpression('component', `$this.data.${this.parentHierarchyRepeat.childrenProperty} `);
+            const bindingExpression: BindingExpression = this.bindingEngine.createBindingExpression('component', `$this.data.${this.parentHierarchyRepeat.childrenProperty} `);
             this.items = (bindingExpression as any).sourceExpression.evaluate(this.scope, this.lookupFunctions);
         } else {
             this.items = null;
-        }       
+        }
     }
 
     /** @inheritdoc */
@@ -60,7 +60,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         this.ensureParentHierarchyRepeat();
         this.throwIfMissingParentHiearchyRepeat();
 
-        let view :any = this.parentHierarchyRepeat.createView();
+        const view: any = this.parentHierarchyRepeat.createView();
         return view;
     }
 
@@ -71,8 +71,8 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
         let previousViewModel: any = item;
 
         while (current) {
-            if( current.viewModel && current.viewModel instanceof HierarchyRepeaterItem ) {
-                if( previousViewModel ) {
+            if ( current.viewModel && current.viewModel instanceof HierarchyRepeaterItem ) {
+                if ( previousViewModel ) {
                     current.viewModel.addChild(previousViewModel);
                     previousViewModel.parent = current.viewModel;
                 }
@@ -80,11 +80,11 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
             }
 
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat')) {
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat')) {
                     break;
                 }
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat-children')) {
-                    hierarchyLevel++;
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat-children')) {
+                    hierarchyLevel += 1;
                 }
             }
             current = current.parent;
@@ -93,7 +93,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     }
 
     private ensureParentHierarchyRepeat() {
-        if( this.parentHierarchyRepeat == null ) {
+        if ( this.parentHierarchyRepeat == null ) {
             this.parentHierarchyRepeat = this.getParrentHierarchyRepeat();
         }
     }
@@ -101,12 +101,12 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
     private getParrentHierarchyRepeat() {
         let current: any = (this._viewFactory as any).parentContainer;
         let parentHierarchyRepeat: any = null;
-        
+
         while (current) {
             if (current.instruction && current.instruction.behaviorInstructions) {
-                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName == 'hierarchy-repeat')) {
-                    
-                    for (let property in current) {                       
+                if (current.instruction.behaviorInstructions.some((instruction: TargetInstruction) => (instruction as any).attrName === 'hierarchy-repeat')) {
+
+                    for (const property in current) {
                         if (current[property] instanceof HierarchyRepeat) {
                             parentHierarchyRepeat = current[property];
                             break;
@@ -114,7 +114,7 @@ export class HierarchyRepeatChildren extends HierarchyRepeater {
                     }
                 }
             }
-            if( parentHierarchyRepeat ) break;
+            if ( parentHierarchyRepeat ) break;
             current = current.parent;
         }
         return parentHierarchyRepeat;

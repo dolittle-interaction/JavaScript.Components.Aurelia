@@ -8,7 +8,6 @@ export class CommandBarButton {
     @bindable icon: any;
     @bindable label: any;
     @bindable linkUrl: any;
-    constructor(){
-
-    }
+    // tslint:disable-next-line: no-empty
+    constructor(){}
 }

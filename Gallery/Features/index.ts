@@ -8,8 +8,8 @@ import { bindable } from 'aurelia-framework';
 export class index {
     @bindable selectedItem: any;
     navigationStrategy: any;
-    structure: any
-    profile: any
+    structure: any;
+    profile: any;
     constructor(structure: any) {
         this.navigationStrategy = 'left';
         this.structure = structure;
@@ -19,5 +19,6 @@ export class index {
         };
     }
 
+    // tslint:disable-next-line: no-empty
     selectedItemChanged(item: any) {}
 }

@@ -3,7 +3,7 @@
 import { NavigationView } from '../NavigationView';
 
 describe('when item is clicked', () => {
-    let item = { my: 'item' };
+    const item = { my: 'item' };
     let view: any = null;
 
     (beforeEach => {

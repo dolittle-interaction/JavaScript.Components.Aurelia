@@ -3,7 +3,7 @@
 import { TextField } from '../TextField';
 
 describe('when clicking the x in a text field with focus', () => {
-  let textField: TextField = new TextField();
+  const textField: TextField = new TextField();
 
   beforeEach(() => {
     textField.value = 'A text field value';

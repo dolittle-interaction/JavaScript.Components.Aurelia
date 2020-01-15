@@ -4,7 +4,7 @@ import { NavigationView } from '../NavigationView';
 
 describe('when expansion is toggled', () => {
     describe('and it is not expanded', () => {
-        let view = new NavigationView();
+        const view = new NavigationView();
         view.expanded = false;
 
         view.toggleExpansion();
@@ -13,7 +13,7 @@ describe('when expansion is toggled', () => {
     });
 
     describe('and it is expanded', () => {
-        let view = new NavigationView();
+        const view = new NavigationView();
         view.expanded = true;
 
         view.toggleExpansion();

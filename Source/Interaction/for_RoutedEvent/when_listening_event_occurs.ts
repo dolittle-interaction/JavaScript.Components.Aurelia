@@ -7,7 +7,7 @@ describe('when listening events occur', () => {
     let element: any = null;
     let routedEvent: any = null;
     let createdEvent: any = null;
-    
+
 
     (beforeEach => {
         let listener: any = null;
@@ -18,16 +18,16 @@ describe('when listening events occur', () => {
             dispatchEvent: sinon.stub()
         };
 
-        let customEventFactory = {
+        const customEventFactory = {
             create: (name: any, details: any) => {
                 createdEvent = {
                     name: name,
                     details: details
                 };
-                
+
                 return createdEvent;
             }
-        }
+        };
 
         routedEvent = new RoutedEvent(element, customEventFactory);
         routedEvent.bind({},{});

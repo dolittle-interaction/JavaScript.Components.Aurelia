@@ -3,18 +3,19 @@
 import { processContent, FEATURE } from 'aurelia-framework';
 
 function handlePart(name: string, element: any, replacementTag: string, cssClass: string) {
-  let partContainer = element.querySelector(name);
+  const partContainer = element.querySelector(name);
   if (partContainer) {
     const template: any = document.createElement('template');
     (FEATURE as any).ensureHTMLTemplateElement(template);
     template.setAttribute('replace-part', name);
 
-    let childWrapper: any = document.createElement(replacementTag || 'div');
+    const childWrapper: any = document.createElement(replacementTag || 'div');
     childWrapper.className = cssClass || name;
-    let child: any;
-    while ((child = partContainer.firstChild)) {
+    let child: any = partContainer.firstChild;
+    while (child) {
       partContainer.removeChild(child);
       childWrapper.appendChild(child);
+      child = partContainer.firstChild;
     }
     template.content.appendChild(childWrapper);
     element.appendChild(template);
@@ -29,11 +30,11 @@ function handlePart(name: string, element: any, replacementTag: string, cssClass
  */
 export function hasParts() {
   function contentProcessor(viewCompiler: any, viewResources: any, element: any, parentInstruction: any) {
-    let partTemplates: any = parentInstruction.type.viewFactory.template.querySelectorAll('[part]');
+    const partTemplates: any = parentInstruction.type.viewFactory.template.querySelectorAll('[part]');
     partTemplates.forEach((partTemplate: any) => {
-      let partName: string = partTemplate.getAttribute('part');
-      let replacementTag: string = partTemplate.getAttribute('replacement-tag');
-      let cssClass: string = partTemplate.getAttribute('css-class');
+      const partName: string = partTemplate.getAttribute('part');
+      const replacementTag: string = partTemplate.getAttribute('replacement-tag');
+      const cssClass: string = partTemplate.getAttribute('css-class');
       handlePart(partName, element, replacementTag, cssClass);
     });
     return true;

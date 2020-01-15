@@ -3,8 +3,8 @@
 import { NavigationView } from '../NavigationView';
 
 describe('when selecting new item with already selected item', () => {
-    let previousItem = { isSelected: true };
-    let item = { my: 'item', isSelected: false };
+    const previousItem = { isSelected: true };
+    const item = { my: 'item', isSelected: false };
     let view = null;
 
     (beforeEach => {
