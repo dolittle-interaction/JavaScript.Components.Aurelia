@@ -9,25 +9,25 @@ The CommandBarButton is made for being used as a button in the [CommandBar](..) 
 ## Code example
 
 ```html
-<command-bar-button link-url="some-url" label="Command label" icon-url="/assets/icons/icon.svg"></command-bar-button>
+<command-bar-button clicked.bind="thisCommand" label="Command label" icon-url="/assets/icons/icon.svg"></command-bar-button>
 ```
 
 Renders:
 
 ```html
-<a class="command-bar-button" href="some-url" title="Command label">
+<a class="command-bar-button" click.delegate="handleClick(uniqueIdentifier)" title="Command label">
   <figure class="icon">
-    <img alt="command icon" src="/assets/icons/icon.svg" />
+    <img src.bind="iconUrl" alt="command icon" src="/assets/icons/book.svg" />
   </figure>
-  <span class="label">Command label</span>
+  <span class="label">Ham</span>
 </a>
 ```
 
-| Property  | Type       | Description                                                                   | Default value |
-| --------- | ---------- | ----------------------------------------------------------------------------- | ------------- |
-| `label`   | **String** | Sets the label of the command,                                                | string.empty  |
-| `linkUrl` | **String** | If the command button is to link to a new feature/page, this will be the url. | string.empty  |
-| `iconUrl` | **String** | Sets the url to for the icon.                                                 | string.empty  |
+| Property  | Type         | Description                                                | Default value |
+| --------- | ------------ | ---------------------------------------------------------- | ------------- |
+| `label`   | **String**   | Sets the label of the command,                             | string.empty  |
+| `iconUrl` | **String**   | Sets the url to for the icon.                              | string.empty  |
+| `clicked` | **Function** | Provide a function for the command to be run when clicked. | null          |
 
 {{% notice note %}}
 By now, there is no way to add a callback command to the button yet. There's a task for this feature, and will be implemented later.
