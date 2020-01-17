@@ -6,19 +6,20 @@ import { bindable } from 'aurelia-framework';
 
 @inject(structure)
 export class index {
-    @bindable selectedItem: any;
-    navigationStrategy: any;
-    structure: any;
-    profile: any;
-    constructor(structure: any) {
-        this.navigationStrategy = 'left-compact';
-        this.structure = structure;
+  @bindable selectedItem: any;
+  navigationStrategy: any;
+  structure: any;
+  profile: any;
+  constructor(structure: any) {
+    this.navigationStrategy = 'left-compact';
+    this.structure = structure;
 
-        this.profile = {
-            userName: 'Jane Doe'
-        };
-    }
-
-    // tslint:disable-next-line: no-empty
-    selectedItemChanged(item: any) {}
+    this.profile = {
+      userName: 'Jane Doe'
+    };
+  }
+  clickHam(click_id: any) {
+    console.log('Ham!' , click_id);
+  }
+  selectedItemChanged(item: any) {}
 }
