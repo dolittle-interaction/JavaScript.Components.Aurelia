@@ -23,6 +23,8 @@
 
         <command-bar command-location="right" command-label-position="bottom" z-index="100">
             <primary-commands>
+                <span class="label">Spacing in REM</span>
+                <text-field value.two-way="layoutColumnSpace"></text-field>
                 <span class="label">
                     Horizontal:
                 </span>
@@ -51,7 +53,7 @@
             <content-block> </content-block>
         </command-bar>
 
-        <flexible-layout horizontal-align.bind="hAlign" vertical-align.bind="vAlign" flow-direction.bind="flowDirection" column-space="1">
+        <flexible-layout horizontal-align.bind="hAlign" vertical-align.bind="vAlign" flow-direction.bind="flowDirection" column-space.bind="layoutColumnSpace">
             <acrylic-card>
                 <command-bar>
                     <primary-commands>

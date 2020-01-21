@@ -13,6 +13,7 @@ export class index {
     @observable hAlign: any;
     @observable vAlign: any;
     @observable flowDirection: any;
+    @observable layoutColumnSpace: Number = 0;
     navigationStrategy: any;
     structure: any;
     profile: any;
@@ -40,15 +41,10 @@ export class index {
         for (let [key, value] of Object.entries(flowDirection)) {
             this.flowDirectionOptions.push(value);
         }
-        // for (let prop in verticalAlign) {
-        //     this.vAlignOptions.push(prop);
-        // }
+
     }
     clickHam(click_id: any) {
         console.log("Ham!", click_id);
     }
     selectedItemChanged(item: any) {}
-    hAlignChanged(nv: any, ov: any) {
-        console.log(nv, ov);
-    }
 }
