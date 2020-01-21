@@ -1,11 +1,53 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-@import '~DolittleStyles/Settings/all';
-@import '~DolittleStyles/Tools/all';
+@import "~DolittleStyles/Settings/all";
+@import "~DolittleStyles/Tools/all";
 .flexible-layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    &.flow-row {
+        flex-direction: row;
+    }
+    &.flow-column {
+        flex-direction: column;
+    }
+    &.horizontal-left {
+        justify-content: flex-start;
+    }
+    &.horizontal-right {
+        justify-content: flex-end;
+    }
+    &.horizontal-center {
+        justify-content: center;
+    }
+    &.horizontal-distributed {
+        justify-content: space-around;
+    }
+    &.horizontal-distributed-edge {
+        justify-content: space-between;
+    }
+    &.horizontal-stretch {
+        align-items: stretch;
+    }
+    &.vertical-top {
+        align-items: flex-start;
+    }
+    &.vertical-bottom {
+        align-items: flex-end;
+    }
+    &.vertical-center {
+        align-items: center;
+    }
+    &.vertical-distributed {
+        align-content: space-between;
+    }
+    &.vertical-distributed-edge {
+        align-content: space-around;
+    }
+    &.vertical-stretch {
+        align-items: stretch;
+    }
 }
