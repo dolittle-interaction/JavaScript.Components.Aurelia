@@ -7,5 +7,3 @@ weight: 4
 aliases: /interaction/aurelia/javascript.components.aurelia/templating/
 ---
 
-Templating holds helpers and general functionality to extend Aurelias templating
-capabilities.
