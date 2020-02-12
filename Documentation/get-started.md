@@ -1,14 +1,12 @@
 ---
 title: Get started
-url: /interaction/aurelia/aurelia-components/
 description: Get an overview over the Aurelia Components
 keywords: Components, Overview
-weight: 2
-repository: https://github.com/dolittle-interaction/JavaScript.Components.Aurelia
+weight: 1
 aliases:
     - /interaction/aurelia/javascript.components.aurelia/
     - /interaction/aurelia/aurelia-components/get_started/
-    - /interaction/aurelia/aurelia-components/get-started/
+    - /interaction/aurelia/aurelia-components/
 ---
 
 ## Overview
