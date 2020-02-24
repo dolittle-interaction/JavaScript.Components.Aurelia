@@ -57,3 +57,9 @@ For VSCode users there is a default [tasks.json](./vscode/tasks.json) file with 
 This means you can use the default keystroke for building (CMD+SHIFT+B on Mac, CTRL+SHIFT+B on Windows/Linux).
 
 For more details on using or contributing, read our documentation [here](./Documentation)
+
+# Issues and Contributing
+To learn how to contribute please read our [contributing](https://dolittle.io/contributing/) guide.
+
+File issues to our [Home](https://github.com/dolittle/Home/issues) repository.
+
