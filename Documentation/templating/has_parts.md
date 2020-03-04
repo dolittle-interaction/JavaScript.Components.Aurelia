@@ -3,7 +3,9 @@ title: hasParts
 description: Describes how to use the hasParts decorator
 keywords: Using
 author: einari
-aliases: /interaction/aurelia/javascript.components.aurelia/templating/has_parts
+aliases:
+    - /interaction/aurelia/aurelia-components/templating/has_parts
+    - /interaction/aurelia/aurelia-components/interaction/routed_event
 ---
 When creating components and you want to expose the use of custom elements within
 the use of a component and these should be mapped automatically to slots with the

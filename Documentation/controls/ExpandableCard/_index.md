@@ -2,6 +2,8 @@
 title: Expandable card
 description: Describes how to use the Expandable card
 keywords: expandable, card, acrylic
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/expandablecard
 ---
 
 Expandable card is a component you can use if you want an acrylic card to present a small ammount of content initially, but can be clicked and then present much more information.

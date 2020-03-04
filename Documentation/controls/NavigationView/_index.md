@@ -2,7 +2,9 @@
 title: Navigation view
 description: Describes how to use the Navigation view control
 keywords: Using, navigationview, navigation
-aliases: /interaction/aurelia/javascript.components.aurelia/controls/navigationview/
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/navigationview
+    - /interaction/aurelia/javascript.components.aurelia/controls/navigationview/
 ---
 
 The Navigation view intended for top-level navigation for your app. It has multiple options and will adapt and change behavior for different screen sizes.
