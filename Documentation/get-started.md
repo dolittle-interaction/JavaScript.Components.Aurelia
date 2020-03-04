@@ -6,6 +6,7 @@ weight: 1
 aliases:
     - /interaction/aurelia/javascript.components.aurelia/
     - /interaction/aurelia/aurelia-components/get_started/
+    - /interaction/aurelia/aurelia-components/get-started/
 ---
 
 ## Overview

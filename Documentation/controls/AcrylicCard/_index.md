@@ -2,6 +2,8 @@
 title: Acrylic card
 description: Describes how to use the Acrylic card
 keywords: card, acrylic
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/acryliccard
 ---
 
 A basic card element with Acrylic bacground. There is no named parts or slot in this component, and it supports all HTML content you put in.

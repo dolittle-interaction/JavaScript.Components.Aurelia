@@ -3,6 +3,8 @@ title: Styling
 description: Describes how to use the Acrylic card control and how to change the styles
 keywords: Using, card, styles
 author: Vidar Aune Westrum
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/acryliccard/styling
 ---
 
 ## Acrylic card

@@ -3,6 +3,8 @@ title: Styling
 description: Describes how to use the TextField control and how to change the styles
 keywords: Using, textfield, input, text, styles
 author: Vidar Aune Westrum
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/textfield/styling
 ---
 
 ## TextField

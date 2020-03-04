@@ -2,6 +2,8 @@
 title: TextField
 description: Describes how to use the text-field control
 keywords: text-field, input, text
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/textfield
 ---
 
 TextField is a component that renders an intput field with the type of text. You can provide different options as described below. The field will be given an unique id.

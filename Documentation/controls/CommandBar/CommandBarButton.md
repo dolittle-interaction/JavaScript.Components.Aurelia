@@ -2,6 +2,8 @@
 title: Command bar button
 description: Describes how to use the CommandBarButton control
 keywords: Using, navigation, command, bar
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/commandbar/commandbarbutton
 ---
 
 The CommandBarButton is made for being used as a button in the [CommandBar](..) control.

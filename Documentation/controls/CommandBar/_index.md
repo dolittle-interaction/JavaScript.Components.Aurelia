@@ -2,6 +2,8 @@
 title: Command bar
 description: Describes how to use the CommandBar control
 keywords: Using, navigation, command, bar
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/commandbar
 ---
 
 The Command Bar is a toolbar aimed to use for commands that counts for the "area" it is placed.

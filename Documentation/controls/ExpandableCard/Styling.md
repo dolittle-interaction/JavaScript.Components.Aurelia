@@ -3,6 +3,8 @@ title: Styling
 description: Describes how to use the Expandable card control and how to change the styles
 keywords: Using, expandable, card, styles
 author: Vidar Aune Westrum
+aliases:
+    - /interaction/aurelia/aurelia-components/controls/expandablecard/styling
 ---
 
 ## Expandable Card
